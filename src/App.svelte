@@ -1,30 +1,27 @@
 <script>
 	import "bulma/css/bulma.css";
+	import Period from "./Comps/period.svelte";
+
 	// import { Collapse } from "svelma";
 	// import { Button } from "svelma";
 
 	// import { Collapse } from "svelma";
+	import Drawer from "svelte-drawer-component";
+	let open = false;
+
 	export let name;
 	let show = false;
 </script>
 
 <main>
-	<h1>Расписание {name}</h1>
+	<h1 on:click={() => (open = true)}>Расписание {name}</h1>
 	<!-- <Button>???</Button> -->
 
-	<p>
-		<a
-			role="button"
-			class="navbar-burger"
-			aria-label="menu"
-			aria-expanded="true"
-			data-target="navbarBasicExample"
-		>
-			<span aria-hidden="true" />
-			<span aria-hidden="true" />
-			<span aria-hidden="true" />
-		</a>
-	</p>
+	<div>
+		<Drawer {open} on:clickAway={() => (open = false)} size="60%">
+			<Period />
+		</Drawer>
+	</div>
 
 	<p class="buttons">
 		<button class="button">
@@ -74,5 +71,15 @@
 		main {
 			max-width: none;
 		}
+	}
+
+	main:global(.drawer .overlay) {
+		background: rgba(100, 100, 100, 0.5);
+	}
+
+	main div :global(.drawer .panel) {
+		/* background: black; */
+		max-width: 500px !important;
+		color: rgb(141, 128, 203);
 	}
 </style>

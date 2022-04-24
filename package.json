@@ -23,6 +23,7 @@
     "bulma": "^0.9.3",
     "rollup-plugin-postcss": "^4.0.2",
     "sirv-cli": "^1.0.12",
-    "svelma": "^0.4.5"
+    "svelma": "^0.4.5",
+    "svelte-drawer-component": "^1.2.2"
   }
 }
