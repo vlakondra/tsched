@@ -44,7 +44,7 @@ input:disabled {
 	color: #ccc;
 }
 
-button {
+/* button {
 	color: #333;
 	background-color: #f4f4f4;
 	outline: none;
@@ -53,11 +53,11 @@ button {
 button:disabled {
 	color: #999;
 }
-
+*/
 button:not(:disabled):active {
-	background-color: #ddd;
+	background-color: aqua;
 }
 
 button:focus {
-	border-color: #666;
-}
+	border-color:black;
+} 

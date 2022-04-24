@@ -4,6 +4,9 @@ import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
+import postcss from 'rollup-plugin-postcss';
+import autoPreprocess from 'svelte-preprocess';
+// import preprocess from 'svelte-preprocess'
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -41,11 +44,20 @@ export default {
 			compilerOptions: {
 				// enable run-time checks when not in production
 				dev: !production
-			}
+			},
+			preprocess: autoPreprocess(),
 		}),
+
+		//??
+
+		//??
+
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
-		css({ output: 'bundle.css' }),
+		css({ output: 'bundle.css', sourcemap: true, }),
+
+		//for svelma
+		postcss(),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
@@ -62,12 +74,12 @@ export default {
 		// the bundle has been generated
 		!production && serve(),
 
-        // Watch the `public` directory and refresh the
+		// Watch the `public` directory and refresh the
 		// browser on changes when not in production
 		!production && livereload({
-            watch: 'public',
-            clientUrl: process.env.CLIENT_URL
-        }),
+			watch: 'public',
+			clientUrl: process.env.CLIENT_URL
+		}),
 
 		// If we're building for production (npm run build
 		// instead of npm run dev), minify
