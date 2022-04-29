@@ -9,15 +9,6 @@
     import { ru } from "date-fns/locale";
     import { onMount } from "svelte";
 
-    // let x = formatDistance(
-    //     subDays(new Date(), 3),
-    //     new Date(),
-    //     {
-    //         addSuffix: true,
-    //     },
-    //     { locale: ru }
-    // );
-
     const formatDate = (d) => {
         let frm = "yyyy-MM-dd";
         console.log("frmData", d);
@@ -30,7 +21,6 @@
 
     let currdate = new Date();
 
-    // let startDate = format(currdate.setDate(1), frm);
     let startDate = currdate.setDate(1); //1-й день тек. мес.
     let frmStartDate = formatDate(startDate);
     // $: tmp = frmStartDate;
@@ -42,8 +32,27 @@
     let frmEndDate = formatDate(endDate);
     //min endDate д.б. не больше выбранной startDate
 
-    const compareDates = (start, end) => {
-        console.log(frmEndDate);
+    const compareDates = (comp) => {
+        if (comp == "start") {
+            console.log("START");
+            //если начал. дата обнуляется, обнуляем и конечную,
+            if (!frmStartDate) {
+                frmEndDate = undefined;
+                setTimeout(() => {
+                    prompt("!!!");
+                }, 1000);
+            } else {
+                //иначе добавляем к startDate 1 мес
+                frmEndDate = formatDate(
+                    add(new Date(frmStartDate), { months: 1 })
+                );
+            }
+        } else if (comp == "end") {
+            console.log("END");
+        }
+        console.log("start", frmStartDate);
+        console.log("end", frmEndDate);
+
         //https://stackoverflow.com/questions/4413590/javascript-get-array-of-dates-between-2-dates
     };
 </script>
@@ -58,8 +67,8 @@
         <tr>
             <td>
                 <input
-                    on:change={(v) => compareDates(v)}
                     type="date"
+                    on:change={() => compareDates("start")}
                     min={frmMinStartDate}
                     max={frmMaxStartDate}
                     bind:value={frmStartDate}
@@ -74,9 +83,10 @@
             <td>
                 <input
                     type="date"
+                    on:change={() => compareDates("end")}
                     min={frmStartDate ? frmStartDate : formatDate(new Date())}
                     max={frmStartDate
-                        ? formatDate(add(startDate, { months: 2 }))
+                        ? formatDate(add(startDate, { months: 3 }))
                         : formatDate(new Date())}
                     bind:value={frmEndDate}
                     required

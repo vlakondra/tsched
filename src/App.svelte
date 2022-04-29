@@ -1,11 +1,9 @@
 <script>
 	import "bulma/css/bulma.css";
+
 	import Period from "./Comps/period.svelte";
+	import Depart from "./Comps/depart.svelte";
 
-	// import { Collapse } from "svelma";
-	// import { Button } from "svelma";
-
-	// import { Collapse } from "svelma";
 	import Drawer from "svelte-drawer-component";
 	let open = false;
 
@@ -18,8 +16,9 @@
 	<!-- <Button>???</Button> -->
 
 	<div>
-		<Drawer {open} on:clickAway={() => (open = false)} size="60%">
+		<Drawer {open} on:clickAway={() => (open = false)} size="40%">
 			<Period />
+			<Depart />
 		</Drawer>
 	</div>
 
