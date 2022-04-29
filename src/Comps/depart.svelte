@@ -18,10 +18,18 @@
 
   onMount(async () => {
     const res = await fetch(url + query);
-    const jsres = await res.json();
+    console.log("await??", res);
+    if (res.error) {
+      alert("???");
+      throw new Error("Bad response from server");
+    } else {
+      console.log("await??", res);
+      const jsres = await res.json();
+      console.log("jsres", jsres);
 
-    depjs = jsres["Departs"];
-    tchrjs = jsres["Teachers"];
+      depjs = jsres["Departs"];
+      tchrjs = jsres["Teachers"];
+    }
   });
 
   const onDepSelected = (e) => {
@@ -30,9 +38,9 @@
 </script>
 
 <div
-  style="display: flex;flex-direction:row; align-items: center; justify-content: center;"
+  style="display: flex;flex-direction:row; align-items: center;justify-content: center; margin-left: 20px;"
 >
-  <div style="padding-right: 5px;">Кафедра</div>
+  <div style="padding-right: 5px;width:120px;">Кафедра</div>
 
   <div class="dep_select">
     <div class="control has-icons-left">
@@ -43,12 +51,15 @@
           on:blur={undefined}
         >
           <option value="null" selected disabled>Выберите кафедру</option>
+          {#if depjs}
+            <!-- content here -->
 
-          {#each depjs as item, i}
-            <option value={item.Depart_ID}>
-              {item.DepartName}
-            </option>
-          {/each}
+            {#each depjs as item}
+              <option value={item.Depart_ID}>
+                {item.DepartName}
+              </option>
+            {/each}
+          {/if}
         </select>
       </div>
       <span class="icon is-medium is-left">
@@ -60,23 +71,31 @@
   </div>
 </div>
 {selDep_ID}-{selTchr_ID}
-<div class="dep_select">
-  <div class="control has-icons-left">
-    <div class="select is-success">
-      <select bind:value={selTchr_ID}>
-        <option value="null" selected disabled>Выберите преподавателя</option>
 
-        {#each tchrjs.filter((t) => t.Depart_ID == selDep_ID) as item, i}
-          <option value={item.Emp_ID}>
-            {item.FIO}
-          </option>
-        {/each}
-      </select>
+<div
+  style="display: flex;flex-direction:row; align-items: center; justify-content: center; margin-left: 20px;"
+>
+  <div style="padding-right: 5px;width:120px;">Преподаватель</div>
+
+  <div class="dep_select">
+    <div class="control has-icons-left">
+      <div class="select is-success">
+        <select bind:value={selTchr_ID}>
+          <option value="null" selected disabled>Выберите преподавателя</option>
+          {#if tchrjs}
+            {#each tchrjs.filter((t) => t.Depart_ID == selDep_ID) as item}
+              <option value={item.Emp_ID}>
+                {item.FIO}
+              </option>
+            {/each}
+          {/if}
+        </select>
+      </div>
+      <span class="icon is-medium is-left">
+        <i class="fas fa-chalkboard-teacher" />
+        <!-- <i class="fas fa-diagnoses" /> -->
+      </span>
     </div>
-    <span class="icon is-medium is-left">
-      <!-- <i class="fas fa-chalkboard-teacher" /> -->
-      <i class="fas fa-diagnoses" />
-    </span>
   </div>
 </div>
 
