@@ -1,9 +1,9 @@
 <script>
     import { fade } from "svelte/transition";
-    export let isdata = false;
+    export let showIndicator = true;
 </script>
 
-{#if !isdata}
+{#if showIndicator}
     <div transition:fade class="load-indicator">
         <span class="icon is-large">
             <span class="fa-stack fa-lg">

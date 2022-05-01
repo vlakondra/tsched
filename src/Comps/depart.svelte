@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
 
-  export let getDepartData;
+  export let checkDepartData;
 
   const esc = encodeURIComponent;
   const url = "https://old.ursei.su/Services/GetTeachersIniData?";
@@ -21,20 +21,27 @@
 
   onMount(async () => {
     //try ??
-
+    let result = {};
     try {
       const res = await fetch(url + query);
       const jsres = await res.json();
 
       depjs = jsres["Departs"];
       tchrjs = jsres["Teachers"];
-      getDepartData({
-        data: depjs.length && tchrjs.length ? true : false,
-        err: false,
-      });
+
+      result.isdata = depjs.length && tchrjs.length ? true : false;
+      result.iserror = false;
+      // getDepartData({
+      //   data: depjs.length && tchrjs.length ? true : false,
+      //   err: false,
+      // });
     } catch (error) {
       console.error("Ошибка:", error);
       getDepartData({ data: false, err: error });
+      result.isdata = false;
+      result.iserror = error;
+    } finally {
+      checkDepartData(result);
     }
 
     //   const res = await fetch(url + query);

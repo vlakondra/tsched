@@ -3,6 +3,7 @@
 
 	import Header from "./Comps/header.svelte";
 	import LoadIndicator from "./Comps/loadindicator.svelte";
+	import StartMessage from "./Comps/startmessage.svelte";
 	import Period from "./Comps/period.svelte";
 	import Depart from "./Comps/depart.svelte";
 
@@ -12,10 +13,10 @@
 
 	// export let name;
 	// let show = false;
-	let isDepartData = false; //Получены ли данные кафедр
-	const onGetDepartData = (res) => {
+	let showIndicator = true; //Получены ли данные кафедр
+	const oncheckDepartData = (res) => {
 		//здесь нужны еще данные об ошибках
-		if (res.data && !res.error) isDepartData = true;
+		if (res.hasOwnProperty("isdata")) showIndicator = false;
 	};
 
 	const TurnDrawer = () => {
@@ -29,48 +30,11 @@
 	<Drawer {open} on:clickAway={() => (open = false)} size="40%">
 		<button on:click={() => (open = false)} class="delete is-medium" />
 		<Period />
-		<Depart getDepartData={onGetDepartData} />
+		<Depart checkDepartData={oncheckDepartData} />
 	</Drawer>
 
-	<LoadIndicator isdata={isDepartData} />
-
-	<div style="width:200px; height:200px">
-		<div style="position:relative">
-			<i
-				class="fas fa-user-clock"
-				style=" font-weight: 600; font-size: 200px; color: rgb(208 175 132 / 37%);"
-			/>
-		</div>
-		<div style="position:relative;top: -58%;left: 50%;">999</div>
-	</div>
-
-	<div
-		class="notification2 is-primary"
-		style="  position:relative;top:40%;text-align:center;width:300px;margin:0 auto"
-	>
-		Расписание на апрель 2022 <br />
-		cоставлено.<br />
-		<i
-			class="fas fa-user-clock"
-			style="    font-weight: 600;
-	font-size: 250px;
-	color: rgb(208 175 132 / 37%);"
-		/>
-		<button on:click={() => (open = true)}>Выберите преподавателя</button>
-	</div>
-
-	<div>
-		<span class="icon is-large">
-			<span class="fa-stack fa-lg">
-				<i
-					class="fas fa-user-clock"
-					style="    font-weight: 600;
-				font-size: 250px;
-				color: rgb(208 175 132 / 37%);"
-				/>
-			</span>
-		</span>
-	</div>
+	<LoadIndicator {showIndicator} />
+	<StartMessage />
 </main>
 
 <style>
