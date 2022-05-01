@@ -1,35 +1,54 @@
 <script>
   import { onMount } from "svelte";
 
+  export let getDepartData;
+
   const esc = encodeURIComponent;
   const url = "https://old.ursei.su/Services/GetTeachersIniData?";
   const params = {
-    d: new Date().toISOString().slice(0, 10),
+    //почему работает с любой датой?
+    d: new Date(2015, 0).toISOString().slice(0, 10),
   };
 
   const query = Object.keys(params)
     .map((k) => `${esc(k)}=${esc(params[k])}`)
     .join("&");
 
-  let depjs = [];
-  let tchrjs = [];
+  let depjs;
+  let tchrjs;
   let selDep_ID;
   let selTchr_ID;
 
   onMount(async () => {
-    const res = await fetch(url + query);
-    console.log("await??", res);
-    if (res.error) {
-      alert("???");
-      throw new Error("Bad response from server");
-    } else {
-      console.log("await??", res);
+    //try ??
+
+    try {
+      const res = await fetch(url + query);
       const jsres = await res.json();
-      console.log("jsres", jsres);
 
       depjs = jsres["Departs"];
       tchrjs = jsres["Teachers"];
+      getDepartData({
+        data: depjs.length && tchrjs.length ? true : false,
+        err: false,
+      });
+    } catch (error) {
+      console.error("Ошибка:", error);
+      getDepartData({ data: false, err: error });
     }
+
+    //   const res = await fetch(url + query);
+    //   if (res.error) {
+    //     throw new Error("Bad response from server");
+    //   } else {
+    //     console.log("await??", res);
+    //     const jsres = await res.json();
+    //     console.log("jsres", jsres);
+
+    //     depjs = jsres["Departs"];
+    //     tchrjs = jsres["Teachers"];
+    //     getDepartData(depjs.length);
+    //   }
   });
 
   const onDepSelected = (e) => {
@@ -52,8 +71,6 @@
         >
           <option value="null" selected disabled>Выберите кафедру</option>
           {#if depjs}
-            <!-- content here -->
-
             {#each depjs as item}
               <option value={item.Depart_ID}>
                 {item.DepartName}

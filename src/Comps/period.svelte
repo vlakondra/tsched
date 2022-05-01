@@ -6,8 +6,8 @@
         lastDayOfMonth,
         format,
     } from "date-fns";
+    //https://date-fns.org/v2.28.0/docs/add
     import { ru } from "date-fns/locale";
-    import { onMount } from "svelte";
 
     const formatDate = (d) => {
         let frm = "yyyy-MM-dd";
@@ -52,8 +52,6 @@
         }
         console.log("start", frmStartDate);
         console.log("end", frmEndDate);
-
-        //https://stackoverflow.com/questions/4413590/javascript-get-array-of-dates-between-2-dates
     };
 </script>
 
