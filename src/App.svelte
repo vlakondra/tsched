@@ -2,7 +2,6 @@
 	import "bulma/css/bulma.css";
 
 	import Header from "./Comps/header.svelte";
-	import LoadIndicator from "./Comps/loadindicator.svelte";
 	import StartMessage from "./Comps/startmessage.svelte";
 	import Period from "./Comps/period.svelte";
 	import Depart from "./Comps/depart.svelte";
@@ -33,8 +32,7 @@
 		<Depart checkDepartData={oncheckDepartData} />
 	</Drawer>
 
-	<LoadIndicator {showIndicator} />
-	<StartMessage />
+	<StartMessage {showIndicator} openDrawer={TurnDrawer} />
 </main>
 
 <style>
