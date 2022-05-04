@@ -1,19 +1,20 @@
 <script>
     import { fade } from "svelte/transition";
-    export let showIndicator = false;
+    export let checkData = { reqfinished: false, iserror: false }; //showIndicator;
     export let openDrawer;
 
     let date = new Date();
     let date_opts = { year: "numeric", month: "long" };
 </script>
 
-{#if showIndicator}
+<!-- {#if showIndicator} -->
+{#if !checkData.reqfinished}
     <span class="icon is-large load-indicator">
         <span class="fa-stack fa-lg">
             <i transition:fade class="fas fa-spinner fa-pulse " />
         </span>
     </span>
-{:else}
+{:else if !checkData.iserror}
     <i transition:fade class="fas fa-user-clock sched-image" />
 
     <div transition:fade class="start-message">
@@ -29,6 +30,8 @@
             </button>
         </p>
     </div>
+{:else}
+    <div class="start-message start-err">Произошла ошибка</div>
 {/if}
 
 <style>
@@ -65,6 +68,14 @@
         font-weight: 100;
         color: rgb(188 143 143 / 52%);
     }
+
+    .start-err {
+        text-align: center;
+        font-size: 5vw;
+        font-weight: 400;
+        color: red;
+    }
+
     .select-tchr {
         color: rgb(0 0 255 / 63%);
         background-color: transparent;

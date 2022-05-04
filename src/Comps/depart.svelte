@@ -29,33 +29,15 @@
       depjs = jsres["Departs"];
       tchrjs = jsres["Teachers"];
 
-      result.isdata = depjs.length && tchrjs.length ? true : false;
+      result.reqfinished = depjs.length && tchrjs.length ? true : false;
       result.iserror = false;
-      // getDepartData({
-      //   data: depjs.length && tchrjs.length ? true : false,
-      //   err: false,
-      // });
     } catch (error) {
       console.error("Ошибка:", error);
-      getDepartData({ data: false, err: error });
-      result.isdata = false;
-      result.iserror = error;
+      result.reqfinished = false;
+      result.iserror = true;
     } finally {
       checkDepartData(result);
     }
-
-    //   const res = await fetch(url + query);
-    //   if (res.error) {
-    //     throw new Error("Bad response from server");
-    //   } else {
-    //     console.log("await??", res);
-    //     const jsres = await res.json();
-    //     console.log("jsres", jsres);
-
-    //     depjs = jsres["Departs"];
-    //     tchrjs = jsres["Teachers"];
-    //     getDepartData(depjs.length);
-    //   }
   });
 
   const onDepSelected = (e) => {

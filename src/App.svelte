@@ -12,10 +12,15 @@
 
 	// export let name;
 	// let show = false;
-	let showIndicator = true; //Получены ли данные кафедр
+	// let showIndicator = {}; //true; //Получены ли данные кафедр
+	let checkData = { reqfinished: false, iserror: false };
 	const oncheckDepartData = (res) => {
 		//здесь нужны еще данные об ошибках
-		if (res.hasOwnProperty("isdata")) showIndicator = false;
+		//showStartMessage = res
+		//if (res.hasOwnProperty("isdata")) showIndicator = res; //false;
+
+		checkData.reqfinished = res.reqfinished;
+		checkData.iserror = res.iserror;
 	};
 
 	const TurnDrawer = () => {
@@ -32,7 +37,7 @@
 		<Depart checkDepartData={oncheckDepartData} />
 	</Drawer>
 
-	<StartMessage {showIndicator} openDrawer={TurnDrawer} />
+	<StartMessage {checkData} openDrawer={TurnDrawer} />
 </main>
 
 <style>
