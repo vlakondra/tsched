@@ -9,7 +9,7 @@
             <div class="burg-line" />
             <div class="burg-line" />
         </div>
-        <div class="caption">Расписание преподавателей</div>
+        <div class="title caption">Расписание преподавателей</div>
     </div>
 </div>
 
@@ -17,22 +17,26 @@
     .header {
         display: flex;
         flex-direction: row;
-        justify-content: center;
         align-items: center;
         background-color: burlywood;
-        color: white;
-        font-family: Roboto;
-        font-size: 5vw;
-        font-weight: 100;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-evenly;
+        padding: 10px 0;
     }
     .caption {
-        margin-left: 10px;
+        /* margin-left: 10px; */
         text-shadow: 2px 3px 4px black;
+
+        color: rgb(229, 229, 229) !important;
+        font-family: inherit;
+        font-size: 150%;
+        font-weight: 300;
     }
     .burger {
         width: 60px;
         height: 60px;
-        margin-right: 10px;
+        /* margin-right: 10px; */
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -44,10 +48,10 @@
         background-color: blue;
         border-radius: 4px;
     }
-    @media (max-width: 960px) {
+    @media screen and (max-width: 320px) {
         .burger {
-            width: 40px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
         }
     }
 

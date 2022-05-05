@@ -31,7 +31,7 @@
 <main>
 	<Header onBurgerClick={TurnDrawer} />
 
-	<Drawer {open} on:clickAway={() => (open = false)} size="40%">
+	<Drawer {open} on:clickAway={() => (open = false)} size="null">
 		<button on:click={() => (open = false)} class="delete is-medium" />
 		<Period />
 		<Depart checkDepartData={oncheckDepartData} />
@@ -45,10 +45,12 @@
 		height: 100%;
 		background-color: beige;
 		position: relative;
+		font-family: Roboto;
 	}
 
 	button.delete.is-medium {
-		left: 95%;
+		/* left: 93%; */
+		right: 0;
 		top: 1px;
 	}
 
@@ -58,7 +60,7 @@
 
 	main :global(.drawer .panel) {
 		/* background: black; */
-		max-width: 500px !important;
+		max-width: 90% !important;
 		color: rgb(141, 128, 203);
 	}
 </style>
