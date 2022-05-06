@@ -1,14 +1,25 @@
 <script>
     export let onBurgerClick;
+
+    import Fa from "svelte-fa";
+    import { faBars } from "@fortawesome/free-solid-svg-icons";
+
+    // https://cweili.github.io/svelte-fa/
+    //https://www.npmjs.com/package/svelte-fa
+    //https://fontawesome.com/v5/icons/bars?s=solid
 </script>
 
 <div class="container ">
     <div class="header">
-        <div on:click={onBurgerClick} class="burger">
-            <div class="burg-line" />
-            <div class="burg-line" />
-            <div class="burg-line" />
+        <div on:click={onBurgerClick}>
+            <!-- <i on:click={onBurgerClick} class="fas fa-bars" /> -->
+            <Fa icon={faBars} color="white" size="2.5x" />
         </div>
+        <!-- <div on:click={onBurgerClick} class="burger">
+            <div class="burg-line" />
+            <div class="burg-line" />
+            <div class="burg-line" />
+        </div> -->
         <div class="title caption">Расписание преподавателей</div>
     </div>
 </div>

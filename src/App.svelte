@@ -26,15 +26,20 @@
 	const TurnDrawer = () => {
 		open = true;
 	};
+	let x;
 </script>
 
+<svelte:window bind:outerWidth={x} />
 <main>
 	<Header onBurgerClick={TurnDrawer} />
+	{x}
 
 	<Drawer {open} on:clickAway={() => (open = false)} size="null">
-		<button on:click={() => (open = false)} class="delete is-medium" />
-		<Period />
-		<Depart checkDepartData={oncheckDepartData} />
+		<div class="notification">
+			<button on:click={() => (open = false)} class="delete is-medium" />
+			<Period />
+			<Depart checkDepartData={oncheckDepartData} />
+		</div>
 	</Drawer>
 
 	<StartMessage {checkData} openDrawer={TurnDrawer} />
@@ -60,7 +65,9 @@
 
 	main :global(.drawer .panel) {
 		/* background: black; */
-		max-width: 90% !important;
+		transition: transform 2s ease;
+		max-width: 80% !important;
+		/* max-width: 90% !important; */
 		color: rgb(141, 128, 203);
 	}
 </style>

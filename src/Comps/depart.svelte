@@ -7,7 +7,7 @@
   const url = "https://old.ursei.su/Services/GetTeachersIniData?";
   const params = {
     //почему работает с любой датой?
-    d: new Date(2015, 0).toISOString().slice(0, 10),
+    d: new Date().toISOString().slice(0, 10),
   };
 
   const query = Object.keys(params)
@@ -51,29 +51,29 @@
   <div style="padding-right: 5px;width:120px;">Кафедра</div>
 
   <div class="dep_select">
-    <div class="control has-icons-left">
-      <div class="select is-success">
-        <select
-          bind:value={selDep_ID}
-          on:change={(v) => onDepSelected(v)}
-          on:blur={undefined}
-        >
-          <option value="null" selected disabled>Выберите кафедру</option>
-          {#if depjs}
-            {#each depjs as item}
-              <option value={item.Depart_ID}>
-                {item.DepartName}
-              </option>
-            {/each}
-          {/if}
-        </select>
-      </div>
-      <span class="icon is-medium is-left">
+    <!-- <div class="control"> -->
+    <div class="select is-success">
+      <select
+        bind:value={selDep_ID}
+        on:change={(v) => onDepSelected(v)}
+        on:blur={undefined}
+      >
+        <option value="null" selected disabled>Выберите кафедру</option>
+        {#if depjs}
+          {#each depjs as item}
+            <option value={item.Depart_ID}>
+              {item.DepartName}
+            </option>
+          {/each}
+        {/if}
+      </select>
+    </div>
+    <!-- <span class="icon is-medium is-left">
         <i class="fas fa-sitemap" />
         <!-- <i class="fas fa-chalkboard-teacher" />
       <i class="fas fa-diagnoses" /> -->
-      </span>
-    </div>
+    <!-- </span> -->
+    <!-- </div> -->
   </div>
 </div>
 {selDep_ID}-{selTchr_ID}
@@ -84,24 +84,24 @@
   <div style="padding-right: 5px;width:120px;">Преподаватель</div>
 
   <div class="dep_select">
-    <div class="control has-icons-left">
-      <div class="select is-success">
-        <select bind:value={selTchr_ID}>
-          <option value="null" selected disabled>Выберите преподавателя</option>
-          {#if tchrjs}
-            {#each tchrjs.filter((t) => t.Depart_ID == selDep_ID) as item}
-              <option value={item.Emp_ID}>
-                {item.FIO}
-              </option>
-            {/each}
-          {/if}
-        </select>
-      </div>
-      <span class="icon is-medium is-left">
+    <!-- <div class="control has-icons-left2"> -->
+    <div class="select is-success2">
+      <select bind:value={selTchr_ID}>
+        <option value="null" selected disabled>Выберите преподавателя</option>
+        {#if tchrjs}
+          {#each tchrjs.filter((t) => t.Depart_ID == selDep_ID) as item}
+            <option value={item.Emp_ID}>
+              {item.FIO}
+            </option>
+          {/each}
+        {/if}
+      </select>
+    </div>
+    <!-- <span class="icon is-medium is-left">
         <i class="fas fa-chalkboard-teacher" />
         <!-- <i class="fas fa-diagnoses" /> -->
-      </span>
-    </div>
+    <!-- </span> -->
+    <!-- </div> -->
   </div>
 </div>
 
