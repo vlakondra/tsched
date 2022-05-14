@@ -5,6 +5,7 @@
 	import StartMessage from "./Comps/startmessage.svelte";
 	import Period from "./Comps/period.svelte";
 	import Depart from "./Comps/depart.svelte";
+	import Schedule from "./Comps/schedule.svelte";
 
 	import Drawer from "svelte-drawer-component";
 	let open = false;
@@ -41,8 +42,9 @@
 			<Depart checkDepartData={oncheckDepartData} />
 		</div>
 	</Drawer>
-
-	<StartMessage {checkData} openDrawer={TurnDrawer} />
+	<!-- 
+	<StartMessage {checkData} openDrawer={TurnDrawer} /> -->
+	<Schedule />
 </main>
 
 <style>
