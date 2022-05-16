@@ -57,10 +57,10 @@
 		position: relative;
 		font-family: Roboto;
 	}
-	main {
+	/* main {
 		margin: 0 auto;
 		max-width: 960px;
-	}
+	} */
 
 	button.delete.is-medium {
 		/* left: 93%; */

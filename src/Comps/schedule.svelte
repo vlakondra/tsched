@@ -1,14 +1,9 @@
 <script>
     //https://github.com/langbamit/svelte-scrollto#readme
     import { onMount } from "svelte";
+    import ShahSched from "./shahsched.svelte";
 
-    import {
-        formatDistance,
-        subDays,
-        add,
-        lastDayOfMonth,
-        format,
-    } from "date-fns";
+    import { format } from "date-fns";
 
     import { fade } from "svelte/transition";
 
@@ -648,7 +643,11 @@
     </div>
 {/if}
 
-<div class="container " style="background:aqua;">
+<div class="container" style="display:none">
+    <ShahSched />
+</div>
+
+<div class="container " style="margin-top:10px;">
     {#each sched as month, i}
         <div id={i + "-month"} on:click={showSched} class="month">
             <span> {month.Month}</span>
@@ -749,11 +748,13 @@
 
     .pair-wrapper {
         display: grid;
-        gap: 10px;
+        /* gap: 10px; */
         grid-template-columns: 65px 1fr 80px 100px 65px;
         grid-template-areas: "timestart subjname kind group aud";
-        border: 1px solid wheat;
+        border-bottom: 1px solid wheat;
         font-weight: 300;
+        /* ??? сделать фон и рамка на подложке или в этом классе */
+        background-color: rgb(215, 235, 250);
     }
 
     .time-start {
