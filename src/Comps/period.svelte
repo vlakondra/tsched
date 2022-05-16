@@ -11,7 +11,6 @@
 
     const formatDate = (d) => {
         let frm = "yyyy-MM-dd";
-        console.log("frmData", d);
         if (d) {
             return format(d, frm);
         } else {

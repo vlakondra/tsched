@@ -1,11 +1,53 @@
 <script>
     //https://github.com/langbamit/svelte-scrollto#readme
     import { onMount } from "svelte";
+
+    import {
+        formatDistance,
+        subDays,
+        add,
+        lastDayOfMonth,
+        format,
+    } from "date-fns";
+
     import { fade } from "svelte/transition";
+
+    import Fa from "svelte-fa";
+    import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
+
+    onMount(() => {
+        //позиционировать расписание на текущую дату
+        let dp = document.getElementById(new Date().toISOString().slice(0, 10));
+        setTimeout(() => {
+            if (dp) {
+                dp.scrollIntoView({ block: "start", behavior: "smooth" });
+            }
+        }, 1000);
+    });
+
+    const scrollToTop = () => {
+        let dp = document.getElementById("0-month");
+        if (dp) {
+            dp.scrollIntoView({ block: "start", behavior: "smooth" });
+        }
+    };
+
+    export let scrolly = 0;
 
     let schedVisible = true;
     const showSched = () => {
         schedVisible = !schedVisible;
+    };
+
+    const formatDate = (rudate) => {
+        let frm = "yyyy-MM-dd";
+        let spld = rudate.split(".");
+        let d = new Date(
+            parseInt(spld[2]),
+            parseInt(spld[1]) - 1,
+            parseInt(spld[0])
+        );
+        return format(d, frm); //  d.toISOString().slice(0, 10);
     };
 
     const PairCount = (daysArr) => {
@@ -600,17 +642,41 @@
     ];
 </script>
 
-<div class="container " style="background:aqua;padding:5px">
+{#if scrolly > 500}
+    <div transition:fade on:click={scrollToTop} class="totop-box">
+        <Fa icon={faArrowCircleUp} color="wheat" size="2.5x" />
+    </div>
+{/if}
+
+<div class="container " style="background:aqua;">
     {#each sched as month, i}
-        <div on:click={showSched} class="month">
-            {month.Month} -- {PairCount(month.DateDay)} пар -- {month.DateDay
-                .length} дней
+        <div id={i + "-month"} on:click={showSched} class="month">
+            <span> {month.Month}</span>
+            <span
+                >{PairCount(month.DateDay)} пар; {month.DateDay.length} дней</span
+            >
         </div>
         {#if schedVisible}
             <div in:fade={{ duration: 1000 }} out:fade>
                 {#each month.DateDay as day, i}
-                    <div class="day">
-                        {day.DatePair}--{day.DayWeek}
+                    <div
+                        id={formatDate(day.DatePair)}
+                        class="day {day.DayWeek == 'Суббота' ? 'sbt' : ''}"
+                    >
+                        <span>
+                            {day.DatePair}
+                            <span style="margin-left:10px;">
+                                {day.DayWeek}</span
+                            >
+                        </span>
+                        {#if formatDate(day.DatePair) === new Date()
+                                .toISOString()
+                                .slice(0, 10)}
+                            <span
+                                style="padding-right:5px; color:lime;font-weight:400"
+                                >Сегодня</span
+                            >
+                        {/if}
                     </div>
                     {#each day.Schedule as pair, i}
                         <div class="pair-wrapper">
@@ -641,40 +707,42 @@
     {/each}
 </div>
 
-<!-- <div class="container " style="background:aqua;padding:5px">
-    <div class="wrapper">
-        <div class="date">16.05.2022, Понедельник</div>
-        <div class="time">08:30</div>
-        <div class="subject">
-            Разработка, внедрение и адаптация программного обеспечения
-            отраслевой направленности
-        </div>
-        <div class="kind">Практ зан</div>
-        <div class="groups">ИПД-301, ИПСД-201</div>
-        <div class="aud">607/ГК</div>
-    </div>
-
-    <div class="wrapper" style="margin-top:-1em">
-        <div class="time">10:15</div>
-        <div class="subject">
-            Разработка, внедрение и адаптация программного обеспечения
-            отраслевой направленности
-        </div>
-        <div class="kind">Практ зан</div>
-        <div class="groups">ИПД-301, ИПСД-201</div>
-        <div class="aud">607/ГК</div>
-    </div>
-</div> -->
 <style>
+    .sbt {
+        font-weight: 600 !important;
+        color: rgb(234, 249, 252) !important;
+    }
+    /* .container {
+        font-family: "Roboto";
+    } */
     .month {
         cursor: pointer;
+        border-top-left-radius: 0.7em;
+        border-top-right-radius: 0.7em;
+        padding: 5px 7px;
+        background-color: gainsboro;
+        color: blueviolet;
+        border-bottom: 1px solid blue;
+        font-style: oblique;
+        letter-spacing: 2px;
+        font-size: 1.1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+    .month span {
+        border-bottom: 1px solid blue;
+        font-style: oblique;
     }
     .day {
-        background-color: rgb(58, 29, 246);
-        color: wheat;
+        background-color: rgb(136, 120, 243);
+        color: whitesmoke;
         padding: 1px 0 1px 5px;
         letter-spacing: 0.9px;
         font-weight: 300;
+        display: flex;
+        justify-content: space-between;
 
         /* border-bottom: 1px solid silver; */
     }
@@ -713,6 +781,20 @@
         }
     } */
 
+    @media (min-width: 501px) {
+        .pair-wrapper {
+            grid-template-columns: 65px 1fr 100px 100px 65px;
+            /* gap: 10px !important; ??*/
+        }
+        .pair-wrapper div {
+            border-right: 1px solid silver;
+            padding: 5px;
+        }
+        .pair-wrapper *:not(.subj-name) {
+            text-align: left;
+        }
+    }
+
     @media (max-width: 500px) {
         .pair-wrapper {
             grid-template-columns: 65px 1fr 65px;
@@ -727,7 +809,7 @@
             grid-row: 1 / 4;
             text-align: center;
             padding-top: 5px;
-            background-color: red;
+            background-color: rgb(221, 137, 137);
             color: white;
         }
         .subj-name {
@@ -735,15 +817,17 @@
             grid-row: 1 / 2;
             padding: 5px 5px;
             letter-spacing: 0.2px;
-            background-color: #ebd836;
-            color: darkblue;
+            background-color: #368483;
+            /* background-color: #2b706f; !!*/
+            /* color: darkblue; */
+            color: whitesmoke;
         }
         .aud {
             grid-column: 3 / 4;
             grid-row: 1 / 3;
             text-align: center;
             padding-top: 5px;
-            background-color: red;
+            background-color: rgb(221, 137, 137);
             color: white;
             /* height: 100%; */
         }
@@ -769,5 +853,13 @@
             grid-area: kind;
             margin-left: 80px;
         } */
+    }
+
+    .totop-box {
+        position: fixed;
+        left: 80%;
+        top: 80%;
+        cursor: pointer;
+        z-index: 99;
     }
 </style>

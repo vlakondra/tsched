@@ -27,13 +27,13 @@
 	const TurnDrawer = () => {
 		open = true;
 	};
-	let x;
+	let scrolly;
 </script>
 
-<svelte:window bind:outerWidth={x} />
+<!-- <svelte:window bind:outerWidth={x} /> -->
+
 <main>
 	<Header onBurgerClick={TurnDrawer} />
-	{x}
 
 	<Drawer {open} on:clickAway={() => (open = false)} size="null">
 		<div class="notification">
@@ -44,15 +44,22 @@
 	</Drawer>
 	<!-- 
 	<StartMessage {checkData} openDrawer={TurnDrawer} /> -->
-	<Schedule />
+	<Schedule {scrolly} />
 </main>
+
+<svelte:window bind:scrollY={scrolly} />
 
 <style>
 	main {
 		height: 100%;
+		padding: 5px;
 		background-color: beige;
 		position: relative;
 		font-family: Roboto;
+	}
+	main {
+		margin: 0 auto;
+		max-width: 960px;
 	}
 
 	button.delete.is-medium {
