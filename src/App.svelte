@@ -72,11 +72,19 @@
 		background: rgba(100, 100, 100, 0.5);
 	}
 
-	main :global(.drawer .panel) {
-		/* background: black; */
-		transition: transform 2s ease;
-		max-width: 80% !important;
-		/* max-width: 90% !important; */
-		color: rgb(141, 128, 203);
+	@media (min-width: 501px) {
+		main :global(.drawer .panel) {
+			/* background: black; */
+			transition: transform 1s ease;
+			/* для мобилы и компа сделать разные ширины */
+			max-width: 60% !important;
+			/* max-width: 90% !important; */
+			color: rgb(141, 128, 203);
+		}
+	}
+	@media (max-width: 500px) {
+		main :global(.drawer .panel) {
+			max-width: 80% !important;
+		}
 	}
 </style>

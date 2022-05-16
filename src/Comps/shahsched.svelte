@@ -26,9 +26,6 @@
     </div>
 </div>
 
-<!-- <div class="pair-wrapper">
-    <div>3333</div>
-</div> -->
 <style>
     .pair-wrapper {
         display: grid;
