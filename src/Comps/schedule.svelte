@@ -644,7 +644,7 @@
 {/if}
 
 <div class="container" style="display:none">
-    <ShahSched />
+    <ShahSched {sched} />
 </div>
 
 <div class="container " style="margin-top:10px;">
