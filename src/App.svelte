@@ -8,6 +8,8 @@
 	import Schedule from "./Comps/schedule.svelte";
 
 	import Drawer from "svelte-drawer-component";
+	import ResizeObserver from "svelte-resize-observer";
+
 	let open = false;
 	// let hopen;
 
@@ -28,11 +30,19 @@
 		open = true;
 	};
 	let scrolly;
+	let w;
 </script>
 
 <!-- <svelte:window bind:outerWidth={x} /> -->
 
 <main>
+	<ResizeObserver
+		on:resize={(e) => {
+			w = e.detail.clientWidth;
+			console.log(e.detail.clientWidth, e);
+		}}
+	/>
+	{w}
 	<Header onBurgerClick={TurnDrawer} />
 
 	<Drawer {open} on:clickAway={() => (open = false)} size="null">

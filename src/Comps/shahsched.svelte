@@ -10,12 +10,23 @@
         "19:15",
         "20:55",
     ];
+
+    let timepairs = {
+        1: "08:30",
+        2: "10:15",
+        3: "12:00",
+        4: "14:05",
+        5: "15:50",
+        6: "17:35",
+        7: "19:15",
+        8: "20:55",
+    };
+
     const indexPair = (timepair) => {
         return pairs.indexOf(timepair);
     };
 
     export let sched;
-    let w = 4;
     let startRow = 3;
     let startCol = 1;
     let sC = 2;
@@ -34,16 +45,17 @@
     //     Sch = sch;
     //     console.log("SCH? ", Sch);
     // };
+    let w;
 </script>
 
-<!-- {#each {length: 3} as _, i}
-    <li>{i + 1}</li>
-{/each} -->
+<svelte:window bind:outerWidth={w} />
 
-<h1>SHAHSCHED</h1>
+<h1>SHAHSCHED {w}</h1>
 <div class="pair-wrapper" style="background-color:aqua">
     {#each pairs as timePair, i}
-        <div style=" grid-column: {i + 1} / {i + 2}; grid-row: 1 / 2;">
+        <div
+            style=" grid-column: {i + 1} / {i + 2}; grid-row: 1 / 2;padding:5px"
+        >
             {timePair}
         </div>
     {/each}
@@ -52,13 +64,15 @@
         Физическая культура
     </div> -->
     {#each sched as month, i}
-        <div style="grid-column: 1 / 10; grid-row: {2} / {3};">
+        <div style="grid-column: 1 / 10; grid-row: {2} / {3}; padding:5px">
             {month.Month}
         </div>
         {#each month.DateDay as day, i}
             <div
                 style="grid-column: {startCol} / {startCol +
-                    1}; grid-row: {startRow + i} / {startRow + i + 1};"
+                    1}; grid-row: {startRow + i} / {startRow +
+                    i +
+                    1};padding:5px "
             >
                 <div>
                     {day.DatePair}
@@ -71,27 +85,42 @@
 
             <!-- Переделать на Object.entries
                 https://www.eternaldev.com/blog/5-ways-to-perform-for-loop-in-svelte-each-block/ -->
-            {#each { length: 8 } as _, j}
+            <!-- {#each { length: 8 } as _, j} -->
+            {#each Object.entries(timepairs) as [pair, time], j}
                 <div
-                    style="grid-column: {j + 2} / {j + 3}; grid-row: {i +
-                        3} / {i + 4};"
+                    style="grid-column: {time + 1} / {time + 2}; grid-row: {i +
+                        3} / {i + 4}"
                 >
-                    {#if day.Schedule.findIndex((el) => el.TimeStart == pairs[j + 1]) == -1}
+                    <!-- {#if day.Schedule.findIndex((el) => el.TimeStart == pairs[j + 1]) == -1} -->
+                    {#if day.Schedule.findIndex((el) => el.TimeStart == time) == -1}
                         {""}
                     {:else}
-                        <div>
-                            {PairItem(day.Schedule, pairs[j + 1]).SubjSN}
-                        </div>
-                        <div>
-                            {PairItem(day.Schedule, pairs[j + 1]).TimeStart}
-                        </div>
-                        {PairItem(day.Schedule, pairs[j + 1]).GSName}
-                        {PairItem(day.Schedule, pairs[j + 1]).GSName}
-                        {PairItem(day.Schedule, pairs[j + 1]).Aud}
+                        <div
+                            style="padding:5px;    display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 100%;"
+                        >
+                            <div title={PairItem(day.Schedule, time).TimeStart}>
+                                {PairItem(day.Schedule, time).SubjSN}
+                            </div>
+                            <div>
+                                {PairItem(day.Schedule, time).LoadKindSN}
+                            </div>
+                            <div
+                                style="line-height:1.1em;font-size:0.8em;padding:3px"
+                            >
+                                {PairItem(day.Schedule, time).GSName}
+                            </div>
 
-                        {PairItem(day.Schedule, pairs[j + 1]).LoadKindSN}
-                        <!-- {Sch.find((e) => e.TimeStart == pairs[j + 1])
-                            .LoadKindSN} -->
+                            <!-- {PairItem(day.Schedule, pairs[j + 1]).GSName}-->
+
+                            <div
+                                style="color:azure; background-color:burlywood; padding: 3px 0"
+                            >
+                                {PairItem(day.Schedule, time).Aud}
+                            </div>
+                        </div>
                     {/if}
                 </div>
             {/each}
@@ -104,11 +133,12 @@
         display: grid;
         gap: 1px;
         background-color: rgb(226, 171, 171);
-
-        grid-template-columns: auto auto auto auto auto auto auto auto;
+        grid-template-columns: repeat(8, auto);
+        /* grid-template-columns: repeat(8,auto);// auto auto auto auto auto auto auto auto; */
         grid-template-rows: auto;
     }
     .pair-wrapper div {
         background-color: blue;
+        font-weight: 300px !important;
     }
 </style>

@@ -28,6 +28,7 @@
     "sirv-cli": "^1.0.12",
     "svelma": "^0.4.5",
     "svelte-drawer-component": "^1.2.2",
-    "svelte-fa": "^2.4.0"
+    "svelte-fa": "^2.4.0",
+    "svelte-resize-observer": "^2.0.0"
   }
 }
