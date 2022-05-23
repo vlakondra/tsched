@@ -634,6 +634,586 @@
                 },
             ],
         },
+
+        {
+            Month: "Июнь",
+            DateDay: [
+                {
+                    DatePair: "04.05.2022",
+                    DayWeek: "Среда",
+                    DayWeekShort: "Ср",
+                    Schedule: [
+                        {
+                            TimeStart: "08:30",
+                            SubjName: "Физическая культура 1",
+                            SubjSN: "Физическая культура 1",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭБСД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 4,
+                        },
+                        {
+                            TimeStart: "10:15",
+                            SubjName: "Физическая культура 1",
+                            SubjSN: "Физическая культура 1",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭБД-201",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "12:00",
+                            SubjName: "Физическая культура 1",
+                            SubjSN: "Физическая культура 1",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭБД-201",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "05.05.2022",
+                    DayWeek: "Четверг",
+                    DayWeekShort: "Чт",
+                    Schedule: [
+                        {
+                            TimeStart: "12:00",
+                            SubjName: "Физическая культура 1",
+                            SubjSN: "Физическая культура 1",
+                            LoadKindSN: "Практ зан",
+                            GSName: "БДД-101, ЭБД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "14:05",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту 1",
+                            SubjSN: "Эл курсы п/ф-ре и сп 1 ",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ИД-201, РСОД-201-д, УПД-201-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "15:50",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту 1",
+                            SubjSN: "Эл курсы п/ф-ре и сп 1",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ИД-201, РСОД-201-д, УПД-201-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "06.05.2022",
+                    DayWeek: "Пятница",
+                    DayWeekShort: "Пт",
+                    Schedule: [
+                        {
+                            TimeStart: "10:15",
+                            SubjName: "Общая физическая подготовка 1",
+                            SubjSN: "Общая физ. подгов. 1",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ИД-101, РСОД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "12:00",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту 1",
+                            SubjSN: "Эл курсы п/ф-ре и сп 1",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭД-301 эпо-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "14:05",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту 1",
+                            SubjSN: "Эл курсы п/ф-ре и сп 1",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ИД-301, УПД-301-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "15:50",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту 1",
+                            SubjSN: "Эл курсы п/ф-ре и сп 1",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ИД-201, РСОД-201-д, УПД-201-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "11.05.2022",
+                    DayWeek: "Среда",
+                    DayWeekShort: "Ср",
+                    Schedule: [
+                        {
+                            TimeStart: "14:05",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту 1",
+                            SubjSN: "Эл курсы п/ф-ре и сп 1",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭД-201эпо-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "12.05.2022",
+                    DayWeek: "Четверг",
+                    DayWeekShort: "Чт",
+                    Schedule: [
+                        {
+                            TimeStart: "10:15",
+                            SubjName: "Физическая культура",
+                            SubjSN: "Физическая культура",
+                            LoadKindSN: "Практ зан",
+                            GSName: "БДД-101, ЭБД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "13.05.2022",
+                    DayWeek: "Пятница",
+                    DayWeekShort: "Пт",
+                    Schedule: [
+                        {
+                            TimeStart: "14:05",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту 1",
+                            SubjSN: "Эл курсы п/ф-ре и сп 1",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭД-301 эпо-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "15:50",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту 1",
+                            SubjSN: "Эл курсы п/ф-ре и сп 1",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭД-201эпо-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "16.05.2022",
+                    DayWeek: "Понедельник",
+                    DayWeekShort: "Пн",
+                    Schedule: [
+                        {
+                            TimeStart: "10:15",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту 1",
+                            SubjSN: "Эл курсы п/ф-ре и сп 1",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭД-201эпо-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "12:00",
+                            SubjName: "Физическая культура 1",
+                            SubjSN: "Физическая культура 1",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭБСД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 4,
+                        },
+                        {
+                            TimeStart: "14:05",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту 1",
+                            SubjSN: "Эл курсы п/ф-ре и сп 1",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ИД-301, УПД-301-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "15:50",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту 1",
+                            SubjSN: "Эл курсы п/ф-ре и сп 1",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ИД-301, УПД-301-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "17.05.2022",
+                    DayWeek: "Вторник",
+                    DayWeekShort: "Вт",
+                    Schedule: [
+                        {
+                            TimeStart: "08:30",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту",
+                            SubjSN: "Эл курсы п/ф-ре и сп",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ИД-201, РСОД-201-д, УПД-201-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "19.05.2022",
+                    DayWeek: "Четверг",
+                    DayWeekShort: "Чт",
+                    Schedule: [
+                        {
+                            TimeStart: "12:00",
+                            SubjName: "Физическая культура",
+                            SubjSN: "Физическая культура",
+                            LoadKindSN: "Практ зан",
+                            GSName: "БДД-101, ЭБД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "20.05.2022",
+                    DayWeek: "Пятница",
+                    DayWeekShort: "Пт",
+                    Schedule: [
+                        {
+                            TimeStart: "08:30",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту",
+                            SubjSN: "Эл курсы п/ф-ре и сп",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭД-301 эпо-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "10:15",
+                            SubjName: "Общая физическая подготовка",
+                            SubjSN: "Общая физ. подгов.",
+                            LoadKindSN: "Практ зан",
+                            GSName: "МД-101, УПД-101, ЭД-101",
+                            Aud: "712/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "12:00",
+                            SubjName: "Общая физическая подготовка",
+                            SubjSN: "Общая физ. подгов.",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ИД-101, РСОД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "23.05.2022",
+                    DayWeek: "Понедельник",
+                    DayWeekShort: "Пн",
+                    Schedule: [
+                        {
+                            TimeStart: "08:30",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту",
+                            SubjSN: "Эл курсы п/ф-ре и сп",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭД-301 эпо-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "10:15",
+                            SubjName: "Физическая культура",
+                            SubjSN: "Физическая культура",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭБД-201",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "12:00",
+                            SubjName: "Физическая культура",
+                            SubjSN: "Физическая культура",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭБСД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 4,
+                        },
+                        {
+                            TimeStart: "15:50",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту",
+                            SubjSN: "Эл курсы п/ф-ре и сп",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭД-201эпо-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "24.05.2022",
+                    DayWeek: "Вторник",
+                    DayWeekShort: "Вт",
+                    Schedule: [
+                        {
+                            TimeStart: "12:00",
+                            SubjName: "Общая физическая подготовка",
+                            SubjSN: "Общая физ. подгов.",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ИД-101, РСОД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "14:05",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту",
+                            SubjSN: "Эл курсы п/ф-ре и сп",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ИД-301, УПД-301-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "15:50",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту",
+                            SubjSN: "Эл курсы п/ф-ре и сп",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ИД-201, РСОД-201-д, УПД-201-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "25.05.2022",
+                    DayWeek: "Среда",
+                    DayWeekShort: "Ср",
+                    Schedule: [
+                        {
+                            TimeStart: "14:05",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту",
+                            SubjSN: "Эл курсы п/ф-ре и сп",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭД-201эпо-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "15:50",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту",
+                            SubjSN: "Эл курсы п/ф-ре и сп",
+                            LoadKindSN: "Зачет",
+                            GSName: "ИД-201, РСОД-201-д, УПД-201-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "26.05.2022",
+                    DayWeek: "Четверг",
+                    DayWeekShort: "Чт",
+                    Schedule: [
+                        {
+                            TimeStart: "08:30",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту",
+                            SubjSN: "Эл курсы п/ф-ре и сп",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭД-201эпо-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "10:15",
+                            SubjName: "Физическая культура",
+                            SubjSN: "Физическая культура",
+                            LoadKindSN: "Практ зан",
+                            GSName: "БДД-101, ЭБД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "14:05",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту",
+                            SubjSN: "Эл курсы п/ф-ре и сп",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭД-301 эпо-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "27.05.2022",
+                    DayWeek: "Пятница",
+                    DayWeekShort: "Пт",
+                    Schedule: [
+                        {
+                            TimeStart: "08:30",
+                            SubjName: "Физическая культура",
+                            SubjSN: "Физическая культура",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭБД-201",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "10:15",
+                            SubjName: "Общая физическая подготовка",
+                            SubjSN: "Общая физ. подгов.",
+                            LoadKindSN: "Зачет",
+                            GSName: "ИД-101, РСОД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "12:00",
+                            SubjName: "Общая физическая подготовка",
+                            SubjSN: "Общая физ. подгов.",
+                            LoadKindSN: "Практ зан",
+                            GSName: "МД-101, УПД-101, ЭД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "14:05",
+                            SubjName: "Общая физическая подготовка",
+                            SubjSN: "Общая физ. подгов.",
+                            LoadKindSN: "Зачет",
+                            GSName: "УПД-101, ЭД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "28.05.2022",
+                    DayWeek: "Суббота",
+                    DayWeekShort: "Сб",
+                    Schedule: [
+                        {
+                            TimeStart: "10:15",
+                            SubjName: "Физическая культура",
+                            SubjSN: "Физическая культура",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭБСД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 4,
+                        },
+                        {
+                            TimeStart: "12:00",
+                            SubjName: "Физическая культура",
+                            SubjSN: "Физическая культура",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭБСД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 4,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "30.05.2022",
+                    DayWeek: "Понедельник",
+                    DayWeekShort: "Пн",
+                    Schedule: [
+                        {
+                            TimeStart: "10:15",
+                            SubjName: "Физическая культура",
+                            SubjSN: "Физическая культура",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭБСД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 4,
+                        },
+                        {
+                            TimeStart: "12:00",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту",
+                            SubjSN: "Эл курсы п/ф-ре и сп",
+                            LoadKindSN: "Зачет",
+                            GSName: "ЭД-301 эпо-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "14:05",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту",
+                            SubjSN: "Эл курсы п/ф-ре и сп",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ИД-301, УПД-301-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+                {
+                    DatePair: "31.05.2022",
+                    DayWeek: "Вторник",
+                    DayWeekShort: "Вт",
+                    Schedule: [
+                        {
+                            TimeStart: "08:30",
+                            SubjName: "Физическая культура",
+                            SubjSN: "Физическая культура",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭБСД-101",
+                            Aud: "709/ГК",
+                            FE_ID: 4,
+                        },
+                        {
+                            TimeStart: "10:15",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту",
+                            SubjSN: "Эл курсы п/ф-ре и сп",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ЭД-201эпо-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                        {
+                            TimeStart: "12:00",
+                            SubjName:
+                                "Элективные курсы по физической культуре и спорту",
+                            SubjSN: "Эл курсы п/ф-ре и сп",
+                            LoadKindSN: "Практ зан",
+                            GSName: "ИД-301, УПД-301-д",
+                            Aud: "709/ГК",
+                            FE_ID: 1,
+                        },
+                    ],
+                },
+            ],
+        },
     ];
 </script>
 
@@ -643,7 +1223,7 @@
     </div>
 {/if}
 
-<div class="container" style="display:none">
+<div class="container" style="display:block">
     <ShahSched {sched} />
 </div>
 
@@ -714,7 +1294,7 @@
     /* .container {
         font-family: "Roboto";
     } */
-    .month {
+    /* .month {
         cursor: pointer;
         border-top-left-radius: 0.7em;
         border-top-right-radius: 0.7em;
@@ -729,7 +1309,7 @@
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
-    }
+    } */
     .month span {
         border-bottom: 1px solid blue;
         font-style: oblique;

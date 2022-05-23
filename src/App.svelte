@@ -67,6 +67,34 @@
 		position: relative;
 		font-family: Roboto;
 	}
+
+	:global(.month) {
+		cursor: pointer;
+		/* border-top-left-radius: 0.7em;
+		border-top-right-radius: 0.7em; */
+		padding: 5px 7px;
+		background-color: gainsboro;
+		color: blueviolet;
+		border-bottom: 1px solid blue;
+		font-style: oblique;
+		letter-spacing: 2px;
+		font-size: 1.1em;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: row;
+	}
+
+	:global(.month span) {
+		border-bottom: 1px solid blue;
+		font-style: oblique;
+	}
+
+	:global(.month:first-child) {
+		border-top-left-radius: 0.7em;
+		border-top-right-radius: 0.7em;
+	}
+
 	/* main {
 		margin: 0 auto;
 		max-width: 960px;
