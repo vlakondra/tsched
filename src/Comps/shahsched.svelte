@@ -17,7 +17,6 @@
         8: "20:55",
     };
 
-
     const formatDate = (rudate) => {
         let frm = "yyyy-MM-dd";
         let spld = rudate.split(".");
@@ -28,7 +27,6 @@
         );
         return format(d, frm); //  d.toISOString().slice(0, 10);
     };
-
 
     const PairCount = (daysArr) => {
         //считает кол-во пар в мес.
@@ -51,7 +49,10 @@
 
 <h1>SHAHSCHED {w}</h1>
 
-<div class="pair-wrapper">
+<div
+    class="pair-wrapper"
+    style="min-width:960px;  max-width:1200px;margin: 0 auto"
+>
     {#each sched as month, m}
         <div
             on:click={() => (shows[m] = !shows[m])}
@@ -81,7 +82,7 @@
             {#each month.DateDay as day, d}
                 <div
                     style="grid-column: {startCol} / {startCol +
-                        1};background-color:lightgreen"
+                        1};background-color:#8878f3; color:azure;font-weight:300"
                     in:fade={{ duration: 500 }}
                     out:fade
                     class="pair-ceil {day.DayWeek == 'Суббота' ? 'sbt' : ''}"
@@ -94,15 +95,13 @@
                     </div>
 
                     {#if formatDate(day.DatePair) === new Date()
-                        .toISOString()
-                        .slice(0, 10)}
-                    <span
-                        style="padding-right:5px; color:lime;font-weight:400"
-                        >Сегодня</span
-                    >
-                {/if}
-
-
+                            .toISOString()
+                            .slice(0, 10)}
+                        <span
+                            style="padding-right:5px; color:lime;font-weight:400"
+                            >Сегодня</span
+                        >
+                    {/if}
                 </div>
 
                 {#each Object.entries(timepairs) as [n_pair, time]}
@@ -121,22 +120,28 @@
                                 title={PairItem(day.Schedule, time).TimeStart}
                                 style="display: flex;
                     flex-direction: column;
-                    justify-content: center;
+                    justify-content: space-between;
                     height: 100%;"
                                 class="pair-detail"
                             >
                                 <div class="subj">
                                     {PairItem(day.Schedule, time).SubjSN}
                                 </div>
-                                <div class="kind-aud">
-                                    <div>
+
+                                <div style="margin:3px 0">
+                                    <div
+                                        style="text-align:right;font-size:0.8em; font-weight:400"
+                                    >
+                                        {PairItem(day.Schedule, time).Aud}
+                                    </div>
+                                    <div
+                                        style="text-align:right;line-height:1em;font-size:0.8em; font-weight:400"
+                                    >
                                         {PairItem(day.Schedule, time)
                                             .LoadKindSN}
                                     </div>
-                                    <div>
-                                        {PairItem(day.Schedule, time).Aud}
-                                    </div>
                                 </div>
+
                                 <div class="groups">
                                     {PairItem(day.Schedule, time).GSName}
                                 </div>
@@ -150,9 +155,9 @@
 </div>
 
 <style>
-.sbt{
-    background-color: black !important;
-}
+    .sbt {
+        background-color: black !important;
+    }
 
     .pair-wrapper {
         display: grid;
@@ -165,42 +170,51 @@
     }
     .timepairs {
         background-color: rgb(136, 120, 243);
-        color: whitesmoke;
+        color: azure !important;
         padding: 0 5px;
+        font-weight: 300;
     }
     .pair-ceil {
         font-weight: 300;
         /* background-color: rgb(215, 235, 250); */
-        background-color: rgb(233 236 239);
+        background-color: rgb(252 254 255);
         padding: 5px;
     }
 
-    .pair-detail div {
-        /* background-color: darkturquoise; */
-        /* color: rgb(36 69 70); */
+    /* .pair-detail div {
         padding: 0 3px;
-    }
+    } */
 
     .subj {
-        background-color: bisque;
-        color: rgb(45, 88, 88);
-        border-top-left-radius: 0.5em;
-        border-top-right-radius: 1px solid #bfa8a8;
-        border-bottom: 1px solid #bfa8a8;
+        /* background-color: bisque; */
+        color: rgb(40, 78, 78);
+        font-size: 1.15em;
+        line-height: 1.1em;
+        /* border-top-left-radius: 0.5em; */
+        /* border-top-right-radius: 1px solid #bfa8a8; */
+        /* border-bottom: 1px solid #bfa8a8; */
     }
 
     .kind-aud {
         /* border-radius: 0.5em; */
-        background-color: bisque;
-        color: rgb(45, 88, 88);
+        /* background-color: bisque; */
+        color: rgb(38, 75, 75);
     }
     .groups {
-        background-color: rgb(113, 171, 173);
-        color: azure !important;
+        /* background-color: rgb(230 170 114);
+        color: white !important; */
+
+        background-color: rgb(184 234 195);
+        color: #071919 !important;
+        /* margin-top: 3px; */
         /* font-size: 0.8em; */
-        font-size: 0.7em;
-        border-radius: 0.5em;
+        font-size: 0.8em;
+        border-radius: 0.4em;
         word-break: break-all;
+        min-height: 37px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     /* .pair-wrapper div {
