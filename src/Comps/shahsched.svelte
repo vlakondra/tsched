@@ -1,5 +1,7 @@
 <script>
     import { fade } from "svelte/transition";
+    import { format } from "date-fns";
+
     export let sched;
 
     let shows = Array(sched.length).fill(true);
@@ -14,6 +16,19 @@
         7: "19:15",
         8: "20:55",
     };
+
+
+    const formatDate = (rudate) => {
+        let frm = "yyyy-MM-dd";
+        let spld = rudate.split(".");
+        let d = new Date(
+            parseInt(spld[2]),
+            parseInt(spld[1]) - 1,
+            parseInt(spld[0])
+        );
+        return format(d, frm); //  d.toISOString().slice(0, 10);
+    };
+
 
     const PairCount = (daysArr) => {
         //считает кол-во пар в мес.
@@ -69,7 +84,7 @@
                         1};background-color:lightgreen"
                     in:fade={{ duration: 500 }}
                     out:fade
-                    class="pair-ceil"
+                    class="pair-ceil {day.DayWeek == 'Суббота' ? 'sbt' : ''}"
                 >
                     <div>
                         {day.DatePair}
@@ -77,6 +92,17 @@
                     <div>
                         {day.DayWeek}
                     </div>
+
+                    {#if formatDate(day.DatePair) === new Date()
+                        .toISOString()
+                        .slice(0, 10)}
+                    <span
+                        style="padding-right:5px; color:lime;font-weight:400"
+                        >Сегодня</span
+                    >
+                {/if}
+
+
                 </div>
 
                 {#each Object.entries(timepairs) as [n_pair, time]}
@@ -124,6 +150,10 @@
 </div>
 
 <style>
+.sbt{
+    background-color: black !important;
+}
+
     .pair-wrapper {
         display: grid;
         gap: 1px;
