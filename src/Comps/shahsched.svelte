@@ -128,7 +128,7 @@
                                     {PairItem(day.Schedule, time).SubjSN}
                                 </div>
 
-                                <div style="margin:3px 0">
+                                <div style="margin:0; height:40px">
                                     <div
                                         style="text-align:right;font-size:0.8em; font-weight:400"
                                     >
@@ -177,7 +177,8 @@
     .pair-ceil {
         font-weight: 300;
         /* background-color: rgb(215, 235, 250); */
-        background-color: rgb(252 254 255);
+        /* background-color: rgb(252 254 255); */
+        background-color: rgb(215 235 250);
         padding: 5px;
     }
 
@@ -187,24 +188,23 @@
 
     .subj {
         /* background-color: bisque; */
-        color: rgb(40, 78, 78);
-        font-size: 1.15em;
+        color: rgb(5 19 19);
+        font-size: 0.95em;
         line-height: 1.1em;
-        /* border-top-left-radius: 0.5em; */
+        height: 31px;
+        text-shadow: 0px 0.5px 0.5px #6f7df3;
+        /* Сделать media-query  для height
+        border-top-left-radius: 0.5em; */
         /* border-top-right-radius: 1px solid #bfa8a8; */
         /* border-bottom: 1px solid #bfa8a8; */
     }
 
-    .kind-aud {
-        /* border-radius: 0.5em; */
-        /* background-color: bisque; */
-        color: rgb(38, 75, 75);
-    }
     .groups {
         /* background-color: rgb(230 170 114);
         color: white !important; */
 
-        background-color: rgb(184 234 195);
+        /* background-color: rgb(184 234 195); */
+        background-color: rgb(234 184 198 / 42%);
         color: #071919 !important;
         /* margin-top: 3px; */
         /* font-size: 0.8em; */

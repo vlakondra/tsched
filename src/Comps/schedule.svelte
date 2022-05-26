@@ -1215,6 +1215,8 @@
             ],
         },
     ];
+
+    let shows = Array(sched.length).fill(true);
 </script>
 
 {#if scrolly > 500}
@@ -1229,13 +1231,18 @@
 
 <div class="container " style="margin-top:10px;">
     {#each sched as month, i}
-        <div id={i + "-month"} on:click={showSched} class="month">
+        <div
+            id={i + "-month"}
+            on:click={() => (shows[i] = !shows[i])}
+            class="month"
+        >
             <span> {month.Month}</span>
             <span
                 >{PairCount(month.DateDay)} пар; {month.DateDay.length} дней</span
             >
         </div>
-        {#if schedVisible}
+        <!-- PairCount есть в обоих компонентах - сделать их в одном модуле -->
+        {#if shows[i]}
             <div in:fade={{ duration: 1000 }} out:fade>
                 {#each month.DateDay as day, i}
                     <div
@@ -1328,16 +1335,15 @@
 
     .pair-wrapper {
         display: grid;
-        /* gap: 10px; */
         grid-template-columns: 65px 1fr 80px 100px 65px;
-        grid-template-areas: "timestart subjname kind group aud";
+        /* grid-template-areas: "timestart subjname kind group aud"; */
         border-bottom: 1px solid wheat;
         font-weight: 300;
         /* ??? сделать фон и рамка на подложке или в этом классе */
         background-color: rgb(215, 235, 250);
     }
 
-    .time-start {
+    /* .time-start {
         grid-area: timestart;
     }
     .subj-name {
@@ -1351,7 +1357,7 @@
     }
     .aud {
         grid-area: aud;
-    }
+    } */
 
     /* @media (min-width: 501px) {
         .pair-wrapper {
@@ -1364,7 +1370,7 @@
 
     @media (min-width: 501px) {
         .pair-wrapper {
-            grid-template-columns: 65px 1fr 100px 100px 65px;
+            grid-template-columns: 65px 1fr 100px 160px 65px;
             /* gap: 10px !important; ??*/
         }
         .pair-wrapper div {
@@ -1373,6 +1379,10 @@
         }
         .pair-wrapper *:not(.subj-name) {
             text-align: left;
+        }
+        .time-start {
+            background-color: #8878f3;
+            color: white;
         }
     }
 
