@@ -9,66 +9,81 @@
     //https://fontawesome.com/v5/icons/bars?s=solid
 </script>
 
-<div class="container ">
-    <div class="header">
-        <div on:click={onBurgerClick}>
-            <!-- <i on:click={onBurgerClick} class="fas fa-bars" /> -->
-            <Fa icon={faBars} color="white" size="2.5x" />
-        </div>
-        <!-- <div on:click={onBurgerClick} class="burger">
-            <div class="burg-line" />
-            <div class="burg-line" />
-            <div class="burg-line" />
-        </div> -->
-        <div class="title caption">Расписание преподавателей</div>
+<!-- <div class="container1"> -->
+<div class="header">
+    <div class="burger" on:click={onBurgerClick}>
+        <Fa icon={faBars} />
     </div>
+    <div class="caption">Расписание преподавателей</div>
 </div>
 
+<!-- </div> -->
 <style>
     .header {
         display: flex;
         flex-direction: row;
         align-items: center;
-        background-color: burlywood;
+        /* background-color: #6e8de4; */
+        background-color: #bea5f5;
         flex-wrap: nowrap;
         align-content: center;
-        justify-content: space-evenly;
+        justify-content: center;
         padding: 10px 0;
-    }
-    .caption {
-        /* margin-left: 10px; */
-        text-shadow: 2px 3px 4px black;
-
-        color: rgb(229, 229, 229) !important;
-        font-family: inherit;
-        font-size: 150%;
-        font-weight: 300;
+        margin-top: 15px;
+        margin-bottom: 30px;
+        box-shadow: 1px 2px 6px 0px #5a3c3c;
+        border-radius: 5px;
     }
     .burger {
-        width: 60px;
-        height: 60px;
-        /* margin-right: 10px; */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
+        margin-right: 0px;
+        /* font-size: 2em; */
+        color: #fff;
         cursor: pointer;
     }
-    .burg-line {
-        width: 100%;
-        height: 4px;
-        background-color: blue;
-        border-radius: 4px;
+    .caption {
+        font-family: Roboto;
+        text-shadow: 2px 3px 4px rgb(86, 246, 118);
+        color: white;
+        font-size: 2em;
+        font-weight: 200;
     }
-    @media screen and (max-width: 320px) {
+    @media (min-width: 500.5px) {
         .burger {
-            width: 25px;
-            height: 25px;
+            margin-right: 1em;
+            font-size: 1.5em;
+            font-weight: 100;
+        }
+        .caption {
+            font-size: 1.7em;
+            font-weight: 100;
+            letter-spacing: 1px;
+        }
+    }
+    @media (max-width: 500px) {
+        .header {
+            padding: 5px 5px;
+            /* line-height: 1.5em; */
+        }
+        .caption {
+            font-size: 1.5em;
+            font-weight: 100;
+        }
+        .burger {
+            margin-right: 10px;
+            font-size: 1.5em;
+        }
+        .header {
+            margin: 3px 0 0px 0;
         }
     }
 
-    /* @media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	} */
+    @media (max-width: 400px) {
+        .header {
+            padding: 70px !important;
+        }
+
+        .caption {
+            font-size: 1.35em;
+        }
+    }
 </style>

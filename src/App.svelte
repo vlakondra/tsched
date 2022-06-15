@@ -1,6 +1,8 @@
 <script>
 	import "bulma/css/bulma.css";
 
+	import "@fontsource/roboto";
+
 	import Header from "./Comps/header.svelte";
 	import StartMessage from "./Comps/startmessage.svelte";
 	import Period from "./Comps/period.svelte";
@@ -35,14 +37,18 @@
 
 <!-- <svelte:window bind:outerWidth={x} /> -->
 
-<main>
+<svelte:head>
+	<title>Расписание преподавателей</title>
+</svelte:head>
+
+<main class="container  is-widescreen">
 	<ResizeObserver
 		on:resize={(e) => {
 			w = e.detail.clientWidth;
 			console.log(e.detail.clientWidth, e);
 		}}
 	/>
-	{w}
+
 	<Header onBurgerClick={TurnDrawer} />
 
 	<Drawer {open} on:clickAway={() => (open = false)} size="null">
@@ -55,6 +61,7 @@
 	<!-- 
 	<StartMessage {checkData} openDrawer={TurnDrawer} /> -->
 	<Schedule {scrolly} />
+	{w}
 </main>
 
 <svelte:window bind:scrollY={scrolly} />
@@ -62,20 +69,23 @@
 <style>
 	main {
 		height: 100%;
+		margin-bottom: 40px;
 		padding: 5px;
-		background-color: beige;
 		position: relative;
 		font-family: Roboto;
 	}
-
+	.container {
+		max-width: 960px !important;
+	}
 	:global(.month) {
 		cursor: pointer;
+		font-family: Roboto;
 		/* border-top-left-radius: 0.7em;
 		border-top-right-radius: 0.7em; */
 		padding: 5px 7px;
-		background-color: gainsboro;
-		color: blueviolet;
-		border-bottom: 1px solid blue;
+		background-color: #e67f7f;
+		color: #eef9f9;
+		border-bottom: 1px solid rgb(195, 195, 251);
 		font-style: oblique;
 		letter-spacing: 2px;
 		font-size: 1.1em;
@@ -86,7 +96,7 @@
 	}
 
 	:global(.month span) {
-		border-bottom: 1px solid blue;
+		border-bottom: 1px solid rgb(194, 194, 253);
 		font-style: oblique;
 	}
 
@@ -94,11 +104,6 @@
 		border-top-left-radius: 0.7em;
 		border-top-right-radius: 0.7em;
 	}
-
-	/* main {
-		margin: 0 auto;
-		max-width: 960px;
-	} */
 
 	button.delete.is-medium {
 		/* left: 93%; */
@@ -112,7 +117,6 @@
 
 	@media (min-width: 501px) {
 		main :global(.drawer .panel) {
-			/* background: black; */
 			transition: transform 1s ease;
 			/* для мобилы и компа сделать разные ширины */
 			max-width: 60% !important;
@@ -123,6 +127,9 @@
 	@media (max-width: 500px) {
 		main :global(.drawer .panel) {
 			max-width: 80% !important;
+		}
+		main {
+			margin-bottom: 5px;
 		}
 	}
 </style>

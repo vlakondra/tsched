@@ -59,7 +59,7 @@
             Month: "Май",
             DateDay: [
                 {
-                    DatePair: "04.05.2022",
+                    DatePair: "15.06.2022",
                     DayWeek: "Среда",
                     DayWeekShort: "Ср",
                     Schedule: [
@@ -1258,10 +1258,7 @@
                         {#if formatDate(day.DatePair) === new Date()
                                 .toISOString()
                                 .slice(0, 10)}
-                            <span
-                                style="padding-right:5px; color:lime;font-weight:400"
-                                >Сегодня</span
-                            >
+                            <span class="today">Сегодня</span>
                         {/if}
                     </div>
                     {#each day.Schedule as pair, i}
@@ -1318,29 +1315,39 @@
         flex-direction: row;
     } */
     .month span {
-        border-bottom: 1px solid blue;
+        border-bottom: 1px solid rgb(133, 133, 243);
         font-style: oblique;
     }
+
     .day {
-        background-color: rgb(136, 120, 243);
-        color: whitesmoke;
-        padding: 1px 0 1px 5px;
-        letter-spacing: 0.9px;
-        font-weight: 300;
+        /* background-color: rgb(136, 120, 243); */
         display: flex;
         justify-content: space-between;
+        background-color: #7bdc7f;
+        border-bottom: 3px solid rgb(111, 88, 88);
+        color: rgb(80, 55, 55);
+        padding: 1px 0 1px 5px;
+        letter-spacing: 0.9px;
+        /* font-weight: 300; */
 
         /* border-bottom: 1px solid silver; */
     }
-
+    .today {
+        padding-right: 5px;
+        color: rgb(248, 10, 10);
+        font-weight: 400;
+    }
     .pair-wrapper {
         display: grid;
         grid-template-columns: 65px 1fr 80px 100px 65px;
         /* grid-template-areas: "timestart subjname kind group aud"; */
-        border-bottom: 1px solid wheat;
-        font-weight: 300;
+        /* border-bottom: 1px solid wheat; */
+        /* font-weight: 300; */
         /* ??? сделать фон и рамка на подложке или в этом классе */
-        background-color: rgb(215, 235, 250);
+        /* background-color: rgb(215, 235, 250); */
+
+        /* background-color: blue !important; */
+        margin-bottom: 1px;
     }
 
     /* .time-start {
@@ -1372,17 +1379,21 @@
         .pair-wrapper {
             grid-template-columns: 65px 1fr 100px 160px 65px;
             /* gap: 10px !important; ??*/
+            /* background-color: blue; */
+            gap: 0.8px 0.8px;
         }
         .pair-wrapper div {
-            border-right: 1px solid silver;
+            /* border-right: 1px solid silver; */
             padding: 5px;
+            background-color: #f1fff7; /* #e9e9f6;*/
+            /* margin-bottom: 0.8px; */
         }
         .pair-wrapper *:not(.subj-name) {
             text-align: left;
         }
         .time-start {
-            background-color: #8878f3;
-            color: white;
+            background-color: #7bdc7f !important;
+            color: rgb(53, 11, 11);
         }
     }
 
@@ -1411,7 +1422,8 @@
             background-color: #368483;
             /* background-color: #2b706f; !!*/
             /* color: darkblue; */
-            color: whitesmoke;
+            color: rgb(231, 228, 228);
+            /*background-color: #f1fff7; */
         }
         .aud {
             grid-column: 3 / 4;

@@ -1,4 +1,5 @@
 <script>
+    //https://www.appypie.com/design/image-color-picker/
     import { fade } from "svelte/transition";
     import { format } from "date-fns";
 
@@ -47,12 +48,7 @@
 
 <svelte:window bind:outerWidth={w} />
 
-<h1>SHAHSCHED {w}</h1>
-
-<div
-    class="pair-wrapper"
-    style="min-width:960px;  max-width:1200px;margin: 0 auto"
->
+<div class="pair-wrapper">
     {#each sched as month, m}
         <div
             on:click={() => (shows[m] = !shows[m])}
@@ -81,27 +77,25 @@
 
             {#each month.DateDay as day, d}
                 <div
-                    style="grid-column: {startCol} / {startCol +
-                        1};background-color:#8878f3; color:azure;font-weight:300"
+                    style="grid-column: {startCol} / {startCol + 1};"
                     in:fade={{ duration: 500 }}
                     out:fade
-                    class="pair-ceil {day.DayWeek == 'Суббота' ? 'sbt' : ''}"
+                    class="pair-ceil {day.DayWeek == 'Суббота'
+                        ? 'sbt'
+                        : 'date-pair'}"
                 >
+                    {#if formatDate(day.DatePair) === new Date()
+                            .toISOString()
+                            .slice(0, 10)}
+                        <div class="today">Сегодня</div>
+                    {/if}
+
                     <div>
                         {day.DatePair}
                     </div>
                     <div>
                         {day.DayWeek}
                     </div>
-
-                    {#if formatDate(day.DatePair) === new Date()
-                            .toISOString()
-                            .slice(0, 10)}
-                        <span
-                            style="padding-right:5px; color:lime;font-weight:400"
-                            >Сегодня</span
-                        >
-                    {/if}
                 </div>
 
                 {#each Object.entries(timepairs) as [n_pair, time]}
@@ -118,25 +112,17 @@
                         {:else}
                             <div
                                 title={PairItem(day.Schedule, time).TimeStart}
-                                style="display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    height: 100%;"
                                 class="pair-detail"
                             >
                                 <div class="subj">
                                     {PairItem(day.Schedule, time).SubjSN}
                                 </div>
 
-                                <div style="margin:0; height:40px">
-                                    <div
-                                        style="text-align:right;font-size:0.8em; font-weight:400"
-                                    >
+                                <div class="aud-wrapper">
+                                    <div class="aud">
                                         {PairItem(day.Schedule, time).Aud}
                                     </div>
-                                    <div
-                                        style="text-align:right;line-height:1em;font-size:0.8em; font-weight:400"
-                                    >
+                                    <div class="kind-load">
                                         {PairItem(day.Schedule, time)
                                             .LoadKindSN}
                                     </div>
@@ -153,72 +139,95 @@
         {/if}
     {/each}
 </div>
+<h1>SHAHSCHED {w}</h1>
 
 <style>
     .sbt {
-        background-color: black !important;
+        background-color: rgb(246 95 95) !important;
+        color: whitesmoke;
+        text-align: center;
     }
-
+    .today {
+        padding-right: 5px;
+        color: whitesmoke;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+    .month span:first-child {
+        margin-left: 20px;
+    }
+    .date-pair {
+        background-color: #7bdc7f !important;
+        text-align: center;
+    }
     .pair-wrapper {
         display: grid;
-        gap: 1px;
-        background-color: rgb(190 185 210);
+        gap: 0.8px;
+        min-width: 860px;
+        /* background-color: rgb(190 185 210); */
+        background-color: #8b8cab;
         grid-template-columns: repeat(8, auto);
         grid-template-rows: auto;
         border-top-left-radius: 0.7em;
         border-top-right-radius: 0.7em;
     }
     .timepairs {
-        background-color: rgb(136, 120, 243);
-        color: azure !important;
+        background-color: #7bdc7f;
+        color: #225353;
         padding: 0 5px;
-        font-weight: 300;
+        font-weight: 400;
+        font-family: Roboto;
     }
     .pair-ceil {
-        font-weight: 300;
+        /* font-weight: 300; */
         /* background-color: rgb(215, 235, 250); */
-        /* background-color: rgb(252 254 255); */
-        background-color: rgb(215 235 250);
+        /* background-color: #7BDC7F; */
+        background-color: #f1fff7;
         padding: 5px;
     }
 
-    /* .pair-detail div {
-        padding: 0 3px;
-    } */
-
+    .pair-detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+    .aud-wrapper {
+        margin: 0;
+        height: 40px;
+    }
+    .aud {
+        text-align: right;
+        font-size: 0.9em;
+        font-weight: 400;
+    }
     .subj {
-        /* background-color: bisque; */
         color: rgb(5 19 19);
         font-size: 0.95em;
         line-height: 1.1em;
-        height: 31px;
-        text-shadow: 0px 0.5px 0.5px #6f7df3;
+        height: 36px;
+        /* text-shadow: 0px 0.5px 0.5px #6f7df3; */
         /* Сделать media-query  для height
         border-top-left-radius: 0.5em; */
         /* border-top-right-radius: 1px solid #bfa8a8; */
         /* border-bottom: 1px solid #bfa8a8; */
     }
-
-    .groups {
-        /* background-color: rgb(230 170 114);
-        color: white !important; */
-
-        /* background-color: rgb(184 234 195); */
-        background-color: rgb(234 184 198 / 42%);
-        color: #071919 !important;
-        /* margin-top: 3px; */
-        /* font-size: 0.8em; */
+    .kind-load {
+        text-align: right;
+        line-height: 1em;
         font-size: 0.8em;
+        font-weight: 400;
+    }
+    .groups {
+        background-color: #d2c0fa;
+        color: #071919 !important;
+        font-size: 0.75em;
         border-radius: 0.4em;
         word-break: break-all;
+        padding: 0 5px;
         min-height: 37px;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-
-    /* .pair-wrapper div {
-        background-color: blue;
-        font-weight: 300px !important;
-    } */
 </style>
