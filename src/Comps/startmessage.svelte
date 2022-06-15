@@ -1,5 +1,9 @@
 <script>
+    import { load_ini_data, err_ini_data } from "./store";
     import { fade } from "svelte/transition";
+    import Fa from "svelte-fa";
+    import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+
     // export let checkData = { reqfinished: false, iserror: false }; //showIndicator;
     export let openDrawer;
 
@@ -7,51 +11,31 @@
     let date_opts = { year: "numeric", month: "long" };
 </script>
 
-<!-- {#if showIndicator} -->
-<!-- {#if !checkData.reqfinished} -->
-<span class="icon is-large load-indicator">
-    <span class="fa-stack fa-lg">
-        <i transition:fade class="fas fa-spinner fa-pulse " />
-    </span>
-</span>
-<!-- {:else if !checkData.iserror} -->
-<i transition:fade class="fas fa-user-clock sched-image" />
+<div class="start-message">
+    {#if $load_ini_data}
+        <Fa icon={faSpinner} size="3x" spin color="blue" />
+    {:else if $err_ini_data}
+        <div>
+            <p>Произошла ошибка</p>
+            <p>
+                {$err_ini_data}
+            </p>
+        </div>
+    {:else}
+        <div transition:fade class="start-info">
+            <div>Расписание</div>
+            <div>
+                на {date.toLocaleDateString("ru-RU", date_opts)}
+            </div>
 
-<div transition:fade class="start-message">
-    <p class="start-info">
-        Расписание<br /> на {date.toLocaleDateString("ru-RU", date_opts)}
-
-        <br />
-        <button class="button select-tchr" on:click={openDrawer}>
-            Выберите преподавателя
-        </button>
-    </p>
+            <button class="button select-tchr" on:click={openDrawer}>
+                Выберите преподавателя
+            </button>
+        </div>
+    {/if}
 </div>
 
-<!-- {:else}
-    <div class="start-message start-err">Произошла ошибка</div>
-{/if} -->
 <style>
-    .load-indicator {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: blue;
-        font-size: 5.5vw;
-    }
-
-    .sched-image {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin-top: 20px;
-        font-size: 30vw;
-        color: rgb(208 175 132 / 10%);
-        resize: vertical;
-    }
-
     .start-message {
         position: absolute;
         top: 50%;
@@ -60,23 +44,18 @@
         margin-top: 20px;
     }
     .start-info {
+        display: flex;
+        flex-direction: column;
         text-align: center;
-        font-size: 5vw;
+        font-size: 2em;
         font-weight: 100;
         color: rgb(188 143 143 / 52%);
     }
 
-    /* .start-err {
-        text-align: center;
-        font-size: 5vw;
-        font-weight: 400;
-        color: red;
-    } */
-
     .select-tchr {
         color: rgb(0 0 255 / 63%);
         background-color: transparent;
-        font-size: 2.5vw;
+        font-size: 0.75em;
         font-weight: 200;
     }
 </style>

@@ -11,9 +11,9 @@ export const time = readable(new Date(), function start(set) {
 	};
 });
 
-const depart_url="https://old.ursei.su/Services/GetTeachersIniData?";
 
-
+export const load_ini_data= writable(false)
+export const err_ini_data= writable(false)
 
 export default function (){
     const url = "https://old.ursei.su/Services/GetTeachersIniData?";
@@ -34,13 +34,16 @@ export default function (){
     async function get() {
         loading.set(true)
         error.set(false)
+        load_ini_data.set(true)
         try {
-            const response = await fetch(url+query)
+            const response = await fetch(url + query)
             data.set(await response.json())
         } catch(e) {
             error.set(e)
+            err_ini_data.set(e)
         }
         loading.set(false)
+        load_ini_data.set(false)
     }
     get()
 
@@ -48,14 +51,19 @@ export default function (){
     return [loading, error,data];
 }
 
-// export const depart = readable(undefined, (set) => {
-//     const loading = writable(false)
-// 	const error = writable(false)
-// 	const data = writable({})
 
-//     console.log('got a subscriber');
+// export function getSched() {
+
+//     const get_sched= ()=>{
+//         console.log('????????')
+//      ttt.set({a:123})
+//     }
+//        console.log('got a subscriber');
 //     //set("кафедры!!")
-//     return [loading, error,data,  function stop(){ console.log('no more subscribers')}];
-// });
+//     return get_sched;
+// };
+
+
+
 
 
