@@ -1,6 +1,6 @@
 <script>
     import { fade } from "svelte/transition";
-    export let checkData = { reqfinished: false, iserror: false }; //showIndicator;
+    // export let checkData = { reqfinished: false, iserror: false }; //showIndicator;
     export let openDrawer;
 
     let date = new Date();
@@ -8,32 +8,29 @@
 </script>
 
 <!-- {#if showIndicator} -->
-{#if !checkData.reqfinished}
-    <span class="icon is-large load-indicator">
-        <span class="fa-stack fa-lg">
-            <i transition:fade class="fas fa-spinner fa-pulse " />
-        </span>
+<!-- {#if !checkData.reqfinished} -->
+<span class="icon is-large load-indicator">
+    <span class="fa-stack fa-lg">
+        <i transition:fade class="fas fa-spinner fa-pulse " />
     </span>
-{:else if !checkData.iserror}
-    <i transition:fade class="fas fa-user-clock sched-image" />
+</span>
+<!-- {:else if !checkData.iserror} -->
+<i transition:fade class="fas fa-user-clock sched-image" />
 
-    <div transition:fade class="start-message">
-        <p class="start-info">
-            Составлено расписание<br /> на {date.toLocaleDateString(
-                "ru-RU",
-                date_opts
-            )}
+<div transition:fade class="start-message">
+    <p class="start-info">
+        Расписание<br /> на {date.toLocaleDateString("ru-RU", date_opts)}
 
-            <br />
-            <button class="button select-tchr" on:click={openDrawer}>
-                Выберите преподавателя
-            </button>
-        </p>
-    </div>
-{:else}
+        <br />
+        <button class="button select-tchr" on:click={openDrawer}>
+            Выберите преподавателя
+        </button>
+    </p>
+</div>
+
+<!-- {:else}
     <div class="start-message start-err">Произошла ошибка</div>
-{/if}
-
+{/if} -->
 <style>
     .load-indicator {
         position: absolute;
@@ -69,12 +66,12 @@
         color: rgb(188 143 143 / 52%);
     }
 
-    .start-err {
+    /* .start-err {
         text-align: center;
         font-size: 5vw;
         font-weight: 400;
         color: red;
-    }
+    } */
 
     .select-tchr {
         color: rgb(0 0 255 / 63%);

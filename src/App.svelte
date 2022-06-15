@@ -18,7 +18,9 @@
 	// export let name;
 	// let show = false;
 	// let showIndicator = {}; //true; //Получены ли данные кафедр
-	let checkData = { reqfinished: false, iserror: false };
+
+	// let checkData = { reqfinished: false, iserror: false };
+
 	const oncheckDepartData = (res) => {
 		//здесь нужны еще данные об ошибках
 		//showStartMessage = res
@@ -58,9 +60,11 @@
 			<Depart checkDepartData={oncheckDepartData} />
 		</div>
 	</Drawer>
-	<!-- 
-	<StartMessage {checkData} openDrawer={TurnDrawer} /> -->
-	<Schedule {scrolly} />
+
+	<StartMessage openDrawer={TurnDrawer} /> -->
+
+	<!-- <Schedule {scrolly} /> -->
+
 	{w}
 </main>
 

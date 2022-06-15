@@ -1,4 +1,5 @@
 <script>
+    import { time } from "./store.js";
     export let onBurgerClick;
 
     import Fa from "svelte-fa";
@@ -7,14 +8,27 @@
     // https://cweili.github.io/svelte-fa/
     //https://www.npmjs.com/package/svelte-fa
     //https://fontawesome.com/v5/icons/bars?s=solid
+
+    const formatter = new Intl.DateTimeFormat("ru", {
+        hour12: false,
+        hour: "numeric",
+        minute: "2-digit",
+        second: "2-digit",
+    });
 </script>
 
 <!-- <div class="container1"> -->
 <div class="header">
-    <div class="burger" on:click={onBurgerClick}>
-        <Fa icon={faBars} />
+    <div class="date">
+        {new Date().toLocaleDateString("ru-RU")}
     </div>
-    <div class="caption">Расписание преподавателей</div>
+    <div style="display:flex;flex-wrap: nowrap;align-items:center">
+        <div class="burger" on:click={onBurgerClick}>
+            <Fa icon={faBars} />
+        </div>
+        <div class="caption">Расписание преподавателей</div>
+    </div>
+    <div class="time">{formatter.format($time)}</div>
 </div>
 
 <!-- </div> -->
@@ -27,16 +41,24 @@
         background-color: #bea5f5;
         flex-wrap: nowrap;
         align-content: center;
-        justify-content: center;
+        justify-content: space-around;
         padding: 10px 0;
         margin-top: 15px;
         margin-bottom: 30px;
         box-shadow: 1px 2px 6px 0px #5a3c3c;
         border-radius: 5px;
     }
+    .date,
+    .time {
+        color: #f9ffef; /*#6c8441;*/
+        font-size: 1.15em;
+    }
+
     .burger {
-        margin-right: 0px;
-        /* font-size: 2em; */
+        /* margin-right: 0px;
+        font-size: 2em; */
+        width: 50px;
+        text-align: center;
         color: #fff;
         cursor: pointer;
     }
@@ -49,14 +71,23 @@
     }
     @media (min-width: 500.5px) {
         .burger {
-            margin-right: 1em;
-            font-size: 1.5em;
+            /* margin-right: 1em; */
+            font-size: 1.75em;
             font-weight: 100;
+            /* color: wheat; */
         }
         .caption {
             font-size: 1.7em;
             font-weight: 100;
             letter-spacing: 1px;
+            line-height: 1em;
+        }
+    }
+
+    @media (max-width: 690px) {
+        .date,
+        .time {
+            display: none;
         }
     }
     @media (max-width: 500px) {
@@ -65,11 +96,12 @@
             /* line-height: 1.5em; */
         }
         .caption {
-            font-size: 1.5em;
+            font-size: 1.35em;
             font-weight: 100;
+            line-height: 1em;
         }
         .burger {
-            margin-right: 10px;
+            /* margin-right: 10px; */
             font-size: 1.5em;
         }
         .header {
@@ -79,11 +111,14 @@
 
     @media (max-width: 400px) {
         .header {
-            padding: 70px !important;
+            padding: 5px !important;
         }
-
+        /* .burger {
+            width: 30px;
+        } */
         .caption {
             font-size: 1.35em;
+            line-height: 1em;
         }
     }
 </style>
