@@ -1,13 +1,19 @@
 <script>
     import {
-        formatDistance,
-        subDays,
-        add,
-        lastDayOfMonth,
-        format,
-    } from "date-fns";
+        depart_id,
+        teacher_id,
+        d_start,
+        d_end,
+        getSched,
+    } from "./store.js";
+
+    import { add, lastDayOfMonth, format } from "date-fns";
     //https://date-fns.org/v2.28.0/docs/add
     import { ru } from "date-fns/locale";
+
+    import Fa from "svelte-fa";
+    import { faSync } from "@fortawesome/free-solid-svg-icons";
+    // import { depart_id } from "./store";
 
     const formatDate = (d) => {
         let frm = "yyyy-MM-dd";
@@ -22,110 +28,187 @@
 
     let startDate = currdate.setDate(1); //1-й день тек. мес.
     let frmStartDate = formatDate(startDate);
-    // $: tmp = frmStartDate;
 
-    let frmMinStartDate = formatDate(add(currdate.setDate(1), { months: -1 }));
-    let frmMaxStartDate = formatDate(add(currdate.setDate(1), { months: 2 }));
+    let frmMinStartDate = formatDate(currdate.setDate(1)); //formatDate(add(currdate.setDate(1), { months: -1 }));
+    let frmMaxStartDate = formatDate(lastDayOfMonth(currdate)); //formatDate(add(currdate.setDate(1), { months: 2 }));
 
     let endDate = currdate.setDate(lastDayOfMonth(currdate).getDate()); //посл. день тек. мес.
     let frmEndDate = formatDate(endDate);
-    //min endDate д.б. не больше выбранной startDate
 
-    const compareDates = (comp) => {
-        if (comp == "start") {
-            console.log("START");
-            //если начал. дата обнуляется, обнуляем и конечную,
-            if (!frmStartDate) {
-                frmEndDate = undefined;
-                setTimeout(() => {
-                    prompt("!!!");
-                }, 1000);
-            } else {
-                //иначе добавляем к startDate 1 мес
-                frmEndDate = formatDate(
-                    add(new Date(frmStartDate), { months: 1 })
-                );
-            }
-        } else if (comp == "end") {
-            console.log("END");
+    let frmMinEndDate = formatDate(currdate.setDate(2));
+    let frmMaxEndDate = formatDate(
+        add(lastDayOfMonth(currdate), { months: 2 })
+    );
+    let errMessage = "";
+
+    //привязка store-writable переменных к значениям input'ов
+    $: d_start.update(() => frmStartDate);
+    $: d_end.update(() => frmEndDate);
+
+    //endDate д.б. не больше выбранной startDate
+    const compareDates = () => {
+        if (new Date(frmEndDate) < new Date(frmStartDate)) {
+            frmEndDate = frmStartDate;
+            return;
         }
-        console.log("start", frmStartDate);
-        console.log("end", frmEndDate);
+        if (new Date(frmEndDate) > new Date(frmMaxEndDate)) {
+            frmEndDate = frmMaxEndDate;
+            return;
+        }
+
+        if (!frmStartDate || !frmEndDate) {
+            errMessage = "Установите даты периода";
+            return;
+        } else {
+            errMessage = "";
+        }
     };
 </script>
 
-<div class="dates">
-    <table>
-        <tr>
-            <td> Начало периода: </td>
-            <td />
-            <td> Конец периода: </td>
-        </tr>
-        <tr>
-            <td>
+<div class="calendar-wrapper">
+    <!-- {$depart_id} -- {$teacher_id} -->
+
+    <div class="calendar-inputs">
+        <div>
+            <div class="calendar-txt calendar-caption" style="">Период</div>
+            <div class="calendar-txt">Начало:</div>
+            <div>
                 <input
                     type="date"
-                    on:change={() => compareDates("start")}
+                    on:change={() => compareDates()}
                     min={frmMinStartDate}
                     max={frmMaxStartDate}
                     bind:value={frmStartDate}
                     required
                     class="input is-success"
                 />
-                <span class="validity" />
-            </td>
-            <td style="vertical-align: middle;">
-                <div class="defis" />
-            </td>
-            <td>
+            </div>
+        </div>
+        <div style="width:20px" />
+        <div>
+            <div class="calendar-txt">Конец:</div>
+            <div>
                 <input
                     type="date"
-                    on:change={() => compareDates("end")}
-                    min={frmStartDate ? frmStartDate : formatDate(new Date())}
-                    max={frmStartDate
-                        ? formatDate(add(startDate, { months: 3 }))
-                        : formatDate(new Date())}
+                    on:change={() => compareDates()}
+                    min={frmMinEndDate}
+                    max={frmMaxEndDate}
                     bind:value={frmEndDate}
                     required
                     class="input is-success"
                 />
-            </td>
-        </tr>
-        <tr>
-            <td><span class="validity" /></td>
-            <td />
-            <td><span class="validity" /></td>
-        </tr>
-    </table>
+            </div>
+
+            {#if !errMessage}
+                <div style="padding:5px 0">
+                    <button
+                        class="button is-small is-info "
+                        on:click={() => getSched(555)}
+                        disabled={errMessage || !$depart_id || !$teacher_id
+                            ? true
+                            : false}
+                    >
+                        <span class="icon">
+                            <Fa icon={faSync} size="1.5x" />
+                        </span>
+
+                        <span>Обновить</span>
+                    </button>
+                </div>
+            {/if}
+        </div>
+    </div>
+    <div class="error-row">
+        {#if errMessage}
+            <span class="errmessage"> {errMessage}</span>
+        {/if}
+    </div>
+    <!-- <div class="state-row">
+        {#if errMessage}
+            <span class="errmessage"> {errMessage}</span>
+        {:else}
+            <button
+                class="button is-small is-info "
+                on:click={() => getSched(555)}
+                disabled={errMessage || !$depart_id || !$teacher_id
+                    ? true
+                    : false}
+            >
+                <span class="icon">
+                    <Fa icon={faSync} size="1.5x" />
+                </span>
+
+                <span>Обновить</span>
+            </button>
+        {/if}
+    </div> -->
 </div>
 
 <style>
-    .dates {
-        display: inline-flex;
+    .calendar-wrapper {
+        padding: 10px 0;
     }
-    table tr td:first-child,
-    td:last-child {
-        text-align: left;
-        padding-bottom: 3px;
-    }
-
-    .defis {
-        background-color: blue;
-        border: 1px solid gray;
-        display: block;
-        height: 3px;
-        position: static;
-        width: 20px;
-        margin: 0 3px;
+    .calendar-inputs {
+        display: flex;
+        justify-content: center;
     }
 
-    /* input:invalid + span:after {
-        content: "✖";
-        padding-left: 5px;
+    button {
+        width: 100%;
     }
 
-    input:valid + span:after {
-        content: "✓";
-        padding-left: 5px;
-    } */
+    .error-row {
+        text-align: center;
+    }
+    @media (min-width: 500.5px) {
+        input {
+            width: 120px !important;
+
+            padding: 0 3px;
+            font-size: 0.95rem;
+            font-family: Roboto;
+        }
+        .calendar-caption {
+            margin-top: -28px;
+            letter-spacing: 1px;
+            font-size: 1.15em;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .calendar-txt {
+            color: #3488ce;
+        }
+
+        .calendar-caption {
+            margin-top: -25px;
+            letter-spacing: 1px;
+            font-size: 1.15em;
+        }
+        /* .error-row {
+            text-align: center;
+        } */
+        /* .state-row {
+            padding: 5px 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        } */
+        input {
+            width: 100px !important;
+
+            padding: 0 3px;
+            font-size: 0.85rem;
+            font-family: Roboto;
+        }
+        /* button {
+            width: 100px;
+        } */
+    }
+
+    .errmessage {
+        color: red;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
 </style>

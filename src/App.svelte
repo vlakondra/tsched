@@ -1,13 +1,19 @@
 <script>
 	import "bulma/css/bulma.css";
-
 	import "@fontsource/roboto";
+
+	import { fade } from "svelte/transition";
+	import { scheddata } from "./Comps/store";
 
 	import Header from "./Comps/header.svelte";
 	import StartMessage from "./Comps/startmessage.svelte";
 	import Period from "./Comps/period.svelte";
 	import Depart from "./Comps/depart.svelte";
+
 	import Schedule from "./Comps/schedule.svelte";
+	import ShahSched from "./Comps/shahsched.svelte";
+
+	import Progbar from "./Comps/progbar.svelte";
 
 	import Drawer from "svelte-drawer-component";
 	import ResizeObserver from "svelte-resize-observer";
@@ -21,35 +27,54 @@
 
 	// let checkData = { reqfinished: false, iserror: false };
 
-	const oncheckDepartData = (res) => {
-		//здесь нужны еще данные об ошибках
-		//showStartMessage = res
-		//if (res.hasOwnProperty("isdata")) showIndicator = res; //false;
+	import Fa from "svelte-fa";
+	import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
 
-		checkData.reqfinished = res.reqfinished;
-		checkData.iserror = res.iserror;
+	// const oncheckDepartData = (res) => {
+	// 	//здесь нужны еще данные об ошибках
+	// 	//showStartMessage = res
+	// 	//if (res.hasOwnProperty("isdata")) showIndicator = res; //false;
+
+	// 	checkData.reqfinished = res.reqfinished;
+	// 	checkData.iserror = res.iserror;
+	// };
+
+	const scrollToTop = () => {
+		let dp = document.getElementById("0-month");
+		if (dp) {
+			dp.scrollIntoView({ block: "start", behavior: "smooth" });
+		}
 	};
 
 	const TurnDrawer = () => {
 		open = true;
 	};
-	let scrolly;
+	let scrolly = 5;
 	let w;
+	let showtable = true;
 </script>
 
 <!-- <svelte:window bind:outerWidth={x} /> -->
+<svelte:window bind:scrollY={scrolly} />
 
 <svelte:head>
 	<title>Расписание преподавателей</title>
 </svelte:head>
 
-<main class="container  is-widescreen">
-	<ResizeObserver
+<main class="container  is-widescreen" style="min-height: 100vh;">
+	<!-- <ResizeObserver
 		on:resize={(e) => {
 			w = e.detail.clientWidth;
 			console.log(e.detail.clientWidth, e);
 		}}
-	/>
+	/> -->
+
+	{#if scrolly > 100}
+		<div transition:fade on:click={scrollToTop} class="totop-box">
+			<h1>{scrolly}</h1>
+			<Fa icon={faArrowCircleUp} color="wheat" size="2.5x" />
+		</div>
+	{/if}
 
 	<Header onBurgerClick={TurnDrawer} />
 
@@ -57,18 +82,23 @@
 		<div class="notification">
 			<button on:click={() => (open = false)} class="delete is-medium" />
 			<Period />
-			<Depart checkDepartData={oncheckDepartData} />
+			<Depart />
 		</div>
 	</Drawer>
 
-	<StartMessage openDrawer={TurnDrawer} /> -->
+	<Progbar />
+	<StartMessage openDrawer={TurnDrawer} />
 
-	<!-- <Schedule {scrolly} /> -->
+	{#if Object.keys($scheddata).length}
+		{#if { showtable }}
+			<Schedule {scrolly} />
+		{:else}
+			<ShahSched />
+		{/if}
+	{/if}
 
 	{w}
 </main>
-
-<svelte:window bind:scrollY={scrolly} />
 
 <style>
 	main {
@@ -81,6 +111,7 @@
 	.container {
 		max-width: 960px !important;
 	}
+	/* ПРОВЕРИТЬ - НУжНО ЛИ? */
 	:global(.month) {
 		cursor: pointer;
 		font-family: Roboto;
@@ -119,21 +150,53 @@
 		background: rgba(100, 100, 100, 0.5);
 	}
 
+	main :global(.drawer .panel .notification) {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
 	@media (min-width: 501px) {
 		main :global(.drawer .panel) {
 			transition: transform 1s ease;
-			/* для мобилы и компа сделать разные ширины */
-			max-width: 60% !important;
-			/* max-width: 90% !important; */
+			width: 70% !important;
+			max-width: 350px !important;
 			color: rgb(141, 128, 203);
 		}
 	}
 	@media (max-width: 500px) {
 		main :global(.drawer .panel) {
 			max-width: 80% !important;
+			font-size: 0.9rem;
 		}
+
+		/*?? main :global(.drawer .panel input) {
+			width: 100px !important;
+
+			padding: 0 3px;
+			font-size: 0.9rem;
+			font-family: serif;
+		} */
+
+		/* main :global(.drawer .panel .notification) {
+			padding-left: 5px;
+			padding-right: 5px;
+		} */
+
+		/* main :global(.drawer .panel .calendar-inputs) {
+			display: flex;
+			justify-content: space-around;
+		} */
+
 		main {
 			margin-bottom: 5px;
 		}
+	}
+
+	.totop-box {
+		position: fixed;
+		left: 80%;
+		top: 80%;
+		cursor: pointer;
+		z-index: 99999;
 	}
 </style>

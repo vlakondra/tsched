@@ -52,6 +52,8 @@
     .time {
         color: #f9ffef; /*#6c8441;*/
         font-size: 1.15em;
+        text-shadow: 1px 1px 1px rgb(75 50 31);
+        letter-spacing: 0.5px;
     }
 
     .burger {
@@ -64,7 +66,7 @@
     }
     .caption {
         font-family: Roboto;
-        text-shadow: 2px 3px 4px rgb(86, 246, 118);
+        text-shadow: 1px 1px 1px rgb(75 50 31);
         color: white;
         font-size: 2em;
         font-weight: 200;
