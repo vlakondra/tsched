@@ -171,7 +171,7 @@
         .calendar-caption {
             margin-top: -28px;
             letter-spacing: 1px;
-            font-size: 1.15em;
+            font-size: 1.05em;
         }
     }
 
@@ -183,7 +183,7 @@
         .calendar-caption {
             margin-top: -25px;
             letter-spacing: 1px;
-            font-size: 1.15em;
+            font-size: 1.05em;
         }
         /* .error-row {
             text-align: center;

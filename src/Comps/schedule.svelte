@@ -1,21 +1,19 @@
 <script>
     //https://github.com/langbamit/svelte-scrollto#readme
-    import { scheddata } from "./store";
+    import { scheddata, sched_data_loaded } from "./store";
+    import Noschedule from "./noschedule.svelte";
     // import ShahSched from "./shahsched.svelte";
     import { format } from "date-fns";
     import { fade } from "svelte/transition";
 
-    // import Fa from "svelte-fa";
-    // import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
+    // const scrollToTop = () => {
+    //     let dp = document.getElementById("0-month");
+    //     if (dp) {
+    //         dp.scrollIntoView({ block: "start", behavior: "smooth" });
+    //     }
+    // };
 
-    const scrollToTop = () => {
-        let dp = document.getElementById("0-month");
-        if (dp) {
-            dp.scrollIntoView({ block: "start", behavior: "smooth" });
-        }
-    };
-
-    export let scrolly = 0;
+    // export let scrolly = 0;
     let schedVisible = true;
 
     const showSched = () => {
@@ -119,7 +117,8 @@
     <!-- <div class="container" style="display:block">
         <ShahSched sched={$scheddata} />
     </div> -->
-    <h1>{scrolly}</h1>
+{:else if $sched_data_loaded}
+    <Noschedule />
 {/if}
 
 <style>

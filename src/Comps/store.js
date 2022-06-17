@@ -97,7 +97,7 @@ export async function getSched(par){
       try {
         const response = await fetch(url + query)
         let v = await response.json()
-        // console.log(v)
+         console.log('scheddata',v)
         scheddata.set(v)  //await response.json())
         sched_data_loaded.set(true)
 

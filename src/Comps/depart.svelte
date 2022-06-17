@@ -1,6 +1,6 @@
 <script>
   import departData from "./store.js";
-  import { depart_id, teacher_id } from "./store.js";
+  import { depart_id, teacher_id, getSched } from "./store.js";
 
   let selDep_ID;
   let selTchr_ID;
@@ -15,6 +15,7 @@
 
   const onTchrSelected = (e) => {
     teacher_id.update(() => e.target.value);
+    getSched();
   };
 </script>
 

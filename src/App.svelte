@@ -16,6 +16,8 @@
 	import Progbar from "./Comps/progbar.svelte";
 
 	import Drawer from "svelte-drawer-component";
+	import ViewFormat from "./Comps/viewformat.svelte";
+
 	import ResizeObserver from "svelte-resize-observer";
 
 	let open = false;
@@ -29,15 +31,6 @@
 
 	import Fa from "svelte-fa";
 	import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
-
-	// const oncheckDepartData = (res) => {
-	// 	//здесь нужны еще данные об ошибках
-	// 	//showStartMessage = res
-	// 	//if (res.hasOwnProperty("isdata")) showIndicator = res; //false;
-
-	// 	checkData.reqfinished = res.reqfinished;
-	// 	checkData.iserror = res.iserror;
-	// };
 
 	const scrollToTop = () => {
 		let dp = document.getElementById("0-month");
@@ -54,7 +47,6 @@
 	let showtable = true;
 </script>
 
-<!-- <svelte:window bind:outerWidth={x} /> -->
 <svelte:window bind:scrollY={scrolly} />
 
 <svelte:head>
@@ -83,21 +75,20 @@
 			<button on:click={() => (open = false)} class="delete is-medium" />
 			<Period />
 			<Depart />
+			<ViewFormat />
 		</div>
 	</Drawer>
 
 	<Progbar />
 	<StartMessage openDrawer={TurnDrawer} />
 
-	{#if Object.keys($scheddata).length}
-		{#if { showtable }}
-			<Schedule {scrolly} />
-		{:else}
-			<ShahSched />
-		{/if}
+	<!-- {#if Object.keys($scheddata).length} -->
+	{#if { showtable }}
+		<Schedule />
+	{:else}
+		<ShahSched />
 	{/if}
-
-	{w}
+	<!-- {/if} -->
 </main>
 
 <style>
@@ -153,6 +144,7 @@
 	main :global(.drawer .panel .notification) {
 		padding-left: 5px;
 		padding-right: 5px;
+		height: 100%;
 	}
 
 	@media (min-width: 501px) {
@@ -167,25 +159,8 @@
 		main :global(.drawer .panel) {
 			max-width: 80% !important;
 			font-size: 0.9rem;
+			color: rgb(141, 128, 203);
 		}
-
-		/*?? main :global(.drawer .panel input) {
-			width: 100px !important;
-
-			padding: 0 3px;
-			font-size: 0.9rem;
-			font-family: serif;
-		} */
-
-		/* main :global(.drawer .panel .notification) {
-			padding-left: 5px;
-			padding-right: 5px;
-		} */
-
-		/* main :global(.drawer .panel .calendar-inputs) {
-			display: flex;
-			justify-content: space-around;
-		} */
 
 		main {
 			margin-bottom: 5px;
