@@ -2,6 +2,8 @@
   import departData from "./store.js";
   import { depart_id, teacher_id, getSched } from "./store.js";
 
+  export let state_drawer;
+
   let selDep_ID;
   let selTchr_ID;
 
@@ -16,12 +18,16 @@
   const onTchrSelected = (e) => {
     teacher_id.update(() => e.target.value);
     getSched();
+    setTimeout(() => {
+      state_drawer();
+    }, 500);
   };
 </script>
 
 {selDep_ID}-{selTchr_ID}
 
 <div>
+  <!--нужен ли div?  -->
   <div class="field">
     <label class="label">Кафедра:</label>
     <div class="control">

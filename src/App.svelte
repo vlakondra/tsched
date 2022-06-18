@@ -21,13 +21,6 @@
 	import ResizeObserver from "svelte-resize-observer";
 
 	let open = false;
-	// let hopen;
-
-	// export let name;
-	// let show = false;
-	// let showIndicator = {}; //true; //Получены ли данные кафедр
-
-	// let checkData = { reqfinished: false, iserror: false };
 
 	import Fa from "svelte-fa";
 	import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
@@ -40,8 +33,10 @@
 	};
 
 	const TurnDrawer = () => {
-		open = true;
+		// open = true;
+		open = !open;
 	};
+
 	let scrolly = 5;
 	let w;
 	let showtable = true;
@@ -74,7 +69,7 @@
 		<div class="notification">
 			<button on:click={() => (open = false)} class="delete is-medium" />
 			<Period />
-			<Depart />
+			<Depart state_drawer={TurnDrawer} />
 			<ViewFormat />
 		</div>
 	</Drawer>
