@@ -40,17 +40,8 @@
         return pcount;
     };
 
-    // let shows = Array(sched.length).fill(true);
     let shows = Array($scheddata.length).fill(true);
 </script>
-
-<!-- <h1>{scrolly}</h1>
-{#if scrolly > 100}
-    <div transition:fade on:click={scrollToTop} class="totop-box">
-        <h1>{scrolly}</h1>
-        <Fa icon={faArrowCircleUp} color="wheat" size="2.5x" />
-    </div>
-{/if} -->
 
 {#if Object.keys($scheddata).length}
     <div class="container " style="margin-top:10px;">
@@ -113,10 +104,6 @@
             {/if}
         {/each}
     </div>
-
-    <!-- <div class="container" style="display:block">
-        <ShahSched sched={$scheddata} />
-    </div> -->
 {:else if $sched_data_loaded}
     <Noschedule />
 {/if}
@@ -126,9 +113,7 @@
         font-weight: 600 !important;
         color: rgb(234, 249, 252) !important;
     }
-    /* .container {
-        font-family: "Roboto";
-    } */
+
     /* .month {
         cursor: pointer;
         border-top-left-radius: 0.7em;
@@ -155,13 +140,10 @@
         display: flex;
         justify-content: space-between;
         background-color: #7bdc7f;
-        border-bottom: 3px solid rgb(111, 88, 88);
+        border-bottom: 3px solid rgb(164 115 115);
         color: rgb(80, 55, 55);
         padding: 1px 0 1px 5px;
         letter-spacing: 0.9px;
-        /* font-weight: 300; */
-
-        /* border-bottom: 1px solid silver; */
     }
     .today {
         padding-right: 5px;
@@ -171,7 +153,10 @@
     }
     .pair-wrapper {
         display: grid;
-        grid-template-columns: 65px 1fr 80px 100px 65px;
+        grid-template-columns: 65px 1fr 80px 160px 65px;
+        /* ??? */
+        gap: 0.8px 0.8px;
+
         /* grid-template-areas: "timestart subjname kind group aud"; */
         /* border-bottom: 1px solid wheat; */
         /* font-weight: 300; */
@@ -208,12 +193,14 @@
     } */
 
     @media (min-width: 501px) {
-        .pair-wrapper {
+        /* .pair-wrapper {
             grid-template-columns: 65px 1fr 100px 160px 65px;
-            /* gap: 10px !important; ??*/
-            /* background-color: blue; */
             gap: 0.8px 0.8px;
+        } */
+        .subj-name {
+            min-width: 160px;
         }
+
         .pair-wrapper div {
             /* border-right: 1px solid silver; */
             padding: 5px;

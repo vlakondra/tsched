@@ -24,7 +24,7 @@
   };
 </script>
 
-{selDep_ID}-{selTchr_ID}
+<!-- {selDep_ID}-{selTchr_ID} -->
 
 <div>
   <!--нужен ли div?  -->

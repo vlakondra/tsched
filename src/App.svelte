@@ -2,8 +2,9 @@
 	import "bulma/css/bulma.css";
 	import "@fontsource/roboto";
 
+	import { client_width, err_sched_data } from "./Comps/store.js";
+
 	import { fade } from "svelte/transition";
-	import { scheddata } from "./Comps/store";
 
 	import Header from "./Comps/header.svelte";
 	import StartMessage from "./Comps/startmessage.svelte";
@@ -19,6 +20,7 @@
 	import ViewFormat from "./Comps/viewformat.svelte";
 
 	import ResizeObserver from "svelte-resize-observer";
+	import Errschedule from "./Comps/errschedule.svelte";
 
 	let open = false;
 
@@ -26,20 +28,28 @@
 	import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
 
 	const scrollToTop = () => {
-		let dp = document.getElementById("0-month");
+		let dp = document.getElementById("header");
+
 		if (dp) {
-			dp.scrollIntoView({ block: "start", behavior: "smooth" });
+			dp.scrollIntoView({
+				block: "start",
+				behavior: "smooth",
+			});
 		}
 	};
 
 	const TurnDrawer = () => {
-		// open = true;
 		open = !open;
+	};
+
+	let showtable = true;
+
+	const ToggleSwitch = (frm) => {
+		showtable = frm;
 	};
 
 	let scrolly = 5;
 	let w;
-	let showtable = true;
 </script>
 
 <svelte:window bind:scrollY={scrolly} />
@@ -49,41 +59,41 @@
 </svelte:head>
 
 <main class="container  is-widescreen" style="min-height: 100vh;">
-	<!-- <ResizeObserver
+	<ResizeObserver
 		on:resize={(e) => {
 			w = e.detail.clientWidth;
-			console.log(e.detail.clientWidth, e);
+			client_width.update(() => w);
 		}}
-	/> -->
-
+	/>
 	{#if scrolly > 100}
 		<div transition:fade on:click={scrollToTop} class="totop-box">
-			<h1>{scrolly}</h1>
-			<Fa icon={faArrowCircleUp} color="wheat" size="2.5x" />
+			<Fa icon={faArrowCircleUp} color="deepskyblue" size="2.5x" />
 		</div>
 	{/if}
 
 	<Header onBurgerClick={TurnDrawer} />
-
 	<Drawer {open} on:clickAway={() => (open = false)} size="null">
 		<div class="notification">
-			<button on:click={() => (open = false)} class="delete is-medium" />
-			<Period />
-			<Depart state_drawer={TurnDrawer} />
-			<ViewFormat />
+			<button
+				on:click={() => (open = false)}
+				class="delete is-medium"
+			/><Period /><Depart state_drawer={TurnDrawer} /><ViewFormat
+				changeformat={ToggleSwitch}
+			/>
 		</div>
 	</Drawer>
-
 	<Progbar />
 	<StartMessage openDrawer={TurnDrawer} />
 
-	<!-- {#if Object.keys($scheddata).length} -->
-	{#if { showtable }}
+	{#if $err_sched_data}
+		<div>
+			<Errschedule errmessage={$err_sched_data} />
+		</div>
+	{:else if showtable}
 		<Schedule />
 	{:else}
 		<ShahSched />
 	{/if}
-	<!-- {/if} -->
 </main>
 
 <style>
@@ -92,17 +102,16 @@
 		margin-bottom: 40px;
 		padding: 5px;
 		position: relative;
-		font-family: Roboto;
+		font-family: "Roboto";
 	}
+
 	.container {
 		max-width: 960px !important;
 	}
+
 	/* ПРОВЕРИТЬ - НУжНО ЛИ? */
 	:global(.month) {
 		cursor: pointer;
-		font-family: Roboto;
-		/* border-top-left-radius: 0.7em;
-		border-top-right-radius: 0.7em; */
 		padding: 5px 7px;
 		background-color: #e67f7f;
 		color: #eef9f9;
@@ -127,7 +136,6 @@
 	}
 
 	button.delete.is-medium {
-		/* left: 93%; */
 		right: 0;
 		top: 1px;
 	}
@@ -150,6 +158,7 @@
 			color: rgb(141, 128, 203);
 		}
 	}
+
 	@media (max-width: 500px) {
 		main :global(.drawer .panel) {
 			max-width: 80% !important;

@@ -70,8 +70,8 @@
 
     <div class="calendar-inputs">
         <div>
-            <div class="calendar-txt calendar-caption" style="">Период</div>
-            <div class="calendar-txt">Начало:</div>
+            <!-- <div class="calendar-txt calendar-caption" style="">Период</div> -->
+            <div class="calendar-txt">Начало периода:</div>
             <div>
                 <input
                     type="date"
@@ -84,9 +84,9 @@
                 />
             </div>
         </div>
-        <div style="width:20px" />
+        <!-- <div style="width:20px" /> -->
         <div>
-            <div class="calendar-txt">Конец:</div>
+            <div class="calendar-txt">Конец периода:</div>
             <div>
                 <input
                     type="date"
@@ -150,7 +150,6 @@
     }
     .calendar-inputs {
         display: flex;
-        justify-content: center;
     }
 
     button {
@@ -161,6 +160,11 @@
         text-align: center;
     }
     @media (min-width: 500.5px) {
+        .calendar-inputs {
+            /* display: flex; */
+            justify-content: space-around;
+        }
+
         input {
             width: 120px !important;
 
@@ -169,19 +173,23 @@
             font-family: Roboto;
         }
         .calendar-caption {
-            margin-top: -28px;
+            margin-top: -25px;
             letter-spacing: 1px;
             font-size: 1.05em;
         }
     }
 
     @media (max-width: 500px) {
+        .calendar-inputs {
+            justify-content: space-evenly;
+        }
+
         .calendar-txt {
             color: #3488ce;
         }
 
         .calendar-caption {
-            margin-top: -25px;
+            margin-top: -22px;
             letter-spacing: 1px;
             font-size: 1.05em;
         }
@@ -195,15 +203,12 @@
             justify-content: flex-end;
         } */
         input {
-            width: 100px !important;
+            width: 115px !important;
 
             padding: 0 3px;
             font-size: 0.85rem;
             font-family: Roboto;
         }
-        /* button {
-            width: 100px;
-        } */
     }
 
     .errmessage {

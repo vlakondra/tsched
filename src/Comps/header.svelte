@@ -17,8 +17,7 @@
     });
 </script>
 
-<!-- <div class="container1"> -->
-<div class="header">
+<div id="header" class="header">
     <div class="date">
         {new Date().toLocaleDateString("ru-RU")}
     </div>
@@ -31,13 +30,11 @@
     <div class="time">{formatter.format($time)}</div>
 </div>
 
-<!-- </div> -->
 <style>
     .header {
         display: flex;
         flex-direction: row;
         align-items: center;
-        /* background-color: #6e8de4; */
         background-color: #bea5f5;
         flex-wrap: nowrap;
         align-content: center;
@@ -57,8 +54,6 @@
     }
 
     .burger {
-        /* margin-right: 0px;
-        font-size: 2em; */
         width: 50px;
         text-align: center;
         color: #fff;
@@ -75,12 +70,10 @@
         .burger {
             /* margin-right: 1em; */
             font-size: 1.75em;
-            font-weight: 100;
             /* color: wheat; */
         }
         .caption {
-            font-size: 1.7em;
-            font-weight: 100;
+            font-size: 1.8em;
             letter-spacing: 1px;
             line-height: 1em;
         }
@@ -98,7 +91,7 @@
             /* line-height: 1.5em; */
         }
         .caption {
-            font-size: 1.35em;
+            font-size: 1.4em;
             font-weight: 100;
             line-height: 1em;
         }
@@ -115,9 +108,6 @@
         .header {
             padding: 5px !important;
         }
-        /* .burger {
-            width: 30px;
-        } */
         .caption {
             font-size: 1.35em;
             line-height: 1em;

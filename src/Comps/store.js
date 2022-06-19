@@ -7,7 +7,6 @@ export const time = readable(new Date(), function start(set) {
 	}, 1000);
 
 	return function stop() {
-        console.log('STOP??? ')
 		clearInterval(interval);
 	};
 });
@@ -26,12 +25,12 @@ export const d_start = writable(null)
 export const d_end = writable(null)
 export const  scheddata=writable({})
 export const sched_data_loaded=writable(false) //была  загрузка расписания - не показ-ть startmessage
+export const client_width = writable(0) //ширина экрана от ResizeObserver
 
 
 
 const esc = encodeURIComponent;
 const buildparams =(pars)=>{
-    console.log('from build')
      Object.keys(pars)
     .map((k) => `${esc(k)}=${esc(pars[k])}`)
     .join("&");
@@ -96,30 +95,23 @@ export async function getSched(par){
 
       try {
         const response = await fetch(url + query)
-        let v = await response.json()
-         console.log('scheddata',v)
-        scheddata.set(v)  //await response.json())
+        scheddata.set( await response.json())  
         sched_data_loaded.set(true)
-
+        //Позиционируем на сегодня, если есть в расписании
         setTimeout(() => {
             let dp = document.getElementById(
                 new Date().toISOString().slice(0, 10)
             );
-            console.log('DP', dp)
             if (dp) {
                 dp.scrollIntoView({ block: "start", behavior: "smooth" });
             }else {
                 document.body.scrollIntoView();
             }
         }, 500);
-
-
-
-        
+     
     } catch(e) {
+        sched_data_loaded.set(true)
         err_sched_data.set(e)
-        // error.set(e)
-        // err_ini_data.set(e)
     }
     load_sched_data.set(false)
 

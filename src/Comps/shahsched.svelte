@@ -1,11 +1,16 @@
 <script>
     //https://www.appypie.com/design/image-color-picker/
+    //https://github.com/xelaok/svelte-watch-resize
+
+    import { scheddata, sched_data_loaded } from "./store";
+    import Noschedule from "./noschedule.svelte";
+
     import { fade } from "svelte/transition";
     import { format } from "date-fns";
 
-    export let sched;
+    //export let sched;
 
-    let shows = Array(sched.length).fill(true);
+    let shows = Array($scheddata.length).fill(true);
 
     let timepairs = {
         1: "08:30",
@@ -43,103 +48,104 @@
     const PairItem = (sch, ptime) => {
         return sch.find((e) => e.TimeStart == ptime);
     };
-    let w;
+    // let w;
 </script>
 
-<svelte:window bind:outerWidth={w} />
+<!-- <svelte:window bind:outerWidth={w} /> -->
 
-<div class="pair-wrapper">
-    {#each sched as month, m}
-        <div
-            on:click={() => (shows[m] = !shows[m])}
-            style="grid-column: 1 / 10;"
-            class="month"
-        >
-            <span> {month.Month}</span>
-            <span
-                >{PairCount(month.DateDay)} пар; {month.DateDay.length} дней</span
+{#if Object.keys($scheddata).length}
+    <div class="pair-wrapper">
+        {#each $scheddata as month, m}
+            <div
+                on:click={() => (shows[m] = !shows[m])}
+                style="grid-column: 1 / 10;"
+                class="month"
             >
-        </div>
-
-        {#if shows[m]}
-            <div style="grid-column: 1 / 2}; " class="timepairs" />
-
-            {#each Object.entries(timepairs) as [n_pair, time], n}
-                <div
-                    style="grid-column: {parseInt(n_pair) + 1} / {parseInt(
-                        n_pair
-                    ) + 2};"
-                    class="timepairs"
+                <span> {month.Month}</span>
+                <span
+                    >{PairCount(month.DateDay)} пар; {month.DateDay.length} дней</span
                 >
-                    {time}
-                </div>
-            {/each}
+            </div>
 
-            {#each month.DateDay as day, d}
-                <div
-                    style="grid-column: {startCol} / {startCol + 1};"
-                    in:fade={{ duration: 500 }}
-                    out:fade
-                    class="pair-ceil {day.DayWeek == 'Суббота'
-                        ? 'sbt'
-                        : 'date-pair'}"
-                >
-                    {#if formatDate(day.DatePair) === new Date()
-                            .toISOString()
-                            .slice(0, 10)}
-                        <div class="today">Сегодня</div>
-                    {/if}
+            {#if shows[m]}
+                <div style="grid-column: 1 / 2}; " class="timepairs" />
 
-                    <div>
-                        {day.DatePair}
-                    </div>
-                    <div>
-                        {day.DayWeek}
-                    </div>
-                </div>
-
-                {#each Object.entries(timepairs) as [n_pair, time]}
+                {#each Object.entries(timepairs) as [n_pair, time], n}
                     <div
                         style="grid-column: {parseInt(n_pair) + 1} / {parseInt(
                             n_pair
-                        ) + 2}"
-                        in:fade={{ duration: 1000 }}
-                        out:fade
-                        class="pair-ceil"
+                        ) + 2};"
+                        class="timepairs"
                     >
-                        {#if day.Schedule.findIndex((el) => el.TimeStart == time) == -1}
-                            {""}
-                        {:else}
-                            <div
-                                title={PairItem(day.Schedule, time).TimeStart}
-                                class="pair-detail"
-                            >
-                                <div class="subj">
-                                    {PairItem(day.Schedule, time).SubjSN}
-                                </div>
-
-                                <div class="aud-wrapper">
-                                    <div class="aud">
-                                        {PairItem(day.Schedule, time).Aud}
-                                    </div>
-                                    <div class="kind-load">
-                                        {PairItem(day.Schedule, time)
-                                            .LoadKindSN}
-                                    </div>
-                                </div>
-
-                                <div class="groups">
-                                    {PairItem(day.Schedule, time).GSName}
-                                </div>
-                            </div>
-                        {/if}
+                        {time}
                     </div>
                 {/each}
-            {/each}
-        {/if}
-    {/each}
-</div>
-<h1>SHAHSCHED {w}</h1>
+
+                {#each month.DateDay as day, d}
+                    <div
+                        style="grid-column: {startCol} / {startCol + 1};"
+                        in:fade={{ duration: 500 }}
+                        out:fade
+                        class="pair-ceil {day.DayWeek == 'Суббота'
+                            ? 'sbt'
+                            : 'date-pair'}"
+                    >
+                        {#if formatDate(day.DatePair) === new Date()
+                                .toISOString()
+                                .slice(0, 10)}
+                            <div class="today">Сегодня</div>
+                        {/if}
+
+                        <div>
+                            {day.DatePair}
+                        </div>
+                        <div>
+                            {day.DayWeek}
+                        </div>
+                    </div>
+
+                    {#each Object.entries(timepairs) as [n_pair, time]}
+                        <div
+                            style="grid-column: {parseInt(n_pair) +
+                                1} / {parseInt(n_pair) + 2}"
+                            in:fade={{ duration: 1000 }}
+                            out:fade
+                            class="pair-ceil"
+                        >
+                            {#if day.Schedule.findIndex((el) => el.TimeStart == time) == -1}
+                                {""}
+                            {:else}
+                                <div
+                                    title={PairItem(day.Schedule, time)
+                                        .TimeStart}
+                                    class="pair-detail"
+                                >
+                                    <div class="subj">
+                                        {PairItem(day.Schedule, time).SubjSN}
+                                    </div>
+
+                                    <div class="aud-wrapper">
+                                        <div class="aud">
+                                            {PairItem(day.Schedule, time).Aud}
+                                        </div>
+                                        <div class="kind-load">
+                                            {PairItem(day.Schedule, time)
+                                                .LoadKindSN}
+                                        </div>
+                                    </div>
+
+                                    <div class="groups">
+                                        {PairItem(day.Schedule, time).GSName}
+                                    </div>
+                                </div>
+                            {/if}
+                        </div>
+                    {/each}
+                {/each}
+            {/if}
+        {/each}
+    </div>
+{/if}
 
 <style>
     .sbt {
