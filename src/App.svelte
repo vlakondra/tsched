@@ -43,7 +43,6 @@
 	};
 
 	let showtable = true;
-
 	const ToggleSwitch = (frm) => {
 		showtable = frm;
 	};
@@ -102,7 +101,6 @@
 		margin-bottom: 40px;
 		padding: 5px;
 		position: relative;
-		font-family: "Roboto";
 	}
 
 	.container {

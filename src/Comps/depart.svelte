@@ -79,7 +79,7 @@
     margin: 10px auto;
   }
   .field .label {
-    font-weight: 100;
+    font-weight: 400;
     margin-bottom: 3px;
     color: #3488ce;
   }

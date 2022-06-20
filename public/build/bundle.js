@@ -8943,37 +8943,37 @@ var app = (function () {
     			option1 = element("option");
     			option1.textContent = "Выберите преподавателя";
     			if (if_block1) if_block1.c();
-    			attr_dev(label0, "class", "label svelte-98ektz");
+    			attr_dev(label0, "class", "label svelte-1v2pg6m");
     			add_location(label0, file$c, 31, 4, 663);
     			option0.__value = "null";
     			option0.value = option0.__value;
     			option0.selected = true;
     			option0.disabled = true;
     			add_location(option0, file$c, 39, 10, 910);
-    			attr_dev(select0, "class", "svelte-98ektz");
+    			attr_dev(select0, "class", "svelte-1v2pg6m");
     			if (/*selDep_ID*/ ctx[0] === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[7].call(select0));
     			add_location(select0, file$c, 34, 8, 773);
-    			attr_dev(div0, "class", "select is-success svelte-98ektz");
+    			attr_dev(div0, "class", "select is-success svelte-1v2pg6m");
     			add_location(div0, file$c, 33, 6, 733);
     			attr_dev(div1, "class", "control");
     			add_location(div1, file$c, 32, 4, 705);
-    			attr_dev(div2, "class", "field svelte-98ektz");
+    			attr_dev(div2, "class", "field svelte-1v2pg6m");
     			add_location(div2, file$c, 30, 2, 639);
-    			attr_dev(label1, "class", "label svelte-98ektz");
+    			attr_dev(label1, "class", "label svelte-1v2pg6m");
     			add_location(label1, file$c, 53, 4, 1265);
     			option1.__value = "null";
     			option1.value = option1.__value;
     			option1.selected = true;
     			option1.disabled = true;
     			add_location(option1, file$c, 61, 10, 1520);
-    			attr_dev(select1, "class", "svelte-98ektz");
+    			attr_dev(select1, "class", "svelte-1v2pg6m");
     			if (/*selTchr_ID*/ ctx[1] === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[10].call(select1));
     			add_location(select1, file$c, 56, 8, 1381);
-    			attr_dev(div3, "class", "select is-success svelte-98ektz");
+    			attr_dev(div3, "class", "select is-success svelte-1v2pg6m");
     			add_location(div3, file$c, 55, 6, 1341);
     			attr_dev(div4, "class", "control");
     			add_location(div4, file$c, 54, 4, 1313);
-    			attr_dev(div5, "class", "field svelte-98ektz");
+    			attr_dev(div5, "class", "field svelte-1v2pg6m");
     			add_location(div5, file$c, 52, 2, 1241);
     			add_location(div6, file$c, 28, 0, 606);
     		},
@@ -12810,14 +12810,14 @@ var app = (function () {
     			t5 = text("Шахматка");
     			t6 = space();
     			br = element("br");
-    			attr_dev(div0, "class", "switch-caption svelte-pt90rz");
+    			attr_dev(div0, "class", "switch-caption svelte-wp6kjr");
     			add_location(div0, file$3, 36, 4, 847);
-    			attr_dev(div1, "class", div1_class_value = "format-caption " + (/*checkedValue*/ ctx[0] ? "format-active" : "") + " svelte-pt90rz");
+    			attr_dev(div1, "class", div1_class_value = "format-caption " + (/*checkedValue*/ ctx[0] ? "format-active" : "") + " svelte-wp6kjr");
     			add_location(div1, file$3, 38, 8, 930);
     			add_location(div2, file$3, 44, 8, 1111);
-    			attr_dev(div3, "class", div3_class_value = "format-caption  " + (!/*checkedValue*/ ctx[0] ? "format-active" : "") + " svelte-pt90rz");
+    			attr_dev(div3, "class", div3_class_value = "format-caption  " + (!/*checkedValue*/ ctx[0] ? "format-active" : "") + " svelte-wp6kjr");
     			add_location(div3, file$3, 67, 8, 1866);
-    			attr_dev(div4, "class", "switch-wrapper svelte-pt90rz");
+    			attr_dev(div4, "class", "switch-wrapper svelte-wp6kjr");
     			add_location(div4, file$3, 37, 4, 893);
     			add_location(br, file$3, 74, 4, 2057);
     		},
@@ -12847,7 +12847,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (!current || dirty & /*checkedValue*/ 1 && div1_class_value !== (div1_class_value = "format-caption " + (/*checkedValue*/ ctx[0] ? "format-active" : "") + " svelte-pt90rz")) {
+    			if (!current || dirty & /*checkedValue*/ 1 && div1_class_value !== (div1_class_value = "format-caption " + (/*checkedValue*/ ctx[0] ? "format-active" : "") + " svelte-wp6kjr")) {
     				attr_dev(div1, "class", div1_class_value);
     			}
 
@@ -12860,7 +12860,7 @@ var app = (function () {
 
     			switch_1.$set(switch_1_changes);
 
-    			if (!current || dirty & /*checkedValue*/ 1 && div3_class_value !== (div3_class_value = "format-caption  " + (!/*checkedValue*/ ctx[0] ? "format-active" : "") + " svelte-pt90rz")) {
+    			if (!current || dirty & /*checkedValue*/ 1 && div3_class_value !== (div3_class_value = "format-caption  " + (!/*checkedValue*/ ctx[0] ? "format-active" : "") + " svelte-wp6kjr")) {
     				attr_dev(div3, "class", div3_class_value);
     			}
     		},
@@ -14361,7 +14361,7 @@ var app = (function () {
     const { document: document_1 } = globals;
     const file = "src/App.svelte";
 
-    // (68:1) {#if scrolly > 100}
+    // (67:1) {#if scrolly > 100}
     function create_if_block_2(ctx) {
     	let div;
     	let fa;
@@ -14383,8 +14383,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(fa.$$.fragment);
-    			attr_dev(div, "class", "totop-box svelte-1e6r1wb");
-    			add_location(div, file, 68, 2, 1536);
+    			attr_dev(div, "class", "totop-box svelte-1km7mil");
+    			add_location(div, file, 67, 2, 1535);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -14427,14 +14427,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(68:1) {#if scrolly > 100}",
+    		source: "(67:1) {#if scrolly > 100}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (75:1) <Drawer {open} on:clickAway={() => (open = false)} size="null">
+    // (74:1) <Drawer {open} on:clickAway={() => (open = false)} size="null">
     function create_default_slot(ctx) {
     	let div;
     	let button;
@@ -14463,10 +14463,10 @@ var app = (function () {
     			create_component(period.$$.fragment);
     			create_component(depart.$$.fragment);
     			create_component(viewformat.$$.fragment);
-    			attr_dev(button, "class", "delete is-medium svelte-1e6r1wb");
-    			add_location(button, file, 76, 3, 1817);
+    			attr_dev(button, "class", "delete is-medium svelte-1km7mil");
+    			add_location(button, file, 75, 3, 1816);
     			attr_dev(div, "class", "notification");
-    			add_location(div, file, 75, 2, 1787);
+    			add_location(div, file, 74, 2, 1786);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -14509,14 +14509,14 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(75:1) <Drawer {open} on:clickAway={() => (open = false)} size=\\\"null\\\">",
+    		source: "(74:1) <Drawer {open} on:clickAway={() => (open = false)} size=\\\"null\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (94:1) {:else}
+    // (93:1) {:else}
     function create_else_block(ctx) {
     	let shahsched;
     	let current;
@@ -14549,14 +14549,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(94:1) {:else}",
+    		source: "(93:1) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (92:21) 
+    // (91:21) 
     function create_if_block_1(ctx) {
     	let schedule;
     	let current;
@@ -14589,14 +14589,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(92:21) ",
+    		source: "(91:21) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (88:1) {#if $err_sched_data}
+    // (87:1) {#if $err_sched_data}
     function create_if_block(ctx) {
     	let div;
     	let errschedule;
@@ -14611,7 +14611,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(errschedule.$$.fragment);
-    			add_location(div, file, 88, 2, 2092);
+    			add_location(div, file, 87, 2, 2091);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -14642,7 +14642,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(88:1) {#if $err_sched_data}",
+    		source: "(87:1) {#if $err_sched_data}",
     		ctx
     	});
 
@@ -14733,9 +14733,9 @@ var app = (function () {
     			t6 = space();
     			if_block1.c();
     			document_1.title = "Расписание преподавателей";
-    			attr_dev(main, "class", "container  is-widescreen svelte-1e6r1wb");
+    			attr_dev(main, "class", "container  is-widescreen svelte-1km7mil");
     			set_style(main, "min-height", "100vh");
-    			add_location(main, file, 60, 0, 1336);
+    			add_location(main, file, 59, 0, 1335);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

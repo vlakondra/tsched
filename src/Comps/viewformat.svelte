@@ -75,7 +75,7 @@
     <br />
 {/if}
 
-<!-- The switch is {checkedValue ? "on" : "off"}. -->
+<!--  {checkedValue ? "on" : "off"}. -->
 <style>
     :global(.react-switch-bg) {
         background-color: #3e8ed0 !important;
@@ -88,15 +88,14 @@
     }
     .switch-caption {
         width: 90%;
-        margin: 35px auto 5px auto;
-        /* letter-spacing: 1px; */
+        margin: 35px auto 0 auto;
         font-size: 1.05em;
     }
     .format-caption {
         cursor: pointer;
         text-decoration: underline;
 
-        padding: 0 5px;
+        padding: 3px 5px;
         border-radius: 5px;
     }
     .format-active {
