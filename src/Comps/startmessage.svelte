@@ -38,6 +38,9 @@
 
 <style>
     .start-message {
+        /* font-family: sans-serif;
+        font-weight: 400; */
+
         position: absolute;
         top: 50%;
         left: 50%;

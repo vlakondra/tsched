@@ -2,34 +2,9 @@
     //https://github.com/langbamit/svelte-scrollto#readme
     import { scheddata, sched_data_loaded } from "./store";
     import Noschedule from "./noschedule.svelte";
-    // import ShahSched from "./shahsched.svelte";
-    import { format } from "date-fns";
+    // import { format } from "date-fns";
+    import { isToday, toEnDate } from "./util";
     import { fade } from "svelte/transition";
-
-    // const scrollToTop = () => {
-    //     let dp = document.getElementById("0-month");
-    //     if (dp) {
-    //         dp.scrollIntoView({ block: "start", behavior: "smooth" });
-    //     }
-    // };
-
-    // export let scrolly = 0;
-    let schedVisible = true;
-
-    const showSched = () => {
-        schedVisible = !schedVisible;
-    };
-
-    const formatDate = (rudate) => {
-        let frm = "yyyy-MM-dd";
-        let spld = rudate.split(".");
-        let d = new Date(
-            parseInt(spld[2]),
-            parseInt(spld[1]) - 1,
-            parseInt(spld[0])
-        );
-        return format(d, frm); //  d.toISOString().slice(0, 10);
-    };
 
     const PairCount = (daysArr) => {
         //считает кол-во пар в мес.
@@ -61,8 +36,10 @@
                 <div in:fade={{ duration: 1000 }} out:fade>
                     {#each month.DateDay as day, i}
                         <div
-                            id={formatDate(day.DatePair)}
-                            class="day {day.DayWeek == 'Суббота' ? 'sbt' : ''}"
+                            id={toEnDate(day.DatePair)}
+                            class="day {day.DayWeek == 'Суббота'
+                                ? 'sbt'
+                                : ''}  {isToday(day.DatePair) ? 'today' : ''}"
                         >
                             <span>
                                 {day.DatePair}
@@ -70,10 +47,9 @@
                                     {day.DayWeek}</span
                                 >
                             </span>
-                            {#if formatDate(day.DatePair) === new Date()
-                                    .toISOString()
-                                    .slice(0, 10)}
-                                <span class="today">Сегодня</span>
+
+                            {#if isToday(day.DatePair)}
+                                <span class="today-lbl">Сегодня</span>
                             {/if}
                         </div>
                         {#each day.Schedule as pair, i}
@@ -110,8 +86,18 @@
 
 <style>
     .sbt {
-        font-weight: 600 !important;
         color: rgb(234, 249, 252) !important;
+    }
+    .today {
+        font-size: 1.15em;
+        /* color: blue; */
+        background-color: darkturquoise !important;
+    }
+
+    .today-lbl {
+        padding-right: 5px;
+        color: white;
+        letter-spacing: 1px;
     }
 
     /* .month {
@@ -145,12 +131,7 @@
         padding: 1px 0 1px 5px;
         letter-spacing: 0.9px;
     }
-    .today {
-        padding-right: 5px;
-        color: white;
-        font-weight: 400;
-        letter-spacing: 1px;
-    }
+
     .pair-wrapper {
         display: grid;
         grid-template-columns: 65px 1fr 80px 160px 65px;

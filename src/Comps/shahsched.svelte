@@ -1,14 +1,9 @@
 <script>
     //https://www.appypie.com/design/image-color-picker/
-    //https://github.com/xelaok/svelte-watch-resize
-
     import { scheddata, sched_data_loaded } from "./store";
-    import Noschedule from "./noschedule.svelte";
 
     import { fade } from "svelte/transition";
-    import { format } from "date-fns";
-
-    //export let sched;
+    import { isToday, toEnDate } from "./util";
 
     let shows = Array($scheddata.length).fill(true);
 
@@ -21,17 +16,6 @@
         6: "17:35",
         7: "19:15",
         8: "20:55",
-    };
-
-    const formatDate = (rudate) => {
-        let frm = "yyyy-MM-dd";
-        let spld = rudate.split(".");
-        let d = new Date(
-            parseInt(spld[2]),
-            parseInt(spld[1]) - 1,
-            parseInt(spld[0])
-        );
-        return format(d, frm); //  d.toISOString().slice(0, 10);
     };
 
     const PairCount = (daysArr) => {
@@ -48,10 +32,7 @@
     const PairItem = (sch, ptime) => {
         return sch.find((e) => e.TimeStart == ptime);
     };
-    // let w;
 </script>
-
-<!-- <svelte:window bind:outerWidth={w} /> -->
 
 {#if Object.keys($scheddata).length}
     <div class="pair-wrapper">
@@ -83,17 +64,18 @@
 
                 {#each month.DateDay as day, d}
                     <div
+                        id={toEnDate(day.DatePair)}
                         style="grid-column: {startCol} / {startCol + 1};"
                         in:fade={{ duration: 500 }}
                         out:fade
-                        class="pair-ceil {day.DayWeek == 'Суббота'
+                        class="first-ceil {day.DayWeek == 'Суббота'
                             ? 'sbt'
-                            : 'date-pair'}"
+                            : 'date-pair'}   {isToday(day.DatePair)
+                            ? 'today'
+                            : ''}"
                     >
-                        {#if formatDate(day.DatePair) === new Date()
-                                .toISOString()
-                                .slice(0, 10)}
-                            <div class="today">Сегодня</div>
+                        {#if isToday(day.DatePair)}
+                            <div class="today-lbl">Сегодня</div>
                         {/if}
 
                         <div>
@@ -154,23 +136,26 @@
         text-align: center;
     }
     .today {
-        padding-right: 5px;
-        color: whitesmoke;
-        font-weight: 400;
+        font-size: 1.15em;
+        /* color: blue; */
+        background-color: darkturquoise !important;
+    }
+    .today-lbl {
+        color: white;
         letter-spacing: 1px;
     }
+
     .month span:first-child {
         margin-left: 20px;
     }
     .date-pair {
-        background-color: #7bdc7f !important;
+        background-color: #7bdc7f;
         text-align: center;
     }
     .pair-wrapper {
         display: grid;
         gap: 0.8px;
         min-width: 860px;
-        /* background-color: rgb(190 185 210); */
         background-color: #8b8cab;
         grid-template-columns: repeat(8, auto);
         grid-template-rows: auto;
@@ -181,8 +166,9 @@
         background-color: #7bdc7f;
         color: #225353;
         padding: 0 5px;
-        font-weight: 400;
-        font-family: Roboto;
+    }
+    .first-ceil {
+        padding: 5px 3px;
     }
     .pair-ceil {
         /* font-weight: 300; */

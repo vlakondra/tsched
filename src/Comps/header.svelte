@@ -40,8 +40,8 @@
         align-content: center;
         justify-content: space-around;
         padding: 10px 0;
-        margin-top: 15px;
-        margin-bottom: 30px;
+        margin-top: 10px;
+        margin-bottom: 25px;
         box-shadow: 1px 2px 6px 0px #5a3c3c;
         border-radius: 5px;
     }

@@ -29,7 +29,6 @@
 
 	const scrollToTop = () => {
 		let dp = document.getElementById("header");
-
 		if (dp) {
 			dp.scrollIntoView({
 				block: "start",

@@ -123,25 +123,6 @@
             <span class="errmessage"> {errMessage}</span>
         {/if}
     </div>
-    <!-- <div class="state-row">
-        {#if errMessage}
-            <span class="errmessage"> {errMessage}</span>
-        {:else}
-            <button
-                class="button is-small is-info "
-                on:click={() => getSched(555)}
-                disabled={errMessage || !$depart_id || !$teacher_id
-                    ? true
-                    : false}
-            >
-                <span class="icon">
-                    <Fa icon={faSync} size="1.5x" />
-                </span>
-
-                <span>Обновить</span>
-            </button>
-        {/if}
-    </div> -->
 </div>
 
 <style>
@@ -161,7 +142,6 @@
     }
     @media (min-width: 500.5px) {
         .calendar-inputs {
-            /* display: flex; */
             justify-content: space-around;
         }
 
@@ -171,11 +151,6 @@
             padding: 0 3px;
             font-size: 0.95rem;
             font-family: Roboto;
-        }
-        .calendar-caption {
-            margin-top: -25px;
-            letter-spacing: 1px;
-            font-size: 1.05em;
         }
     }
 
@@ -187,21 +162,6 @@
         .calendar-txt {
             color: #3488ce;
         }
-
-        .calendar-caption {
-            margin-top: -22px;
-            letter-spacing: 1px;
-            font-size: 1.05em;
-        }
-        /* .error-row {
-            text-align: center;
-        } */
-        /* .state-row {
-            padding: 5px 0px;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-        } */
         input {
             width: 115px !important;
 
@@ -210,7 +170,6 @@
             font-family: Roboto;
         }
     }
-
     .errmessage {
         color: red;
         letter-spacing: 1px;
