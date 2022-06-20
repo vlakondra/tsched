@@ -1,6 +1,5 @@
 <script>
     import { load_sched_data } from "./store.js";
-    import { fade } from "svelte/transition";
     import Fa from "svelte-fa";
     import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 </script>

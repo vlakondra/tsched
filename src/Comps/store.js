@@ -27,8 +27,6 @@ export const  scheddata=writable({})
 export const sched_data_loaded=writable(false) //была  загрузка расписания - не показ-ть startmessage
 export const client_width = writable(0) //ширина экрана от ResizeObserver
 
-
-
 const esc = encodeURIComponent;
 const buildparams =(pars)=>{
      Object.keys(pars)
@@ -43,21 +41,17 @@ export default function (){
       d: new Date().toISOString().slice(0, 10),
     };
     let query = buildparams(params)
-    // const query = Object.keys(params)
-    //   .map((k) => `${esc(k)}=${esc(params[k])}`)
-    //   .join("&");
 
     const loading = writable(true) //оставить только data и export-переменные
     const error = writable(false)
 	const data = writable({})  
    
-
     async function get() {
         loading.set(true)
         error.set(false)
         load_ini_data.set(true)
         try {
-            const response = await fetch(url + query)
+            const response = await fetch(url + query,{},5000)
             data.set(await response.json())
         } catch(e) {
             error.set(e)
@@ -114,7 +108,6 @@ export async function getSched(par){
         err_sched_data.set(e)
     }
     load_sched_data.set(false)
-
 }
 
 
