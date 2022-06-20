@@ -1,4 +1,5 @@
 <script>
+	//https://tsched.vercel.app/
 	import "bulma/css/bulma.css";
 	import "@fontsource/roboto";
 

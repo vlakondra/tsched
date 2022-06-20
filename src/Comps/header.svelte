@@ -88,7 +88,6 @@
     @media (max-width: 500px) {
         .header {
             padding: 5px 5px;
-            /* line-height: 1.5em; */
         }
         .caption {
             font-size: 1.4em;
@@ -106,10 +105,10 @@
 
     @media (max-width: 400px) {
         .header {
-            padding: 5px !important;
+            padding: 5px 0 !important;
         }
         .caption {
-            font-size: 1.35em;
+            font-size: 1.1em;
             line-height: 1em;
         }
     }

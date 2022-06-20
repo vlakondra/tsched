@@ -2033,20 +2033,20 @@ var app = (function () {
     			t4 = space();
     			div4 = element("div");
     			t5 = text(t5_value);
-    			attr_dev(div0, "class", "date svelte-189jhe2");
+    			attr_dev(div0, "class", "date svelte-1ludef0");
     			add_location(div0, file$f, 20, 4, 530);
-    			attr_dev(div1, "class", "burger svelte-189jhe2");
+    			attr_dev(div1, "class", "burger svelte-1ludef0");
     			add_location(div1, file$f, 24, 8, 685);
-    			attr_dev(div2, "class", "caption svelte-189jhe2");
+    			attr_dev(div2, "class", "caption svelte-1ludef0");
     			add_location(div2, file$f, 27, 8, 787);
     			set_style(div3, "display", "flex");
     			set_style(div3, "flex-wrap", "nowrap");
     			set_style(div3, "align-items", "center");
     			add_location(div3, file$f, 23, 4, 613);
-    			attr_dev(div4, "class", "time svelte-189jhe2");
+    			attr_dev(div4, "class", "time svelte-1ludef0");
     			add_location(div4, file$f, 29, 4, 855);
     			attr_dev(div5, "id", "header");
-    			attr_dev(div5, "class", "header svelte-189jhe2");
+    			attr_dev(div5, "class", "header svelte-1ludef0");
     			add_location(div5, file$f, 19, 0, 493);
     		},
     		l: function claim(nodes) {
@@ -14361,7 +14361,7 @@ var app = (function () {
     const { document: document_1 } = globals;
     const file = "src/App.svelte";
 
-    // (67:1) {#if scrolly > 100}
+    // (68:1) {#if scrolly > 100}
     function create_if_block_2(ctx) {
     	let div;
     	let fa;
@@ -14384,7 +14384,7 @@ var app = (function () {
     			div = element("div");
     			create_component(fa.$$.fragment);
     			attr_dev(div, "class", "totop-box svelte-1e6r1wb");
-    			add_location(div, file, 67, 2, 1506);
+    			add_location(div, file, 68, 2, 1536);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -14427,14 +14427,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(67:1) {#if scrolly > 100}",
+    		source: "(68:1) {#if scrolly > 100}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (74:1) <Drawer {open} on:clickAway={() => (open = false)} size="null">
+    // (75:1) <Drawer {open} on:clickAway={() => (open = false)} size="null">
     function create_default_slot(ctx) {
     	let div;
     	let button;
@@ -14464,9 +14464,9 @@ var app = (function () {
     			create_component(depart.$$.fragment);
     			create_component(viewformat.$$.fragment);
     			attr_dev(button, "class", "delete is-medium svelte-1e6r1wb");
-    			add_location(button, file, 75, 3, 1787);
+    			add_location(button, file, 76, 3, 1817);
     			attr_dev(div, "class", "notification");
-    			add_location(div, file, 74, 2, 1757);
+    			add_location(div, file, 75, 2, 1787);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -14509,14 +14509,14 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(74:1) <Drawer {open} on:clickAway={() => (open = false)} size=\\\"null\\\">",
+    		source: "(75:1) <Drawer {open} on:clickAway={() => (open = false)} size=\\\"null\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (93:1) {:else}
+    // (94:1) {:else}
     function create_else_block(ctx) {
     	let shahsched;
     	let current;
@@ -14549,14 +14549,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(93:1) {:else}",
+    		source: "(94:1) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (91:21) 
+    // (92:21) 
     function create_if_block_1(ctx) {
     	let schedule;
     	let current;
@@ -14589,14 +14589,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(91:21) ",
+    		source: "(92:21) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (87:1) {#if $err_sched_data}
+    // (88:1) {#if $err_sched_data}
     function create_if_block(ctx) {
     	let div;
     	let errschedule;
@@ -14611,7 +14611,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(errschedule.$$.fragment);
-    			add_location(div, file, 87, 2, 2062);
+    			add_location(div, file, 88, 2, 2092);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -14642,7 +14642,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(87:1) {#if $err_sched_data}",
+    		source: "(88:1) {#if $err_sched_data}",
     		ctx
     	});
 
@@ -14735,7 +14735,7 @@ var app = (function () {
     			document_1.title = "Расписание преподавателей";
     			attr_dev(main, "class", "container  is-widescreen svelte-1e6r1wb");
     			set_style(main, "min-height", "100vh");
-    			add_location(main, file, 59, 0, 1306);
+    			add_location(main, file, 60, 0, 1336);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
