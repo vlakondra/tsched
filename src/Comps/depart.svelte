@@ -24,51 +24,46 @@
   };
 </script>
 
-<!-- {selDep_ID}-{selTchr_ID} -->
-
-<div>
-  <!--нужен ли div?  -->
-  <div class="field">
-    <label class="label">Кафедра:</label>
-    <div class="control">
-      <div class="select is-success">
-        <select
-          bind:value={selDep_ID}
-          on:change={(v) => onDepSelected(v)}
-          on:blur={undefined}
-        >
-          <option value="null" selected disabled>Выберите кафедру</option>
-          {#if $data.Departs}
-            {#each $data.Departs as item}
-              <option value={item.Depart_ID}>
-                {item.DepartName}
-              </option>
-            {/each}
-          {/if}
-        </select>
-      </div>
+<div class="field">
+  <label class="label">Кафедра:</label>
+  <div class="control">
+    <div class="select is-success">
+      <select
+        bind:value={selDep_ID}
+        on:change={(v) => onDepSelected(v)}
+        on:blur={undefined}
+      >
+        <option value="null" selected disabled>Выберите кафедру</option>
+        {#if $data.Departs}
+          {#each $data.Departs as item}
+            <option value={item.Depart_ID}>
+              {item.DepartName}
+            </option>
+          {/each}
+        {/if}
+      </select>
     </div>
   </div>
+</div>
 
-  <div class="field">
-    <label class="label">Преподаватель:</label>
-    <div class="control">
-      <div class="select is-success">
-        <select
-          bind:value={selTchr_ID}
-          on:change={(v) => onTchrSelected(v)}
-          on:blur={undefined}
-        >
-          <option value="null" selected disabled>Выберите преподавателя</option>
-          {#if $data.Teachers}
-            {#each $data.Teachers.filter((t) => t.Depart_ID == selDep_ID) as item}
-              <option value={item.Emp_ID}>
-                {item.FIO}
-              </option>
-            {/each}
-          {/if}
-        </select>
-      </div>
+<div class="field">
+  <label class="label">Преподаватель:</label>
+  <div class="control">
+    <div class="select is-success">
+      <select
+        bind:value={selTchr_ID}
+        on:change={(v) => onTchrSelected(v)}
+        on:blur={undefined}
+      >
+        <option value="null" selected disabled>Выберите преподавателя</option>
+        {#if $data.Teachers}
+          {#each $data.Teachers.filter((t) => t.Depart_ID == selDep_ID) as item}
+            <option value={item.Emp_ID}>
+              {item.FIO}
+            </option>
+          {/each}
+        {/if}
+      </select>
     </div>
   </div>
 </div>

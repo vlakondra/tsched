@@ -3012,7 +3012,7 @@ var app = (function () {
       return !isNaN(Number(date));
     }
 
-    var formatDistanceLocale$1 = {
+    var formatDistanceLocale = {
       lessThanXSeconds: {
         one: 'less than a second',
         other: 'less than {{count}} seconds'
@@ -3076,9 +3076,9 @@ var app = (function () {
       }
     };
 
-    var formatDistance$1 = function (token, count, options) {
+    var formatDistance = function (token, count, options) {
       var result;
-      var tokenValue = formatDistanceLocale$1[token];
+      var tokenValue = formatDistanceLocale[token];
 
       if (typeof tokenValue === 'string') {
         result = tokenValue;
@@ -3109,40 +3109,40 @@ var app = (function () {
       };
     }
 
-    var dateFormats$1 = {
+    var dateFormats = {
       full: 'EEEE, MMMM do, y',
       long: 'MMMM do, y',
       medium: 'MMM d, y',
       short: 'MM/dd/yyyy'
     };
-    var timeFormats$1 = {
+    var timeFormats = {
       full: 'h:mm:ss a zzzz',
       long: 'h:mm:ss a z',
       medium: 'h:mm:ss a',
       short: 'h:mm a'
     };
-    var dateTimeFormats$1 = {
+    var dateTimeFormats = {
       full: "{{date}} 'at' {{time}}",
       long: "{{date}} 'at' {{time}}",
       medium: '{{date}}, {{time}}',
       short: '{{date}}, {{time}}'
     };
-    var formatLong$1 = {
+    var formatLong = {
       date: buildFormatLongFn({
-        formats: dateFormats$1,
+        formats: dateFormats,
         defaultWidth: 'full'
       }),
       time: buildFormatLongFn({
-        formats: timeFormats$1,
+        formats: timeFormats,
         defaultWidth: 'full'
       }),
       dateTime: buildFormatLongFn({
-        formats: dateTimeFormats$1,
+        formats: dateTimeFormats,
         defaultWidth: 'full'
       })
     };
 
-    var formatRelativeLocale$1 = {
+    var formatRelativeLocale = {
       lastWeek: "'last' eeee 'at' p",
       yesterday: "'yesterday at' p",
       today: "'today at' p",
@@ -3151,8 +3151,8 @@ var app = (function () {
       other: 'P'
     };
 
-    var formatRelative$1 = function (token, _date, _baseDate, _options) {
-      return formatRelativeLocale$1[token];
+    var formatRelative = function (token, _date, _baseDate, _options) {
+      return formatRelativeLocale[token];
     };
 
     function buildLocalizeFn(args) {
@@ -3179,12 +3179,12 @@ var app = (function () {
       };
     }
 
-    var eraValues$1 = {
+    var eraValues = {
       narrow: ['B', 'A'],
       abbreviated: ['BC', 'AD'],
       wide: ['Before Christ', 'Anno Domini']
     };
-    var quarterValues$1 = {
+    var quarterValues = {
       narrow: ['1', '2', '3', '4'],
       abbreviated: ['Q1', 'Q2', 'Q3', 'Q4'],
       wide: ['1st quarter', '2nd quarter', '3rd quarter', '4th quarter']
@@ -3193,18 +3193,18 @@ var app = (function () {
     // Generally, formatted dates should look like they are in the middle of a sentence,
     // e.g. in Spanish language the weekdays and months should be in the lowercase.
 
-    var monthValues$1 = {
+    var monthValues = {
       narrow: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
       abbreviated: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       wide: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     };
-    var dayValues$1 = {
+    var dayValues = {
       narrow: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
       short: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
       abbreviated: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
       wide: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     };
-    var dayPeriodValues$1 = {
+    var dayPeriodValues = {
       narrow: {
         am: 'a',
         pm: 'p',
@@ -3236,7 +3236,7 @@ var app = (function () {
         night: 'night'
       }
     };
-    var formattingDayPeriodValues$1 = {
+    var formattingDayPeriodValues = {
       narrow: {
         am: 'a',
         pm: 'p',
@@ -3269,7 +3269,7 @@ var app = (function () {
       }
     };
 
-    var ordinalNumber$1 = function (dirtyNumber, _options) {
+    var ordinalNumber = function (dirtyNumber, _options) {
       var number = Number(dirtyNumber); // If ordinal numbers depend on context, for example,
       // if they are different for different grammatical genders,
       // use `options.unit`.
@@ -3295,31 +3295,31 @@ var app = (function () {
       return number + 'th';
     };
 
-    var localize$1 = {
-      ordinalNumber: ordinalNumber$1,
+    var localize = {
+      ordinalNumber: ordinalNumber,
       era: buildLocalizeFn({
-        values: eraValues$1,
+        values: eraValues,
         defaultWidth: 'wide'
       }),
       quarter: buildLocalizeFn({
-        values: quarterValues$1,
+        values: quarterValues,
         defaultWidth: 'wide',
         argumentCallback: function (quarter) {
           return quarter - 1;
         }
       }),
       month: buildLocalizeFn({
-        values: monthValues$1,
+        values: monthValues,
         defaultWidth: 'wide'
       }),
       day: buildLocalizeFn({
-        values: dayValues$1,
+        values: dayValues,
         defaultWidth: 'wide'
       }),
       dayPeriod: buildLocalizeFn({
-        values: dayPeriodValues$1,
+        values: dayPeriodValues,
         defaultWidth: 'wide',
-        formattingValues: formattingDayPeriodValues$1,
+        formattingValues: formattingDayPeriodValues,
         defaultFormattingWidth: 'wide'
       })
     };
@@ -3391,48 +3391,48 @@ var app = (function () {
       };
     }
 
-    var matchOrdinalNumberPattern$1 = /^(\d+)(th|st|nd|rd)?/i;
-    var parseOrdinalNumberPattern$1 = /\d+/i;
-    var matchEraPatterns$1 = {
+    var matchOrdinalNumberPattern = /^(\d+)(th|st|nd|rd)?/i;
+    var parseOrdinalNumberPattern = /\d+/i;
+    var matchEraPatterns = {
       narrow: /^(b|a)/i,
       abbreviated: /^(b\.?\s?c\.?|b\.?\s?c\.?\s?e\.?|a\.?\s?d\.?|c\.?\s?e\.?)/i,
       wide: /^(before christ|before common era|anno domini|common era)/i
     };
-    var parseEraPatterns$1 = {
+    var parseEraPatterns = {
       any: [/^b/i, /^(a|c)/i]
     };
-    var matchQuarterPatterns$1 = {
+    var matchQuarterPatterns = {
       narrow: /^[1234]/i,
       abbreviated: /^q[1234]/i,
       wide: /^[1234](th|st|nd|rd)? quarter/i
     };
-    var parseQuarterPatterns$1 = {
+    var parseQuarterPatterns = {
       any: [/1/i, /2/i, /3/i, /4/i]
     };
-    var matchMonthPatterns$1 = {
+    var matchMonthPatterns = {
       narrow: /^[jfmasond]/i,
       abbreviated: /^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i,
       wide: /^(january|february|march|april|may|june|july|august|september|october|november|december)/i
     };
-    var parseMonthPatterns$1 = {
+    var parseMonthPatterns = {
       narrow: [/^j/i, /^f/i, /^m/i, /^a/i, /^m/i, /^j/i, /^j/i, /^a/i, /^s/i, /^o/i, /^n/i, /^d/i],
       any: [/^ja/i, /^f/i, /^mar/i, /^ap/i, /^may/i, /^jun/i, /^jul/i, /^au/i, /^s/i, /^o/i, /^n/i, /^d/i]
     };
-    var matchDayPatterns$1 = {
+    var matchDayPatterns = {
       narrow: /^[smtwf]/i,
       short: /^(su|mo|tu|we|th|fr|sa)/i,
       abbreviated: /^(sun|mon|tue|wed|thu|fri|sat)/i,
       wide: /^(sunday|monday|tuesday|wednesday|thursday|friday|saturday)/i
     };
-    var parseDayPatterns$1 = {
+    var parseDayPatterns = {
       narrow: [/^s/i, /^m/i, /^t/i, /^w/i, /^t/i, /^f/i, /^s/i],
       any: [/^su/i, /^m/i, /^tu/i, /^w/i, /^th/i, /^f/i, /^sa/i]
     };
-    var matchDayPeriodPatterns$1 = {
+    var matchDayPeriodPatterns = {
       narrow: /^(a|p|mi|n|(in the|at) (morning|afternoon|evening|night))/i,
       any: /^([ap]\.?\s?m\.?|midnight|noon|(in the|at) (morning|afternoon|evening|night))/i
     };
-    var parseDayPeriodPatterns$1 = {
+    var parseDayPeriodPatterns = {
       any: {
         am: /^a/i,
         pm: /^p/i,
@@ -3444,45 +3444,45 @@ var app = (function () {
         night: /night/i
       }
     };
-    var match$1 = {
+    var match = {
       ordinalNumber: buildMatchPatternFn({
-        matchPattern: matchOrdinalNumberPattern$1,
-        parsePattern: parseOrdinalNumberPattern$1,
+        matchPattern: matchOrdinalNumberPattern,
+        parsePattern: parseOrdinalNumberPattern,
         valueCallback: function (value) {
           return parseInt(value, 10);
         }
       }),
       era: buildMatchFn({
-        matchPatterns: matchEraPatterns$1,
+        matchPatterns: matchEraPatterns,
         defaultMatchWidth: 'wide',
-        parsePatterns: parseEraPatterns$1,
+        parsePatterns: parseEraPatterns,
         defaultParseWidth: 'any'
       }),
       quarter: buildMatchFn({
-        matchPatterns: matchQuarterPatterns$1,
+        matchPatterns: matchQuarterPatterns,
         defaultMatchWidth: 'wide',
-        parsePatterns: parseQuarterPatterns$1,
+        parsePatterns: parseQuarterPatterns,
         defaultParseWidth: 'any',
         valueCallback: function (index) {
           return index + 1;
         }
       }),
       month: buildMatchFn({
-        matchPatterns: matchMonthPatterns$1,
+        matchPatterns: matchMonthPatterns,
         defaultMatchWidth: 'wide',
-        parsePatterns: parseMonthPatterns$1,
+        parsePatterns: parseMonthPatterns,
         defaultParseWidth: 'any'
       }),
       day: buildMatchFn({
-        matchPatterns: matchDayPatterns$1,
+        matchPatterns: matchDayPatterns,
         defaultMatchWidth: 'wide',
-        parsePatterns: parseDayPatterns$1,
+        parsePatterns: parseDayPatterns,
         defaultParseWidth: 'any'
       }),
       dayPeriod: buildMatchFn({
-        matchPatterns: matchDayPeriodPatterns$1,
+        matchPatterns: matchDayPeriodPatterns,
         defaultMatchWidth: 'any',
-        parsePatterns: parseDayPeriodPatterns$1,
+        parsePatterns: parseDayPeriodPatterns,
         defaultParseWidth: 'any'
       })
     };
@@ -3496,13 +3496,13 @@ var app = (function () {
      * @author Sasha Koss [@kossnocorp]{@link https://github.com/kossnocorp}
      * @author Lesha Koss [@leshakoss]{@link https://github.com/leshakoss}
      */
-    var locale$1 = {
+    var locale = {
       code: 'en-US',
-      formatDistance: formatDistance$1,
-      formatLong: formatLong$1,
-      formatRelative: formatRelative$1,
-      localize: localize$1,
-      match: match$1,
+      formatDistance: formatDistance,
+      formatLong: formatLong,
+      formatRelative: formatRelative,
+      localize: localize,
+      match: match,
       options: {
         weekStartsOn: 0
         /* Sunday */
@@ -5104,8 +5104,8 @@ var app = (function () {
       requiredArgs(2, arguments);
       var formatStr = String(dirtyFormatStr);
       var options = dirtyOptions || {};
-      var locale = options.locale || locale$1;
-      var localeFirstWeekContainsDate = locale.options && locale.options.firstWeekContainsDate;
+      var locale$1 = options.locale || locale;
+      var localeFirstWeekContainsDate = locale$1.options && locale$1.options.firstWeekContainsDate;
       var defaultFirstWeekContainsDate = localeFirstWeekContainsDate == null ? 1 : toInteger(localeFirstWeekContainsDate);
       var firstWeekContainsDate = options.firstWeekContainsDate == null ? defaultFirstWeekContainsDate : toInteger(options.firstWeekContainsDate); // Test if weekStartsOn is between 1 and 7 _and_ is not NaN
 
@@ -5113,7 +5113,7 @@ var app = (function () {
         throw new RangeError('firstWeekContainsDate must be between 1 and 7 inclusively');
       }
 
-      var localeWeekStartsOn = locale.options && locale.options.weekStartsOn;
+      var localeWeekStartsOn = locale$1.options && locale$1.options.weekStartsOn;
       var defaultWeekStartsOn = localeWeekStartsOn == null ? 0 : toInteger(localeWeekStartsOn);
       var weekStartsOn = options.weekStartsOn == null ? defaultWeekStartsOn : toInteger(options.weekStartsOn); // Test if weekStartsOn is between 0 and 6 _and_ is not NaN
 
@@ -5121,11 +5121,11 @@ var app = (function () {
         throw new RangeError('weekStartsOn must be between 0 and 6 inclusively');
       }
 
-      if (!locale.localize) {
+      if (!locale$1.localize) {
         throw new RangeError('locale must contain localize property');
       }
 
-      if (!locale.formatLong) {
+      if (!locale$1.formatLong) {
         throw new RangeError('locale must contain formatLong property');
       }
 
@@ -5143,7 +5143,7 @@ var app = (function () {
       var formatterOptions = {
         firstWeekContainsDate: firstWeekContainsDate,
         weekStartsOn: weekStartsOn,
-        locale: locale,
+        locale: locale$1,
         _originalDate: originalDate
       };
       var result = formatStr.match(longFormattingTokensRegExp$1).map(function (substring) {
@@ -5151,7 +5151,7 @@ var app = (function () {
 
         if (firstCharacter === 'p' || firstCharacter === 'P') {
           var longFormatter = longFormatters[firstCharacter];
-          return longFormatter(substring, locale.formatLong, formatterOptions);
+          return longFormatter(substring, locale$1.formatLong, formatterOptions);
         }
 
         return substring;
@@ -5178,7 +5178,7 @@ var app = (function () {
             throwProtectedError(substring, dirtyFormatStr, dirtyDate);
           }
 
-          return formatter(utcDate, substring, locale.localize, formatterOptions);
+          return formatter(utcDate, substring, locale$1.localize, formatterOptions);
         }
 
         if (firstCharacter.match(unescapedLatinCharacterRegExp$2)) {
@@ -7237,13 +7237,13 @@ var app = (function () {
       var dateString = String(dirtyDateString);
       var formatString = String(dirtyFormatString);
       var options = dirtyOptions || {};
-      var locale = options.locale || locale$1;
+      var locale$1 = options.locale || locale;
 
-      if (!locale.match) {
+      if (!locale$1.match) {
         throw new RangeError('locale must contain match property');
       }
 
-      var localeFirstWeekContainsDate = locale.options && locale.options.firstWeekContainsDate;
+      var localeFirstWeekContainsDate = locale$1.options && locale$1.options.firstWeekContainsDate;
       var defaultFirstWeekContainsDate = localeFirstWeekContainsDate == null ? 1 : toInteger(localeFirstWeekContainsDate);
       var firstWeekContainsDate = options.firstWeekContainsDate == null ? defaultFirstWeekContainsDate : toInteger(options.firstWeekContainsDate); // Test if weekStartsOn is between 1 and 7 _and_ is not NaN
 
@@ -7251,7 +7251,7 @@ var app = (function () {
         throw new RangeError('firstWeekContainsDate must be between 1 and 7 inclusively');
       }
 
-      var localeWeekStartsOn = locale.options && locale.options.weekStartsOn;
+      var localeWeekStartsOn = locale$1.options && locale$1.options.weekStartsOn;
       var defaultWeekStartsOn = localeWeekStartsOn == null ? 0 : toInteger(localeWeekStartsOn);
       var weekStartsOn = options.weekStartsOn == null ? defaultWeekStartsOn : toInteger(options.weekStartsOn); // Test if weekStartsOn is between 0 and 6 _and_ is not NaN
 
@@ -7270,7 +7270,7 @@ var app = (function () {
       var subFnOptions = {
         firstWeekContainsDate: firstWeekContainsDate,
         weekStartsOn: weekStartsOn,
-        locale: locale
+        locale: locale$1
       }; // If timezone isn't specified, it will be set to the system timezone
 
       var setters = [{
@@ -7285,7 +7285,7 @@ var app = (function () {
 
         if (firstCharacter === 'p' || firstCharacter === 'P') {
           var longFormatter = longFormatters[firstCharacter];
-          return longFormatter(substring, locale.formatLong, subFnOptions);
+          return longFormatter(substring, locale$1.formatLong, subFnOptions);
         }
 
         return substring;
@@ -7332,7 +7332,7 @@ var app = (function () {
             token: firstCharacter,
             fullToken: token
           });
-          var parseResult = parser.parse(dateString, token, locale.match, subFnOptions);
+          var parseResult = parser.parse(dateString, token, locale$1.match, subFnOptions);
 
           if (!parseResult) {
             return new Date(NaN);
@@ -7557,625 +7557,13 @@ var app = (function () {
       return matches[1].replace(doubleQuoteRegExp, "'");
     }
 
-    // See issue: https://github.com/date-fns/date-fns/issues/376
-
-    function isSameUTCWeek(dirtyDateLeft, dirtyDateRight, options) {
-      requiredArgs(2, arguments);
-      var dateLeftStartOfWeek = startOfUTCWeek(dirtyDateLeft, options);
-      var dateRightStartOfWeek = startOfUTCWeek(dirtyDateRight, options);
-      return dateLeftStartOfWeek.getTime() === dateRightStartOfWeek.getTime();
-    }
-
-    function declension(scheme, count) {
-      // scheme for count=1 exists
-      if (scheme.one !== undefined && count === 1) {
-        return scheme.one;
-      }
-
-      var rem10 = count % 10;
-      var rem100 = count % 100; // 1, 21, 31, ...
-
-      if (rem10 === 1 && rem100 !== 11) {
-        return scheme.singularNominative.replace('{{count}}', count); // 2, 3, 4, 22, 23, 24, 32 ...
-      } else if (rem10 >= 2 && rem10 <= 4 && (rem100 < 10 || rem100 > 20)) {
-        return scheme.singularGenitive.replace('{{count}}', count); // 5, 6, 7, 8, 9, 10, 11, ...
-      } else {
-        return scheme.pluralGenitive.replace('{{count}}', count);
-      }
-    }
-
-    function buildLocalizeTokenFn(scheme) {
-      return function (count, options) {
-        if (options.addSuffix) {
-          if (options.comparison > 0) {
-            if (scheme.future) {
-              return declension(scheme.future, count);
-            } else {
-              return 'через ' + declension(scheme.regular, count);
-            }
-          } else {
-            if (scheme.past) {
-              return declension(scheme.past, count);
-            } else {
-              return declension(scheme.regular, count) + ' назад';
-            }
-          }
-        } else {
-          return declension(scheme.regular, count);
-        }
-      };
-    }
-
-    var formatDistanceLocale = {
-      lessThanXSeconds: buildLocalizeTokenFn({
-        regular: {
-          one: 'меньше секунды',
-          singularNominative: 'меньше {{count}} секунды',
-          singularGenitive: 'меньше {{count}} секунд',
-          pluralGenitive: 'меньше {{count}} секунд'
-        },
-        future: {
-          one: 'меньше, чем через секунду',
-          singularNominative: 'меньше, чем через {{count}} секунду',
-          singularGenitive: 'меньше, чем через {{count}} секунды',
-          pluralGenitive: 'меньше, чем через {{count}} секунд'
-        }
-      }),
-      xSeconds: buildLocalizeTokenFn({
-        regular: {
-          singularNominative: '{{count}} секунда',
-          singularGenitive: '{{count}} секунды',
-          pluralGenitive: '{{count}} секунд'
-        },
-        past: {
-          singularNominative: '{{count}} секунду назад',
-          singularGenitive: '{{count}} секунды назад',
-          pluralGenitive: '{{count}} секунд назад'
-        },
-        future: {
-          singularNominative: 'через {{count}} секунду',
-          singularGenitive: 'через {{count}} секунды',
-          pluralGenitive: 'через {{count}} секунд'
-        }
-      }),
-      halfAMinute: function (_, options) {
-        if (options.addSuffix) {
-          if (options.comparison > 0) {
-            return 'через полминуты';
-          } else {
-            return 'полминуты назад';
-          }
-        }
-
-        return 'полминуты';
-      },
-      lessThanXMinutes: buildLocalizeTokenFn({
-        regular: {
-          one: 'меньше минуты',
-          singularNominative: 'меньше {{count}} минуты',
-          singularGenitive: 'меньше {{count}} минут',
-          pluralGenitive: 'меньше {{count}} минут'
-        },
-        future: {
-          one: 'меньше, чем через минуту',
-          singularNominative: 'меньше, чем через {{count}} минуту',
-          singularGenitive: 'меньше, чем через {{count}} минуты',
-          pluralGenitive: 'меньше, чем через {{count}} минут'
-        }
-      }),
-      xMinutes: buildLocalizeTokenFn({
-        regular: {
-          singularNominative: '{{count}} минута',
-          singularGenitive: '{{count}} минуты',
-          pluralGenitive: '{{count}} минут'
-        },
-        past: {
-          singularNominative: '{{count}} минуту назад',
-          singularGenitive: '{{count}} минуты назад',
-          pluralGenitive: '{{count}} минут назад'
-        },
-        future: {
-          singularNominative: 'через {{count}} минуту',
-          singularGenitive: 'через {{count}} минуты',
-          pluralGenitive: 'через {{count}} минут'
-        }
-      }),
-      aboutXHours: buildLocalizeTokenFn({
-        regular: {
-          singularNominative: 'около {{count}} часа',
-          singularGenitive: 'около {{count}} часов',
-          pluralGenitive: 'около {{count}} часов'
-        },
-        future: {
-          singularNominative: 'приблизительно через {{count}} час',
-          singularGenitive: 'приблизительно через {{count}} часа',
-          pluralGenitive: 'приблизительно через {{count}} часов'
-        }
-      }),
-      xHours: buildLocalizeTokenFn({
-        regular: {
-          singularNominative: '{{count}} час',
-          singularGenitive: '{{count}} часа',
-          pluralGenitive: '{{count}} часов'
-        }
-      }),
-      xDays: buildLocalizeTokenFn({
-        regular: {
-          singularNominative: '{{count}} день',
-          singularGenitive: '{{count}} дня',
-          pluralGenitive: '{{count}} дней'
-        }
-      }),
-      aboutXWeeks: buildLocalizeTokenFn({
-        regular: {
-          singularNominative: 'около {{count}} недели',
-          singularGenitive: 'около {{count}} недель',
-          pluralGenitive: 'около {{count}} недель'
-        },
-        future: {
-          singularNominative: 'приблизительно через {{count}} неделю',
-          singularGenitive: 'приблизительно через {{count}} недели',
-          pluralGenitive: 'приблизительно через {{count}} недель'
-        }
-      }),
-      xWeeks: buildLocalizeTokenFn({
-        regular: {
-          singularNominative: '{{count}} неделя',
-          singularGenitive: '{{count}} недели',
-          pluralGenitive: '{{count}} недель'
-        }
-      }),
-      aboutXMonths: buildLocalizeTokenFn({
-        regular: {
-          singularNominative: 'около {{count}} месяца',
-          singularGenitive: 'около {{count}} месяцев',
-          pluralGenitive: 'около {{count}} месяцев'
-        },
-        future: {
-          singularNominative: 'приблизительно через {{count}} месяц',
-          singularGenitive: 'приблизительно через {{count}} месяца',
-          pluralGenitive: 'приблизительно через {{count}} месяцев'
-        }
-      }),
-      xMonths: buildLocalizeTokenFn({
-        regular: {
-          singularNominative: '{{count}} месяц',
-          singularGenitive: '{{count}} месяца',
-          pluralGenitive: '{{count}} месяцев'
-        }
-      }),
-      aboutXYears: buildLocalizeTokenFn({
-        regular: {
-          singularNominative: 'около {{count}} года',
-          singularGenitive: 'около {{count}} лет',
-          pluralGenitive: 'около {{count}} лет'
-        },
-        future: {
-          singularNominative: 'приблизительно через {{count}} год',
-          singularGenitive: 'приблизительно через {{count}} года',
-          pluralGenitive: 'приблизительно через {{count}} лет'
-        }
-      }),
-      xYears: buildLocalizeTokenFn({
-        regular: {
-          singularNominative: '{{count}} год',
-          singularGenitive: '{{count}} года',
-          pluralGenitive: '{{count}} лет'
-        }
-      }),
-      overXYears: buildLocalizeTokenFn({
-        regular: {
-          singularNominative: 'больше {{count}} года',
-          singularGenitive: 'больше {{count}} лет',
-          pluralGenitive: 'больше {{count}} лет'
-        },
-        future: {
-          singularNominative: 'больше, чем через {{count}} год',
-          singularGenitive: 'больше, чем через {{count}} года',
-          pluralGenitive: 'больше, чем через {{count}} лет'
-        }
-      }),
-      almostXYears: buildLocalizeTokenFn({
-        regular: {
-          singularNominative: 'почти {{count}} год',
-          singularGenitive: 'почти {{count}} года',
-          pluralGenitive: 'почти {{count}} лет'
-        },
-        future: {
-          singularNominative: 'почти через {{count}} год',
-          singularGenitive: 'почти через {{count}} года',
-          pluralGenitive: 'почти через {{count}} лет'
-        }
-      })
-    };
-    function formatDistance(token, count, options) {
-      options = options || {};
-      return formatDistanceLocale[token](count, options);
-    }
-
-    var dateFormats = {
-      full: "EEEE, d MMMM y 'г.'",
-      long: "d MMMM y 'г.'",
-      medium: "d MMM y 'г.'",
-      short: 'dd.MM.y'
-    };
-    var timeFormats = {
-      full: 'H:mm:ss zzzz',
-      long: 'H:mm:ss z',
-      medium: 'H:mm:ss',
-      short: 'H:mm'
-    };
-    var dateTimeFormats = {
-      any: '{{date}}, {{time}}'
-    };
-    var formatLong = {
-      date: buildFormatLongFn({
-        formats: dateFormats,
-        defaultWidth: 'full'
-      }),
-      time: buildFormatLongFn({
-        formats: timeFormats,
-        defaultWidth: 'full'
-      }),
-      dateTime: buildFormatLongFn({
-        formats: dateTimeFormats,
-        defaultWidth: 'any'
-      })
-    };
-
-    var accusativeWeekdays = ['воскресенье', 'понедельник', 'вторник', 'среду', 'четверг', 'пятницу', 'субботу'];
-
-    function lastWeek(day) {
-      var weekday = accusativeWeekdays[day];
-
-      switch (day) {
-        case 0:
-          return "'в прошлое " + weekday + " в' p";
-
-        case 1:
-        case 2:
-        case 4:
-          return "'в прошлый " + weekday + " в' p";
-
-        case 3:
-        case 5:
-        case 6:
-          return "'в прошлую " + weekday + " в' p";
-      }
-    }
-
-    function thisWeek(day) {
-      var weekday = accusativeWeekdays[day];
-
-      if (day === 2
-      /* Tue */
-      ) {
-          return "'во " + weekday + " в' p";
-        } else {
-        return "'в " + weekday + " в' p";
-      }
-    }
-
-    function nextWeek(day) {
-      var weekday = accusativeWeekdays[day];
-
-      switch (day) {
-        case 0:
-          return "'в следующее " + weekday + " в' p";
-
-        case 1:
-        case 2:
-        case 4:
-          return "'в следующий " + weekday + " в' p";
-
-        case 3:
-        case 5:
-        case 6:
-          return "'в следующую " + weekday + " в' p";
-      }
-    }
-
-    var formatRelativeLocale = {
-      lastWeek: function (date, baseDate, options) {
-        var day = date.getUTCDay();
-
-        if (isSameUTCWeek(date, baseDate, options)) {
-          return thisWeek(day);
-        } else {
-          return lastWeek(day);
-        }
-      },
-      yesterday: "'вчера в' p",
-      today: "'сегодня в' p",
-      tomorrow: "'завтра в' p",
-      nextWeek: function (date, baseDate, options) {
-        var day = date.getUTCDay();
-
-        if (isSameUTCWeek(date, baseDate, options)) {
-          return thisWeek(day);
-        } else {
-          return nextWeek(day);
-        }
-      },
-      other: 'P'
-    };
-    function formatRelative(token, date, baseDate, options) {
-      var format = formatRelativeLocale[token];
-
-      if (typeof format === 'function') {
-        return format(date, baseDate, options);
-      }
-
-      return format;
-    }
-
-    var eraValues = {
-      narrow: ['до н.э.', 'н.э.'],
-      abbreviated: ['до н. э.', 'н. э.'],
-      wide: ['до нашей эры', 'нашей эры']
-    };
-    var quarterValues = {
-      narrow: ['1', '2', '3', '4'],
-      abbreviated: ['1-й кв.', '2-й кв.', '3-й кв.', '4-й кв.'],
-      wide: ['1-й квартал', '2-й квартал', '3-й квартал', '4-й квартал']
-    };
-    var monthValues = {
-      narrow: ['Я', 'Ф', 'М', 'А', 'М', 'И', 'И', 'А', 'С', 'О', 'Н', 'Д'],
-      abbreviated: ['янв.', 'фев.', 'март', 'апр.', 'май', 'июнь', 'июль', 'авг.', 'сент.', 'окт.', 'нояб.', 'дек.'],
-      wide: ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь']
-    };
-    var formattingMonthValues = {
-      narrow: ['Я', 'Ф', 'М', 'А', 'М', 'И', 'И', 'А', 'С', 'О', 'Н', 'Д'],
-      abbreviated: ['янв.', 'фев.', 'мар.', 'апр.', 'мая', 'июн.', 'июл.', 'авг.', 'сент.', 'окт.', 'нояб.', 'дек.'],
-      wide: ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
-    };
-    var dayValues = {
-      narrow: ['В', 'П', 'В', 'С', 'Ч', 'П', 'С'],
-      short: ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'],
-      abbreviated: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'суб'],
-      wide: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота']
-    };
-    var dayPeriodValues = {
-      narrow: {
-        am: 'ДП',
-        pm: 'ПП',
-        midnight: 'полн.',
-        noon: 'полд.',
-        morning: 'утро',
-        afternoon: 'день',
-        evening: 'веч.',
-        night: 'ночь'
-      },
-      abbreviated: {
-        am: 'ДП',
-        pm: 'ПП',
-        midnight: 'полн.',
-        noon: 'полд.',
-        morning: 'утро',
-        afternoon: 'день',
-        evening: 'веч.',
-        night: 'ночь'
-      },
-      wide: {
-        am: 'ДП',
-        pm: 'ПП',
-        midnight: 'полночь',
-        noon: 'полдень',
-        morning: 'утро',
-        afternoon: 'день',
-        evening: 'вечер',
-        night: 'ночь'
-      }
-    };
-    var formattingDayPeriodValues = {
-      narrow: {
-        am: 'ДП',
-        pm: 'ПП',
-        midnight: 'полн.',
-        noon: 'полд.',
-        morning: 'утра',
-        afternoon: 'дня',
-        evening: 'веч.',
-        night: 'ночи'
-      },
-      abbreviated: {
-        am: 'ДП',
-        pm: 'ПП',
-        midnight: 'полн.',
-        noon: 'полд.',
-        morning: 'утра',
-        afternoon: 'дня',
-        evening: 'веч.',
-        night: 'ночи'
-      },
-      wide: {
-        am: 'ДП',
-        pm: 'ПП',
-        midnight: 'полночь',
-        noon: 'полдень',
-        morning: 'утра',
-        afternoon: 'дня',
-        evening: 'вечера',
-        night: 'ночи'
-      }
-    };
-
-    function ordinalNumber(dirtyNumber, dirtyOptions) {
-      var options = dirtyOptions || {};
-      var unit = String(options.unit);
-      var suffix;
-
-      if (unit === 'date') {
-        suffix = '-е';
-      } else if (unit === 'week' || unit === 'minute' || unit === 'second') {
-        suffix = '-я';
-      } else {
-        suffix = '-й';
-      }
-
-      return dirtyNumber + suffix;
-    }
-
-    var localize = {
-      ordinalNumber: ordinalNumber,
-      era: buildLocalizeFn({
-        values: eraValues,
-        defaultWidth: 'wide'
-      }),
-      quarter: buildLocalizeFn({
-        values: quarterValues,
-        defaultWidth: 'wide',
-        argumentCallback: function (quarter) {
-          return Number(quarter) - 1;
-        }
-      }),
-      month: buildLocalizeFn({
-        values: monthValues,
-        defaultWidth: 'wide',
-        formattingValues: formattingMonthValues,
-        defaultFormattingWidth: 'wide'
-      }),
-      day: buildLocalizeFn({
-        values: dayValues,
-        defaultWidth: 'wide'
-      }),
-      dayPeriod: buildLocalizeFn({
-        values: dayPeriodValues,
-        defaultWidth: 'any',
-        formattingValues: formattingDayPeriodValues,
-        defaultFormattingWidth: 'wide'
-      })
-    };
-
-    var matchOrdinalNumberPattern = /^(\d+)(-?(е|я|й|ое|ье|ая|ья|ый|ой|ий|ый))?/i;
-    var parseOrdinalNumberPattern = /\d+/i;
-    var matchEraPatterns = {
-      narrow: /^((до )?н\.?\s?э\.?)/i,
-      abbreviated: /^((до )?н\.?\s?э\.?)/i,
-      wide: /^(до нашей эры|нашей эры|наша эра)/i
-    };
-    var parseEraPatterns = {
-      any: [/^д/i, /^н/i]
-    };
-    var matchQuarterPatterns = {
-      narrow: /^[1234]/i,
-      abbreviated: /^[1234](-?[ыои]?й?)? кв.?/i,
-      wide: /^[1234](-?[ыои]?й?)? квартал/i
-    };
-    var parseQuarterPatterns = {
-      any: [/1/i, /2/i, /3/i, /4/i]
-    };
-    var matchMonthPatterns = {
-      narrow: /^[яфмаисонд]/i,
-      abbreviated: /^(янв|фев|март?|апр|ма[йя]|июн[ья]?|июл[ья]?|авг|сент?|окт|нояб?|дек)\.?/i,
-      wide: /^(январ[ья]|феврал[ья]|марта?|апрел[ья]|ма[йя]|июн[ья]|июл[ья]|августа?|сентябр[ья]|октябр[ья]|октябр[ья]|ноябр[ья]|декабр[ья])/i
-    };
-    var parseMonthPatterns = {
-      narrow: [/^я/i, /^ф/i, /^м/i, /^а/i, /^м/i, /^и/i, /^и/i, /^а/i, /^с/i, /^о/i, /^н/i, /^я/i],
-      any: [/^я/i, /^ф/i, /^мар/i, /^ап/i, /^ма[йя]/i, /^июн/i, /^июл/i, /^ав/i, /^с/i, /^о/i, /^н/i, /^д/i]
-    };
-    var matchDayPatterns = {
-      narrow: /^[впсч]/i,
-      short: /^(вс|во|пн|по|вт|ср|чт|че|пт|пя|сб|су)\.?/i,
-      abbreviated: /^(вск|вос|пнд|пон|втр|вто|срд|сре|чтв|чет|птн|пят|суб).?/i,
-      wide: /^(воскресень[ея]|понедельника?|вторника?|сред[аы]|четверга?|пятниц[аы]|суббот[аы])/i
-    };
-    var parseDayPatterns = {
-      narrow: [/^в/i, /^п/i, /^в/i, /^с/i, /^ч/i, /^п/i, /^с/i],
-      any: [/^в[ос]/i, /^п[он]/i, /^в/i, /^ср/i, /^ч/i, /^п[ят]/i, /^с[уб]/i]
-    };
-    var matchDayPeriodPatterns = {
-      narrow: /^([дп]п|полн\.?|полд\.?|утр[оа]|день|дня|веч\.?|ноч[ьи])/i,
-      abbreviated: /^([дп]п|полн\.?|полд\.?|утр[оа]|день|дня|веч\.?|ноч[ьи])/i,
-      wide: /^([дп]п|полночь|полдень|утр[оа]|день|дня|вечера?|ноч[ьи])/i
-    };
-    var parseDayPeriodPatterns = {
-      any: {
-        am: /^дп/i,
-        pm: /^пп/i,
-        midnight: /^полн/i,
-        noon: /^полд/i,
-        morning: /^у/i,
-        afternoon: /^д[ен]/i,
-        evening: /^в/i,
-        night: /^н/i
-      }
-    };
-    var match = {
-      ordinalNumber: buildMatchPatternFn({
-        matchPattern: matchOrdinalNumberPattern,
-        parsePattern: parseOrdinalNumberPattern,
-        valueCallback: function (value) {
-          return parseInt(value, 10);
-        }
-      }),
-      era: buildMatchFn({
-        matchPatterns: matchEraPatterns,
-        defaultMatchWidth: 'wide',
-        parsePatterns: parseEraPatterns,
-        defaultParseWidth: 'any'
-      }),
-      quarter: buildMatchFn({
-        matchPatterns: matchQuarterPatterns,
-        defaultMatchWidth: 'wide',
-        parsePatterns: parseQuarterPatterns,
-        defaultParseWidth: 'any',
-        valueCallback: function (index) {
-          return index + 1;
-        }
-      }),
-      month: buildMatchFn({
-        matchPatterns: matchMonthPatterns,
-        defaultMatchWidth: 'wide',
-        parsePatterns: parseMonthPatterns,
-        defaultParseWidth: 'any'
-      }),
-      day: buildMatchFn({
-        matchPatterns: matchDayPatterns,
-        defaultMatchWidth: 'wide',
-        parsePatterns: parseDayPatterns,
-        defaultParseWidth: 'any'
-      }),
-      dayPeriod: buildMatchFn({
-        matchPatterns: matchDayPeriodPatterns,
-        defaultMatchWidth: 'wide',
-        parsePatterns: parseDayPeriodPatterns,
-        defaultParseWidth: 'any'
-      })
-    };
-
-    /**
-     * @type {Locale}
-     * @category Locales
-     * @summary Russian locale.
-     * @language Russian
-     * @iso-639-2 rus
-     * @author Sasha Koss [@kossnocorp]{@link https://github.com/kossnocorp}
-     * @author Lesha Koss [@leshakoss]{@link https://github.com/leshakoss}
-     */
-
-    var locale = {
-      code: 'ru',
-      formatDistance: formatDistance,
-      formatLong: formatLong,
-      formatRelative: formatRelative,
-      localize: localize,
-      match: match,
-      options: {
-        weekStartsOn: 1
-        /* Monday */
-        ,
-        firstWeekContainsDate: 1
-      }
-    };
-
     var css_248z$9 = "";
     styleInject(css_248z$9);
 
     /* src/Comps/period.svelte generated by Svelte v3.38.3 */
     const file$d = "src/Comps/period.svelte";
 
-    // (102:12) {#if !errMessage}
+    // (97:12) {#if !errMessage}
     function create_if_block_1$4(ctx) {
     	let div;
     	let button;
@@ -8203,17 +7591,17 @@ var app = (function () {
     			span1 = element("span");
     			span1.textContent = "Обновить";
     			attr_dev(span0, "class", "icon");
-    			add_location(span0, file$d, 110, 24, 3533);
-    			add_location(span1, file$d, 114, 24, 3671);
-    			attr_dev(button, "class", "button is-small is-info  svelte-ha5gs8");
+    			add_location(span0, file$d, 105, 24, 3163);
+    			add_location(span1, file$d, 109, 24, 3301);
+    			attr_dev(button, "class", "button is-small is-info  svelte-e4de5u");
 
     			button.disabled = button_disabled_value = /*errMessage*/ ctx[2] || !/*$depart_id*/ ctx[3] || !/*$teacher_id*/ ctx[4]
     			? true
     			: false;
 
-    			add_location(button, file$d, 103, 20, 3219);
+    			add_location(button, file$d, 98, 20, 2849);
     			set_style(div, "padding", "5px 0");
-    			add_location(div, file$d, 102, 16, 3171);
+    			add_location(div, file$d, 97, 16, 2801);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -8257,14 +7645,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$4.name,
     		type: "if",
-    		source: "(102:12) {#if !errMessage}",
+    		source: "(97:12) {#if !errMessage}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (122:8) {#if errMessage}
+    // (117:8) {#if errMessage}
     function create_if_block$6(ctx) {
     	let span;
     	let t;
@@ -8273,8 +7661,8 @@ var app = (function () {
     		c: function create() {
     			span = element("span");
     			t = text(/*errMessage*/ ctx[2]);
-    			attr_dev(span, "class", "errmessage svelte-ha5gs8");
-    			add_location(span, file$d, 122, 12, 3855);
+    			attr_dev(span, "class", "errmessage svelte-e4de5u");
+    			add_location(span, file$d, 117, 12, 3485);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -8292,7 +7680,7 @@ var app = (function () {
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(122:8) {#if errMessage}",
+    		source: "(117:8) {#if errMessage}",
     		ctx
     	});
 
@@ -8344,32 +7732,32 @@ var app = (function () {
     			t6 = space();
     			div7 = element("div");
     			if (if_block1) if_block1.c();
-    			attr_dev(div0, "class", "calendar-txt svelte-ha5gs8");
-    			add_location(div0, file$d, 73, 12, 2214);
+    			attr_dev(div0, "class", "calendar-txt svelte-e4de5u");
+    			add_location(div0, file$d, 68, 12, 1887);
     			attr_dev(input0, "type", "date");
     			attr_dev(input0, "min", /*frmMinStartDate*/ ctx[5]);
     			attr_dev(input0, "max", /*frmMaxStartDate*/ ctx[6]);
     			input0.required = true;
-    			attr_dev(input0, "class", "input is-success svelte-ha5gs8");
-    			add_location(input0, file$d, 75, 16, 2296);
-    			add_location(div1, file$d, 74, 12, 2274);
-    			add_location(div2, file$d, 71, 8, 2110);
-    			attr_dev(div3, "class", "calendar-txt svelte-ha5gs8");
-    			add_location(div3, file$d, 88, 12, 2715);
+    			attr_dev(input0, "class", "input is-success svelte-e4de5u");
+    			add_location(input0, file$d, 70, 16, 1969);
+    			add_location(div1, file$d, 69, 12, 1947);
+    			add_location(div2, file$d, 67, 8, 1869);
+    			attr_dev(div3, "class", "calendar-txt svelte-e4de5u");
+    			add_location(div3, file$d, 83, 12, 2345);
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "min", /*frmMinEndDate*/ ctx[7]);
     			attr_dev(input1, "max", /*frmMaxEndDate*/ ctx[8]);
     			input1.required = true;
-    			attr_dev(input1, "class", "input is-success svelte-ha5gs8");
-    			add_location(input1, file$d, 90, 16, 2796);
-    			add_location(div4, file$d, 89, 12, 2774);
-    			add_location(div5, file$d, 87, 8, 2697);
-    			attr_dev(div6, "class", "calendar-inputs svelte-ha5gs8");
-    			add_location(div6, file$d, 70, 4, 2072);
-    			attr_dev(div7, "class", "error-row svelte-ha5gs8");
-    			add_location(div7, file$d, 120, 4, 3794);
-    			attr_dev(div8, "class", "calendar-wrapper svelte-ha5gs8");
-    			add_location(div8, file$d, 67, 0, 1993);
+    			attr_dev(input1, "class", "input is-success svelte-e4de5u");
+    			add_location(input1, file$d, 85, 16, 2426);
+    			add_location(div4, file$d, 84, 12, 2404);
+    			add_location(div5, file$d, 82, 8, 2327);
+    			attr_dev(div6, "class", "calendar-inputs svelte-e4de5u");
+    			add_location(div6, file$d, 66, 4, 1831);
+    			attr_dev(div7, "class", "error-row svelte-e4de5u");
+    			add_location(div7, file$d, 115, 4, 3424);
+    			attr_dev(div8, "class", "calendar-wrapper svelte-e4de5u");
+    			add_location(div8, file$d, 65, 0, 1796);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8505,8 +7893,8 @@ var app = (function () {
     	let currdate = new Date();
     	let startDate = currdate.setDate(1); //1-й день тек. мес.
     	let frmStartDate = formatDate(startDate);
-    	let frmMinStartDate = formatDate(currdate.setDate(1)); //formatDate(add(currdate.setDate(1), { months: -1 }));
-    	let frmMaxStartDate = formatDate(lastDayOfMonth(currdate)); //formatDate(add(currdate.setDate(1), { months: 2 }));
+    	let frmMinStartDate = formatDate(currdate.setDate(1));
+    	let frmMaxStartDate = formatDate(lastDayOfMonth(currdate));
     	let endDate = currdate.setDate(lastDayOfMonth(currdate).getDate()); //посл. день тек. мес.
     	let frmEndDate = formatDate(endDate);
     	let frmMinEndDate = formatDate(currdate.setDate(2));
@@ -8564,7 +7952,6 @@ var app = (function () {
     		add,
     		lastDayOfMonth,
     		format,
-    		ru: locale,
     		Fa,
     		faSync,
     		formatDate,
@@ -8662,7 +8049,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (41:10) {#if $data.Departs}
+    // (37:8) {#if $data.Departs}
     function create_if_block_1$3(ctx) {
     	let each_1_anchor;
     	let each_value_1 = /*$data*/ ctx[2].Departs;
@@ -8723,14 +8110,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(41:10) {#if $data.Departs}",
+    		source: "(37:8) {#if $data.Departs}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (42:12) {#each $data.Departs as item}
+    // (38:10) {#each $data.Departs as item}
     function create_each_block_1$2(ctx) {
     	let option;
     	let t0_value = /*item*/ ctx[14].DepartName + "";
@@ -8745,7 +8132,7 @@ var app = (function () {
     			t1 = space();
     			option.__value = option_value_value = /*item*/ ctx[14].Depart_ID;
     			option.value = option.__value;
-    			add_location(option, file$c, 42, 14, 1061);
+    			add_location(option, file$c, 38, 12, 969);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -8769,14 +8156,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(42:12) {#each $data.Departs as item}",
+    		source: "(38:10) {#each $data.Departs as item}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (63:10) {#if $data.Teachers}
+    // (59:8) {#if $data.Teachers}
     function create_if_block$5(ctx) {
     	let each_1_anchor;
     	let each_value = /*$data*/ ctx[2].Teachers.filter(/*func*/ ctx[9]);
@@ -8837,14 +8224,14 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(63:10) {#if $data.Teachers}",
+    		source: "(59:8) {#if $data.Teachers}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:12) {#each $data.Teachers.filter((t) => t.Depart_ID == selDep_ID) as item}
+    // (60:10) {#each $data.Teachers.filter((t) => t.Depart_ID == selDep_ID) as item}
     function create_each_block$2(ctx) {
     	let option;
     	let t0_value = /*item*/ ctx[14].FIO + "";
@@ -8859,7 +8246,7 @@ var app = (function () {
     			t1 = space();
     			option.__value = option_value_value = /*item*/ ctx[14].Emp_ID;
     			option.value = option.__value;
-    			add_location(option, file$c, 64, 14, 1719);
+    			add_location(option, file$c, 60, 12, 1585);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -8883,7 +8270,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(64:12) {#each $data.Teachers.filter((t) => t.Depart_ID == selDep_ID) as item}",
+    		source: "(60:10) {#each $data.Teachers.filter((t) => t.Depart_ID == selDep_ID) as item}",
     		ctx
     	});
 
@@ -8891,7 +8278,6 @@ var app = (function () {
     }
 
     function create_fragment$c(ctx) {
-    	let div6;
     	let div2;
     	let label0;
     	let t1;
@@ -8914,7 +8300,6 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div6 = element("div");
     			div2 = element("div");
     			label0 = element("label");
     			label0.textContent = "Кафедра:";
@@ -8937,45 +8322,43 @@ var app = (function () {
     			option1.textContent = "Выберите преподавателя";
     			if (if_block1) if_block1.c();
     			attr_dev(label0, "class", "label svelte-1v2pg6m");
-    			add_location(label0, file$c, 31, 4, 663);
+    			add_location(label0, file$c, 27, 2, 593);
     			option0.__value = "null";
     			option0.value = option0.__value;
     			option0.selected = true;
     			option0.disabled = true;
-    			add_location(option0, file$c, 39, 10, 910);
+    			add_location(option0, file$c, 35, 8, 824);
     			attr_dev(select0, "class", "svelte-1v2pg6m");
     			if (/*selDep_ID*/ ctx[0] === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[7].call(select0));
-    			add_location(select0, file$c, 34, 8, 773);
+    			add_location(select0, file$c, 30, 6, 697);
     			attr_dev(div0, "class", "select is-success svelte-1v2pg6m");
-    			add_location(div0, file$c, 33, 6, 733);
+    			add_location(div0, file$c, 29, 4, 659);
     			attr_dev(div1, "class", "control");
-    			add_location(div1, file$c, 32, 4, 705);
+    			add_location(div1, file$c, 28, 2, 633);
     			attr_dev(div2, "class", "field svelte-1v2pg6m");
-    			add_location(div2, file$c, 30, 2, 639);
+    			add_location(div2, file$c, 26, 0, 571);
     			attr_dev(label1, "class", "label svelte-1v2pg6m");
-    			add_location(label1, file$c, 53, 4, 1265);
+    			add_location(label1, file$c, 49, 2, 1153);
     			option1.__value = "null";
     			option1.value = option1.__value;
     			option1.selected = true;
     			option1.disabled = true;
-    			add_location(option1, file$c, 61, 10, 1520);
+    			add_location(option1, file$c, 57, 8, 1392);
     			attr_dev(select1, "class", "svelte-1v2pg6m");
     			if (/*selTchr_ID*/ ctx[1] === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[10].call(select1));
-    			add_location(select1, file$c, 56, 8, 1381);
+    			add_location(select1, file$c, 52, 6, 1263);
     			attr_dev(div3, "class", "select is-success svelte-1v2pg6m");
-    			add_location(div3, file$c, 55, 6, 1341);
+    			add_location(div3, file$c, 51, 4, 1225);
     			attr_dev(div4, "class", "control");
-    			add_location(div4, file$c, 54, 4, 1313);
+    			add_location(div4, file$c, 50, 2, 1199);
     			attr_dev(div5, "class", "field svelte-1v2pg6m");
-    			add_location(div5, file$c, 52, 2, 1241);
-    			add_location(div6, file$c, 28, 0, 606);
+    			add_location(div5, file$c, 48, 0, 1131);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div6, anchor);
-    			append_dev(div6, div2);
+    			insert_dev(target, div2, anchor);
     			append_dev(div2, label0);
     			append_dev(div2, t1);
     			append_dev(div2, div1);
@@ -8984,8 +8367,8 @@ var app = (function () {
     			append_dev(select0, option0);
     			if (if_block0) if_block0.m(select0, null);
     			select_option(select0, /*selDep_ID*/ ctx[0]);
-    			append_dev(div6, t3);
-    			append_dev(div6, div5);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, div5, anchor);
     			append_dev(div5, label1);
     			append_dev(div5, t5);
     			append_dev(div5, div4);
@@ -9046,8 +8429,10 @@ var app = (function () {
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div6);
+    			if (detaching) detach_dev(div2);
     			if (if_block0) if_block0.d();
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(div5);
     			if (if_block1) if_block1.d();
     			mounted = false;
     			run_all(dispose);
@@ -9598,7 +8983,7 @@ var app = (function () {
     		c: function create() {
     			span = element("span");
     			span.textContent = "Сегодня";
-    			attr_dev(span, "class", "today-lbl svelte-1xko03a");
+    			attr_dev(span, "class", "today-lbl svelte-172bt46");
     			add_location(span, file$a, 51, 32, 1950);
     		},
     		m: function mount(target, anchor) {
@@ -9666,23 +9051,23 @@ var app = (function () {
     			t7 = space();
     			div4 = element("div");
     			t8 = text(t8_value);
-    			attr_dev(div0, "class", "time-start svelte-1xko03a");
+    			attr_dev(div0, "class", "time-start svelte-172bt46");
     			add_location(div0, file$a, 56, 32, 2197);
-    			attr_dev(span0, "class", "svelte-1xko03a");
+    			attr_dev(span0, "class", "svelte-172bt46");
     			add_location(span0, file$a, 60, 36, 2406);
-    			attr_dev(div1, "class", "subj-name svelte-1xko03a");
+    			attr_dev(div1, "class", "subj-name svelte-172bt46");
     			add_location(div1, file$a, 59, 32, 2346);
-    			attr_dev(span1, "class", "svelte-1xko03a");
+    			attr_dev(span1, "class", "svelte-172bt46");
     			add_location(span1, file$a, 63, 36, 2563);
-    			attr_dev(div2, "class", "kind svelte-1xko03a");
+    			attr_dev(div2, "class", "kind svelte-172bt46");
     			add_location(div2, file$a, 62, 32, 2508);
-    			attr_dev(span2, "class", "svelte-1xko03a");
+    			attr_dev(span2, "class", "svelte-172bt46");
     			add_location(span2, file$a, 68, 36, 2799);
-    			attr_dev(div3, "class", "group svelte-1xko03a");
+    			attr_dev(div3, "class", "group svelte-172bt46");
     			add_location(div3, file$a, 67, 32, 2743);
-    			attr_dev(div4, "class", "aud svelte-1xko03a");
+    			attr_dev(div4, "class", "aud svelte-172bt46");
     			add_location(div4, file$a, 72, 32, 2975);
-    			attr_dev(div5, "class", "pair-wrapper svelte-1xko03a");
+    			attr_dev(div5, "class", "pair-wrapper svelte-172bt46");
     			add_location(div5, file$a, 55, 28, 2138);
     		},
     		m: function mount(target, anchor) {
@@ -9774,7 +9159,7 @@ var app = (function () {
     			add_location(span0, file$a, 45, 32, 1702);
     			add_location(span1, file$a, 43, 28, 1616);
     			attr_dev(div, "id", div_id_value = toEnDate(/*day*/ ctx[8].DatePair));
-    			attr_dev(div, "class", div_class_value = "day " + (/*day*/ ctx[8].DayWeek == "Суббота" ? "sbt" : "") + "  " + (isToday(/*day*/ ctx[8].DatePair) ? "today" : "") + " svelte-1xko03a");
+    			attr_dev(div, "class", div_class_value = "day " + (/*day*/ ctx[8].DayWeek == "Суббота" ? "sbt" : "") + "  " + (isToday(/*day*/ ctx[8].DatePair) ? "today" : "") + " svelte-172bt46");
     			add_location(div, file$a, 37, 24, 1317);
     		},
     		m: function mount(target, anchor) {
@@ -9814,7 +9199,7 @@ var app = (function () {
     				attr_dev(div, "id", div_id_value);
     			}
 
-    			if (dirty & /*$scheddata*/ 2 && div_class_value !== (div_class_value = "day " + (/*day*/ ctx[8].DayWeek == "Суббота" ? "sbt" : "") + "  " + (isToday(/*day*/ ctx[8].DatePair) ? "today" : "") + " svelte-1xko03a")) {
+    			if (dirty & /*$scheddata*/ 2 && div_class_value !== (div_class_value = "day " + (/*day*/ ctx[8].DayWeek == "Суббота" ? "sbt" : "") + "  " + (isToday(/*day*/ ctx[8].DatePair) ? "today" : "") + " svelte-172bt46")) {
     				attr_dev(div, "class", div_class_value);
     			}
 
@@ -9902,12 +9287,12 @@ var app = (function () {
     			t6 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
-    			attr_dev(span0, "class", "svelte-1xko03a");
+    			attr_dev(span0, "class", "svelte-172bt46");
     			add_location(span0, file$a, 28, 16, 896);
-    			attr_dev(span1, "class", "svelte-1xko03a");
+    			attr_dev(span1, "class", "svelte-172bt46");
     			add_location(span1, file$a, 29, 16, 940);
     			attr_dev(div, "id", /*i*/ ctx[7] + "-month");
-    			attr_dev(div, "class", "month svelte-1xko03a");
+    			attr_dev(div, "class", "month svelte-172bt46");
     			add_location(div, file$a, 23, 12, 741);
     		},
     		m: function mount(target, anchor) {

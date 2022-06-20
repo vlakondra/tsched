@@ -9,11 +9,9 @@
 
     import { add, lastDayOfMonth, format } from "date-fns";
     //https://date-fns.org/v2.28.0/docs/add
-    import { ru } from "date-fns/locale";
 
     import Fa from "svelte-fa";
     import { faSync } from "@fortawesome/free-solid-svg-icons";
-    // import { depart_id } from "./store";
 
     const formatDate = (d) => {
         let frm = "yyyy-MM-dd";
@@ -29,8 +27,8 @@
     let startDate = currdate.setDate(1); //1-й день тек. мес.
     let frmStartDate = formatDate(startDate);
 
-    let frmMinStartDate = formatDate(currdate.setDate(1)); //formatDate(add(currdate.setDate(1), { months: -1 }));
-    let frmMaxStartDate = formatDate(lastDayOfMonth(currdate)); //formatDate(add(currdate.setDate(1), { months: 2 }));
+    let frmMinStartDate = formatDate(currdate.setDate(1));
+    let frmMaxStartDate = formatDate(lastDayOfMonth(currdate));
 
     let endDate = currdate.setDate(lastDayOfMonth(currdate).getDate()); //посл. день тек. мес.
     let frmEndDate = formatDate(endDate);
@@ -66,11 +64,8 @@
 </script>
 
 <div class="calendar-wrapper">
-    <!-- {$depart_id} -- {$teacher_id} -->
-
     <div class="calendar-inputs">
         <div>
-            <!-- <div class="calendar-txt calendar-caption" style="">Период</div> -->
             <div class="calendar-txt">Начало периода:</div>
             <div>
                 <input
@@ -84,7 +79,7 @@
                 />
             </div>
         </div>
-        <!-- <div style="width:20px" /> -->
+
         <div>
             <div class="calendar-txt">Конец периода:</div>
             <div>
@@ -147,7 +142,6 @@
 
         input {
             width: 120px !important;
-
             padding: 0 3px;
             font-size: 0.95rem;
             font-family: Roboto;
@@ -164,7 +158,6 @@
         }
         input {
             width: 115px !important;
-
             padding: 0 3px;
             font-size: 0.85rem;
             font-family: Roboto;

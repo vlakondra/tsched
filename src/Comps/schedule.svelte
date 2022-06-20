@@ -122,7 +122,6 @@
     }
 
     .day {
-        /* background-color: rgb(136, 120, 243); */
         display: flex;
         justify-content: space-between;
         background-color: #7bdc7f;
@@ -135,58 +134,18 @@
     .pair-wrapper {
         display: grid;
         grid-template-columns: 65px 1fr 80px 160px 65px;
-        /* ??? */
         gap: 0.8px 0.8px;
-
-        /* grid-template-areas: "timestart subjname kind group aud"; */
-        /* border-bottom: 1px solid wheat; */
-        /* font-weight: 300; */
-        /* ??? сделать фон и рамка на подложке или в этом классе */
-        /* background-color: rgb(215, 235, 250); */
-
-        /* background-color: blue !important; */
         margin-bottom: 1px;
     }
 
-    /* .time-start {
-        grid-area: timestart;
-    }
-    .subj-name {
-        grid-area: subjname;
-    }
-    .kind {
-        grid-area: kind;
-    }
-    .group {
-        grid-area: group;
-    }
-    .aud {
-        grid-area: aud;
-    } */
-
-    /* @media (min-width: 501px) {
-        .pair-wrapper {
-            grid-template-columns: 65px auto;
-            grid-template-areas:
-                "timestart"
-                "subjmame";
-        }
-    } */
-
     @media (min-width: 501px) {
-        /* .pair-wrapper {
-            grid-template-columns: 65px 1fr 100px 160px 65px;
-            gap: 0.8px 0.8px;
-        } */
         .subj-name {
             min-width: 160px;
         }
 
         .pair-wrapper div {
-            /* border-right: 1px solid silver; */
             padding: 5px;
-            background-color: #f1fff7; /* #e9e9f6;*/
-            /* margin-bottom: 0.8px; */
+            background-color: #f1fff7;
         }
         .pair-wrapper *:not(.subj-name) {
             text-align: left;
@@ -202,9 +161,6 @@
             grid-template-columns: 65px 1fr 65px;
             grid-template-rows: auto;
             gap: 0px 0px;
-            /* grid-template-areas:
-                "timestart subjname aud"
-                ". kind  ."; */
         }
         .time-start {
             grid-column: 1 / 2;
@@ -220,10 +176,7 @@
             padding: 5px 5px;
             letter-spacing: 0.2px;
             background-color: #368483;
-            /* background-color: #2b706f; !!*/
-            /* color: darkblue; */
             color: rgb(231, 228, 228);
-            /*background-color: #f1fff7; */
         }
         .aud {
             grid-column: 3 / 4;
@@ -252,17 +205,5 @@
             font-weight: 600;
             color: #7e7575;
         }
-        /* .group {
-            grid-area: kind;
-            margin-left: 80px;
-        } */
     }
-
-    /* .totop-box {
-        position: fixed;
-        left: 80%;
-        top: 80%;
-        cursor: pointer;
-        z-index: 99999;
-    } */
 </style>
