@@ -64,9 +64,10 @@
 			client_width.update(() => w);
 		}}
 	/>
+	<!-- deepskyblue -->
 	{#if scrolly > 100}
 		<div transition:fade on:click={scrollToTop} class="totop-box">
-			<Fa icon={faArrowCircleUp} color="deepskyblue" size="2.5x" />
+			<Fa icon={faArrowCircleUp} color="#6565ed" size="2.5x" />
 		</div>
 	{/if}
 

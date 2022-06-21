@@ -44,7 +44,8 @@
             >
                 <span> {month.Month}</span>
                 <span
-                    >{PairCount(month.DateDay)} пар; {month.DateDay.length} дней</span
+                    >Всего пар: {PairCount(month.DateDay)}; дней: {month.DateDay
+                        .length}</span
                 >
             </div>
 
