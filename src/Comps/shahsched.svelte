@@ -1,6 +1,7 @@
 <script>
     //https://www.appypie.com/design/image-color-picker/
     import { scheddata, sched_data_loaded } from "./store";
+    import Noschedule from "./noschedule.svelte";
 
     import { fade } from "svelte/transition";
     import { isToday, toEnDate } from "./util";
@@ -128,8 +129,9 @@
             {/if}
         {/each}
     </div>
+ {:else if $sched_data_loaded}
+    <Noschedule />
 {/if}
-
 <style>
     .sbt {
         background-color: rgb(246 95 95) !important;
@@ -156,7 +158,7 @@
     }
     .pair-wrapper {
         display: grid;
-        gap: 0.8px;
+        gap: 0.95px;
         min-width: 860px;
         background-color: #8b8cab;
         grid-template-columns: repeat(8, auto);
