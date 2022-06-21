@@ -138,10 +138,11 @@
     .today {
         font-size: 1.15em;
         /* color: blue; */
-        background-color: darkturquoise !important;
+        background-color: #97cfd0 !important;
     }
     .today-lbl {
-        color: white;
+        color: #fff;
+        font-weight: 600;
         letter-spacing: 1px;
     }
 
@@ -194,6 +195,8 @@
         font-weight: 400;
     }
     .subj {
+        font-family: "Roboto";
+        font-weight: normal;
         color: rgb(5 19 19);
         font-size: 0.95em;
         line-height: 1.1em;

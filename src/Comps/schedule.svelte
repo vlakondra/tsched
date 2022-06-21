@@ -91,12 +91,12 @@
     .today {
         font-size: 1.15em;
         /* color: blue; */
-        background-color: darkturquoise !important;
+        background-color: #33e5e8 !important;
     }
 
     .today-lbl {
         padding-right: 5px;
-        color: white;
+        color: #202646;
         letter-spacing: 1px;
     }
 

@@ -8983,7 +8983,7 @@ var app = (function () {
     		c: function create() {
     			span = element("span");
     			span.textContent = "Сегодня";
-    			attr_dev(span, "class", "today-lbl svelte-172bt46");
+    			attr_dev(span, "class", "today-lbl svelte-1qa2ynb");
     			add_location(span, file$a, 51, 32, 1950);
     		},
     		m: function mount(target, anchor) {
@@ -9051,23 +9051,23 @@ var app = (function () {
     			t7 = space();
     			div4 = element("div");
     			t8 = text(t8_value);
-    			attr_dev(div0, "class", "time-start svelte-172bt46");
+    			attr_dev(div0, "class", "time-start svelte-1qa2ynb");
     			add_location(div0, file$a, 56, 32, 2197);
-    			attr_dev(span0, "class", "svelte-172bt46");
+    			attr_dev(span0, "class", "svelte-1qa2ynb");
     			add_location(span0, file$a, 60, 36, 2406);
-    			attr_dev(div1, "class", "subj-name svelte-172bt46");
+    			attr_dev(div1, "class", "subj-name svelte-1qa2ynb");
     			add_location(div1, file$a, 59, 32, 2346);
-    			attr_dev(span1, "class", "svelte-172bt46");
+    			attr_dev(span1, "class", "svelte-1qa2ynb");
     			add_location(span1, file$a, 63, 36, 2563);
-    			attr_dev(div2, "class", "kind svelte-172bt46");
+    			attr_dev(div2, "class", "kind svelte-1qa2ynb");
     			add_location(div2, file$a, 62, 32, 2508);
-    			attr_dev(span2, "class", "svelte-172bt46");
+    			attr_dev(span2, "class", "svelte-1qa2ynb");
     			add_location(span2, file$a, 68, 36, 2799);
-    			attr_dev(div3, "class", "group svelte-172bt46");
+    			attr_dev(div3, "class", "group svelte-1qa2ynb");
     			add_location(div3, file$a, 67, 32, 2743);
-    			attr_dev(div4, "class", "aud svelte-172bt46");
+    			attr_dev(div4, "class", "aud svelte-1qa2ynb");
     			add_location(div4, file$a, 72, 32, 2975);
-    			attr_dev(div5, "class", "pair-wrapper svelte-172bt46");
+    			attr_dev(div5, "class", "pair-wrapper svelte-1qa2ynb");
     			add_location(div5, file$a, 55, 28, 2138);
     		},
     		m: function mount(target, anchor) {
@@ -9159,7 +9159,7 @@ var app = (function () {
     			add_location(span0, file$a, 45, 32, 1702);
     			add_location(span1, file$a, 43, 28, 1616);
     			attr_dev(div, "id", div_id_value = toEnDate(/*day*/ ctx[8].DatePair));
-    			attr_dev(div, "class", div_class_value = "day " + (/*day*/ ctx[8].DayWeek == "Суббота" ? "sbt" : "") + "  " + (isToday(/*day*/ ctx[8].DatePair) ? "today" : "") + " svelte-172bt46");
+    			attr_dev(div, "class", div_class_value = "day " + (/*day*/ ctx[8].DayWeek == "Суббота" ? "sbt" : "") + "  " + (isToday(/*day*/ ctx[8].DatePair) ? "today" : "") + " svelte-1qa2ynb");
     			add_location(div, file$a, 37, 24, 1317);
     		},
     		m: function mount(target, anchor) {
@@ -9199,7 +9199,7 @@ var app = (function () {
     				attr_dev(div, "id", div_id_value);
     			}
 
-    			if (dirty & /*$scheddata*/ 2 && div_class_value !== (div_class_value = "day " + (/*day*/ ctx[8].DayWeek == "Суббота" ? "sbt" : "") + "  " + (isToday(/*day*/ ctx[8].DatePair) ? "today" : "") + " svelte-172bt46")) {
+    			if (dirty & /*$scheddata*/ 2 && div_class_value !== (div_class_value = "day " + (/*day*/ ctx[8].DayWeek == "Суббота" ? "sbt" : "") + "  " + (isToday(/*day*/ ctx[8].DatePair) ? "today" : "") + " svelte-1qa2ynb")) {
     				attr_dev(div, "class", div_class_value);
     			}
 
@@ -9287,12 +9287,12 @@ var app = (function () {
     			t6 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
-    			attr_dev(span0, "class", "svelte-172bt46");
+    			attr_dev(span0, "class", "svelte-1qa2ynb");
     			add_location(span0, file$a, 28, 16, 896);
-    			attr_dev(span1, "class", "svelte-172bt46");
+    			attr_dev(span1, "class", "svelte-1qa2ynb");
     			add_location(span1, file$a, 29, 16, 940);
     			attr_dev(div, "id", /*i*/ ctx[7] + "-month");
-    			attr_dev(div, "class", "month svelte-172bt46");
+    			attr_dev(div, "class", "month svelte-1qa2ynb");
     			add_location(div, file$a, 23, 12, 741);
     		},
     		m: function mount(target, anchor) {
@@ -9604,7 +9604,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", "pair-wrapper svelte-1xddm7n");
+    			attr_dev(div, "class", "pair-wrapper svelte-1t5mmcd");
     			add_location(div, file$9, 37, 4, 862);
     		},
     		m: function mount(target, anchor) {
@@ -9724,7 +9724,7 @@ var app = (function () {
 
     			each1_anchor = empty();
     			set_style(div, "grid-column", "1 / 2}");
-    			attr_dev(div, "class", "timepairs svelte-1xddm7n");
+    			attr_dev(div, "class", "timepairs svelte-1t5mmcd");
     			add_location(div, file$9, 51, 16, 1324);
     		},
     		m: function mount(target, anchor) {
@@ -9847,7 +9847,7 @@ var app = (function () {
     			div = element("div");
     			t = text(t_value);
     			set_style(div, "grid-column", parseInt(/*n_pair*/ ctx[14]) + 1 + " / " + (parseInt(/*n_pair*/ ctx[14]) + 2));
-    			attr_dev(div, "class", "timepairs svelte-1xddm7n");
+    			attr_dev(div, "class", "timepairs svelte-1t5mmcd");
     			add_location(div, file$9, 54, 20, 1472);
     		},
     		m: function mount(target, anchor) {
@@ -9879,7 +9879,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			div.textContent = "Сегодня";
-    			attr_dev(div, "class", "today-lbl svelte-1xddm7n");
+    			attr_dev(div, "class", "today-lbl svelte-1t5mmcd");
     			add_location(div, file$9, 77, 28, 2403);
     		},
     		m: function mount(target, anchor) {
@@ -9937,18 +9937,18 @@ var app = (function () {
     			t5 = space();
     			div4 = element("div");
     			t6 = text(t6_value);
-    			attr_dev(div0, "class", "subj svelte-1xddm7n");
+    			attr_dev(div0, "class", "subj svelte-1t5mmcd");
     			add_location(div0, file$9, 104, 36, 3555);
-    			attr_dev(div1, "class", "aud svelte-1xddm7n");
+    			attr_dev(div1, "class", "aud svelte-1t5mmcd");
     			add_location(div1, file$9, 109, 40, 3798);
-    			attr_dev(div2, "class", "kind-load svelte-1xddm7n");
+    			attr_dev(div2, "class", "kind-load svelte-1t5mmcd");
     			add_location(div2, file$9, 112, 40, 3982);
-    			attr_dev(div3, "class", "aud-wrapper svelte-1xddm7n");
+    			attr_dev(div3, "class", "aud-wrapper svelte-1t5mmcd");
     			add_location(div3, file$9, 108, 36, 3732);
-    			attr_dev(div4, "class", "groups svelte-1xddm7n");
+    			attr_dev(div4, "class", "groups svelte-1t5mmcd");
     			add_location(div4, file$9, 118, 36, 4268);
     			attr_dev(div5, "title", div5_title_value = /*PairItem*/ ctx[5](/*day*/ ctx[11].Schedule, /*time*/ ctx[15]).TimeStart);
-    			attr_dev(div5, "class", "pair-detail svelte-1xddm7n");
+    			attr_dev(div5, "class", "pair-detail svelte-1t5mmcd");
     			add_location(div5, file$9, 99, 32, 3300);
     		},
     		m: function mount(target, anchor) {
@@ -10049,7 +10049,7 @@ var app = (function () {
     			if_block.c();
     			t = space();
     			set_style(div, "grid-column", parseInt(/*n_pair*/ ctx[14]) + 1 + " / " + (parseInt(/*n_pair*/ ctx[14]) + 2));
-    			attr_dev(div, "class", "pair-ceil svelte-1xddm7n");
+    			attr_dev(div, "class", "pair-ceil svelte-1t5mmcd");
     			add_location(div, file$9, 89, 24, 2802);
     		},
     		m: function mount(target, anchor) {
@@ -10163,7 +10163,7 @@ var app = (function () {
 
     			attr_dev(div2, "class", div2_class_value = "first-ceil " + (/*day*/ ctx[11].DayWeek == "Суббота"
     			? "sbt"
-    			: "date-pair") + "   " + (isToday(/*day*/ ctx[11].DatePair) ? "today" : "") + " svelte-1xddm7n");
+    			: "date-pair") + "   " + (isToday(/*day*/ ctx[11].DatePair) ? "today" : "") + " svelte-1t5mmcd");
 
     			add_location(div2, file$9, 65, 20, 1840);
     		},
@@ -10208,7 +10208,7 @@ var app = (function () {
 
     			if (!current || dirty & /*$scheddata*/ 2 && div2_class_value !== (div2_class_value = "first-ceil " + (/*day*/ ctx[11].DayWeek == "Суббота"
     			? "sbt"
-    			: "date-pair") + "   " + (isToday(/*day*/ ctx[11].DatePair) ? "today" : "") + " svelte-1xddm7n")) {
+    			: "date-pair") + "   " + (isToday(/*day*/ ctx[11].DatePair) ? "today" : "") + " svelte-1t5mmcd")) {
     				attr_dev(div2, "class", div2_class_value);
     			}
 
@@ -10327,12 +10327,12 @@ var app = (function () {
     			t6 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
-    			attr_dev(span0, "class", "svelte-1xddm7n");
+    			attr_dev(span0, "class", "svelte-1t5mmcd");
     			add_location(span0, file$9, 44, 16, 1106);
-    			attr_dev(span1, "class", "svelte-1xddm7n");
+    			attr_dev(span1, "class", "svelte-1t5mmcd");
     			add_location(span1, file$9, 45, 16, 1150);
     			set_style(div, "grid-column", "1 / 10");
-    			attr_dev(div, "class", "month svelte-1xddm7n");
+    			attr_dev(div, "class", "month svelte-1t5mmcd");
     			add_location(div, file$9, 39, 12, 940);
     		},
     		m: function mount(target, anchor) {
