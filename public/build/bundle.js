@@ -1,5 +1,5 @@
 
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = "https://35729-vlakondra-tsched-7497adbtgno.ws-eu47.gitpod.io/livereload.js?snipver=1&port=443"; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 var app = (function () {
     'use strict';
 
@@ -2026,20 +2026,20 @@ var app = (function () {
     			t4 = space();
     			div4 = element("div");
     			t5 = text(t5_value);
-    			attr_dev(div0, "class", "date svelte-1ludef0");
+    			attr_dev(div0, "class", "date svelte-1ov1i27");
     			add_location(div0, file$f, 20, 4, 530);
-    			attr_dev(div1, "class", "burger svelte-1ludef0");
+    			attr_dev(div1, "class", "kv-burger svelte-1ov1i27");
     			add_location(div1, file$f, 24, 8, 685);
-    			attr_dev(div2, "class", "caption svelte-1ludef0");
-    			add_location(div2, file$f, 27, 8, 787);
+    			attr_dev(div2, "class", "caption svelte-1ov1i27");
+    			add_location(div2, file$f, 27, 8, 790);
     			set_style(div3, "display", "flex");
     			set_style(div3, "flex-wrap", "nowrap");
     			set_style(div3, "align-items", "center");
     			add_location(div3, file$f, 23, 4, 613);
-    			attr_dev(div4, "class", "time svelte-1ludef0");
-    			add_location(div4, file$f, 29, 4, 855);
+    			attr_dev(div4, "class", "time svelte-1ov1i27");
+    			add_location(div4, file$f, 29, 4, 858);
     			attr_dev(div5, "id", "header");
-    			attr_dev(div5, "class", "header svelte-1ludef0");
+    			attr_dev(div5, "class", "header svelte-1ov1i27");
     			add_location(div5, file$f, 19, 0, 493);
     		},
     		l: function claim(nodes) {
@@ -8983,7 +8983,7 @@ var app = (function () {
     		c: function create() {
     			span = element("span");
     			span.textContent = "Сегодня";
-    			attr_dev(span, "class", "today-lbl svelte-1qa2ynb");
+    			attr_dev(span, "class", "today-lbl svelte-v56y6l");
     			add_location(span, file$a, 52, 32, 1983);
     		},
     		m: function mount(target, anchor) {
@@ -9051,23 +9051,23 @@ var app = (function () {
     			t7 = space();
     			div4 = element("div");
     			t8 = text(t8_value);
-    			attr_dev(div0, "class", "time-start svelte-1qa2ynb");
+    			attr_dev(div0, "class", "time-start svelte-v56y6l");
     			add_location(div0, file$a, 57, 32, 2230);
-    			attr_dev(span0, "class", "svelte-1qa2ynb");
+    			attr_dev(span0, "class", "svelte-v56y6l");
     			add_location(span0, file$a, 61, 36, 2439);
-    			attr_dev(div1, "class", "subj-name svelte-1qa2ynb");
+    			attr_dev(div1, "class", "subj-name svelte-v56y6l");
     			add_location(div1, file$a, 60, 32, 2379);
-    			attr_dev(span1, "class", "svelte-1qa2ynb");
+    			attr_dev(span1, "class", "svelte-v56y6l");
     			add_location(span1, file$a, 64, 36, 2596);
-    			attr_dev(div2, "class", "kind svelte-1qa2ynb");
+    			attr_dev(div2, "class", "kind svelte-v56y6l");
     			add_location(div2, file$a, 63, 32, 2541);
-    			attr_dev(span2, "class", "svelte-1qa2ynb");
-    			add_location(span2, file$a, 69, 36, 2832);
-    			attr_dev(div3, "class", "group svelte-1qa2ynb");
+    			attr_dev(span2, "class", "svelte-v56y6l");
+    			add_location(span2, file$a, 69, 36, 2835);
+    			attr_dev(div3, "class", "kv-group svelte-v56y6l");
     			add_location(div3, file$a, 68, 32, 2776);
-    			attr_dev(div4, "class", "aud svelte-1qa2ynb");
-    			add_location(div4, file$a, 73, 32, 3008);
-    			attr_dev(div5, "class", "pair-wrapper svelte-1qa2ynb");
+    			attr_dev(div4, "class", "aud svelte-v56y6l");
+    			add_location(div4, file$a, 73, 32, 3011);
+    			attr_dev(div5, "class", "pair-wrapper svelte-v56y6l");
     			add_location(div5, file$a, 56, 28, 2171);
     		},
     		m: function mount(target, anchor) {
@@ -9159,7 +9159,7 @@ var app = (function () {
     			add_location(span0, file$a, 46, 32, 1735);
     			add_location(span1, file$a, 44, 28, 1649);
     			attr_dev(div, "id", div_id_value = toEnDate(/*day*/ ctx[8].DatePair));
-    			attr_dev(div, "class", div_class_value = "day " + (/*day*/ ctx[8].DayWeek == "Суббота" ? "sbt" : "") + "  " + (isToday(/*day*/ ctx[8].DatePair) ? "today" : "") + " svelte-1qa2ynb");
+    			attr_dev(div, "class", div_class_value = "day " + (/*day*/ ctx[8].DayWeek == "Суббота" ? "sbt" : "") + "  " + (isToday(/*day*/ ctx[8].DatePair) ? "today" : "") + " svelte-v56y6l");
     			add_location(div, file$a, 38, 24, 1350);
     		},
     		m: function mount(target, anchor) {
@@ -9199,7 +9199,7 @@ var app = (function () {
     				attr_dev(div, "id", div_id_value);
     			}
 
-    			if (dirty & /*$scheddata*/ 2 && div_class_value !== (div_class_value = "day " + (/*day*/ ctx[8].DayWeek == "Суббота" ? "sbt" : "") + "  " + (isToday(/*day*/ ctx[8].DatePair) ? "today" : "") + " svelte-1qa2ynb")) {
+    			if (dirty & /*$scheddata*/ 2 && div_class_value !== (div_class_value = "day " + (/*day*/ ctx[8].DayWeek == "Суббота" ? "sbt" : "") + "  " + (isToday(/*day*/ ctx[8].DatePair) ? "today" : "") + " svelte-v56y6l")) {
     				attr_dev(div, "class", div_class_value);
     			}
 
@@ -9287,12 +9287,12 @@ var app = (function () {
     			t6 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
-    			attr_dev(span0, "class", "svelte-1qa2ynb");
+    			attr_dev(span0, "class", "svelte-v56y6l");
     			add_location(span0, file$a, 28, 16, 896);
-    			attr_dev(span1, "class", "svelte-1qa2ynb");
+    			attr_dev(span1, "class", "svelte-v56y6l");
     			add_location(span1, file$a, 29, 16, 940);
     			attr_dev(div, "id", /*i*/ ctx[7] + "-month");
-    			attr_dev(div, "class", "month svelte-1qa2ynb");
+    			attr_dev(div, "class", "month svelte-v56y6l");
     			add_location(div, file$a, 23, 12, 741);
     		},
     		m: function mount(target, anchor) {

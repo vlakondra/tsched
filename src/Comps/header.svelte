@@ -22,7 +22,7 @@
         {new Date().toLocaleDateString("ru-RU")}
     </div>
     <div style="display:flex;flex-wrap: nowrap;align-items:center">
-        <div class="burger" on:click={onBurgerClick}>
+        <div class="kv-burger" on:click={onBurgerClick}>
             <Fa icon={faBars} />
         </div>
         <div class="caption">Расписание преподавателей</div>
@@ -53,7 +53,7 @@
         letter-spacing: 0.5px;
     }
 
-    .burger {
+    .kv-burger {
         width: 50px;
         text-align: center;
         color: #fff;
@@ -67,7 +67,7 @@
         font-weight: 200;
     }
     @media (min-width: 500.5px) {
-        .burger {
+        .kv-burger {
             /* margin-right: 1em; */
             font-size: 1.75em;
             /* color: wheat; */
@@ -94,8 +94,7 @@
             font-weight: 100;
             line-height: 1em;
         }
-        .burger {
-            /* margin-right: 10px; */
+        .kv-burger {
             font-size: 1.5em;
         }
         .header {

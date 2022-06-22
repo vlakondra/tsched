@@ -66,7 +66,7 @@
                                         {pair.LoadKindSN}
                                     </span>
                                 </div>
-                                <div class="group">
+                                <div class="kv-group">
                                     <span>
                                         {pair.GSName}
                                     </span>
@@ -196,7 +196,7 @@
             background-color: #dddfff;
             color: #7e7575;
         }
-        .group {
+        .kv-group {
             grid-column: 2 / 3;
             grid-row: 2 / 3;
             margin-left: 80px;
