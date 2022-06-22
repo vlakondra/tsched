@@ -18,7 +18,12 @@
     </div>
 </div>
 
-<style>
+<style type="text/scss">
+    // $button-light: rgba(0, 125, 141, 0.75);
+    // $button-hover: rgba(0, 125, 141, 1);
+    // $text-color: #efefef;
+    // $bg-color: rgb(19, 255, 6);
+
     .no-schedule {
         position: absolute;
         top: 50%;

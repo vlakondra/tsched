@@ -96,7 +96,7 @@
 	{/if}
 </main>
 
-<style>
+<style type="text/scss">
 	main {
 		height: 100%;
 		margin-bottom: 40px;
@@ -109,6 +109,11 @@
 	}
 
 	/* ПРОВЕРИТЬ - НУжНО ЛИ? */
+	// :global(.container) {
+	// 	color: #000;
+	// 	$bg-color: rgb(19, 255, 6);
+	// }
+
 	:global(.month) {
 		cursor: pointer;
 		padding: 5px 7px;
