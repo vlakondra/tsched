@@ -1,4 +1,5 @@
 import { readable,writable } from 'svelte/store';
+// https://svelte.dev/repl/b2d671b8119845ca903667f1b3a96e31?version=3.37.0
 
 //часы для header'a
 export const time = readable(new Date(), function start(set) {

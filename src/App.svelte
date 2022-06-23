@@ -2,6 +2,7 @@
 	//https://tsched.vercel.app/
 	import "bulma/css/bulma.css";
 	import "@fontsource/roboto";
+	// https://fontsource.org/docs/getting-startedk
 
 	import { client_width, err_sched_data } from "./Comps/store.js";
 
@@ -57,7 +58,7 @@
 	<title>Расписание преподавателей</title>
 </svelte:head>
 
-<main class="container  is-widescreen" style="min-height: 100vh;">
+<main class="kv-container  is-widescreen" style="min-height: 100vh;">
 	<ResizeObserver
 		on:resize={(e) => {
 			w = e.detail.clientWidth;
@@ -104,7 +105,7 @@
 		position: relative;
 	}
 
-	.container {
+	.kv-container {
 		max-width: 960px !important;
 	}
 
@@ -181,5 +182,49 @@
 		top: 80%;
 		cursor: pointer;
 		z-index: 99999;
+	}
+
+	.kv-container {
+		flex-grow: 1;
+		margin: 0 auto;
+		position: relative;
+		width: auto;
+	}
+
+	.kv-container.is-fluid {
+		max-width: none !important;
+		padding-left: 32px;
+		padding-right: 32px;
+		width: 100%;
+	}
+
+	@media screen and (min-width: 1024px) {
+		.kv-container {
+			max-width: 960px;
+		}
+	}
+
+	@media screen and (max-width: 1215px) {
+		.kv-container.is-widescreen:not(.is-max-desktop) {
+			max-width: 1152px;
+		}
+	}
+
+	@media screen and (max-width: 1407px) {
+		.kv-container.is-fullhd:not(.is-max-desktop):not(.is-max-widescreen) {
+			max-width: 1344px;
+		}
+	}
+
+	@media screen and (min-width: 1216px) {
+		.kv-container:not(.is-max-desktop) {
+			max-width: 1152px;
+		}
+	}
+
+	@media screen and (min-width: 1408px) {
+		.kv-container:not(.is-max-desktop):not(.is-max-widescreen) {
+			max-width: 1344px;
+		}
 	}
 </style>
