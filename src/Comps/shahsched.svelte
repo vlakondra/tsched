@@ -158,7 +158,7 @@
     }
     .pair-wrapper {
         display: grid;
-        gap: 0.95px;
+        gap: 1px;
         min-width: 860px;
         background-color: #8b8cab;
         grid-template-columns: repeat(8, auto);
