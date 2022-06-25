@@ -1,7 +1,7 @@
 <script>
     import Switch from "svelte-switch";
-    import Fa from "svelte-fa";
     import { client_width } from "./store.js";
+    import Fa from "svelte-fa";
     import {
         faTableCells,
         faTableList,

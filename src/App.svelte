@@ -24,11 +24,11 @@
 	import ResizeObserver from "svelte-resize-observer";
 	import Errschedule from "./Comps/errschedule.svelte";
 
-	let open = false;
-
 	import Fa from "svelte-fa";
 	import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
+	import DeviceDetector from "svelte-device-detector";
 
+	let open = false;
 	// import { SaveExcel } from "./Comps/util.js";
 
 	const scrollToTop = () => {
@@ -80,12 +80,13 @@
 	<Header onBurgerClick={TurnDrawer} />
 	<Drawer {open} on:clickAway={() => (open = false)} size="null">
 		<div class="notification">
-			<button
-				on:click={() => (open = false)}
-				class="delete is-medium"
-			/><Period /><Depart state_drawer={TurnDrawer} /><ViewFormat
-				changeformat={ToggleSwitch}
-			/>
+			<button on:click={() => (open = false)} class="delete is-medium" />
+			<Period />
+			<Depart state_drawer={TurnDrawer} />
+			<ViewFormat changeformat={ToggleSwitch} />
+			<DeviceDetector showInDevice="desktop">
+				<p>Desktop</p>
+			</DeviceDetector>
 		</div>
 	</Drawer>
 	<Progbar />

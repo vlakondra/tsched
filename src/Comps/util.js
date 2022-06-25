@@ -13,6 +13,4 @@ export const toEnDate=(pairdate)=>{
    return lightFormat(en, 'yyyy-MM-dd')
 }
 
-// export const SaveExcel=()=>{
-//     TableToExcel.convert(document.getElementById('table1'));
-// }
+
