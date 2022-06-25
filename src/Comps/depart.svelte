@@ -1,6 +1,6 @@
 <script>
   import departData from "./store.js";
-  import { depart_id, teacher_id, getSched } from "./store.js";
+  import { depart_id, teacher_id, teacher_fio, getSched } from "./store.js";
 
   export let state_drawer;
 
@@ -16,7 +16,11 @@
   };
 
   const onTchrSelected = (e) => {
-    teacher_id.update(() => e.target.value);
+    teacher_id.update(() => selTchr_ID); // e.target.value);
+    teacher_fio.update(
+      () => $data.Teachers.filter((t) => t.Emp_ID == selTchr_ID)[0].FIO
+    );
+
     getSched();
     setTimeout(() => {
       state_drawer();

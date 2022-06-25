@@ -21,6 +21,7 @@ export const err_sched_data= writable(false)
 
 export const depart_id = writable(null)
 export const teacher_id = writable(null)
+export const teacher_fio = writable(null)
 
 export const d_start = writable(null)
 export const d_end = writable(null)

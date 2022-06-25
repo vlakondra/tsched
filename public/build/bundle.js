@@ -1066,6 +1066,7 @@ var app = (function () {
 
     const depart_id = writable(null);
     const teacher_id = writable(null);
+    const teacher_fio = writable(null);
 
     const d_start = writable(null);
     const d_end = writable(null);
@@ -8051,7 +8052,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (37:8) {#if $data.Departs}
+    // (41:8) {#if $data.Departs}
     function create_if_block_1$3(ctx) {
     	let each_1_anchor;
     	let each_value_1 = /*$data*/ ctx[2].Departs;
@@ -8112,14 +8113,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(37:8) {#if $data.Departs}",
+    		source: "(41:8) {#if $data.Departs}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (38:10) {#each $data.Departs as item}
+    // (42:10) {#each $data.Departs as item}
     function create_each_block_1$2(ctx) {
     	let option;
     	let t0_value = /*item*/ ctx[14].DepartName + "";
@@ -8134,7 +8135,7 @@ var app = (function () {
     			t1 = space();
     			option.__value = option_value_value = /*item*/ ctx[14].Depart_ID;
     			option.value = option.__value;
-    			add_location(option, file$c, 38, 12, 969);
+    			add_location(option, file$c, 42, 12, 1102);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -8158,14 +8159,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(38:10) {#each $data.Departs as item}",
+    		source: "(42:10) {#each $data.Departs as item}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (59:8) {#if $data.Teachers}
+    // (63:8) {#if $data.Teachers}
     function create_if_block$5(ctx) {
     	let each_1_anchor;
     	let each_value = /*$data*/ ctx[2].Teachers.filter(/*func*/ ctx[9]);
@@ -8226,14 +8227,14 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(59:8) {#if $data.Teachers}",
+    		source: "(63:8) {#if $data.Teachers}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (60:10) {#each $data.Teachers.filter((t) => t.Depart_ID == selDep_ID) as item}
+    // (64:10) {#each $data.Teachers.filter((t) => t.Depart_ID == selDep_ID) as item}
     function create_each_block$2(ctx) {
     	let option;
     	let t0_value = /*item*/ ctx[14].FIO + "";
@@ -8248,7 +8249,7 @@ var app = (function () {
     			t1 = space();
     			option.__value = option_value_value = /*item*/ ctx[14].Emp_ID;
     			option.value = option.__value;
-    			add_location(option, file$c, 60, 12, 1585);
+    			add_location(option, file$c, 64, 12, 1718);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -8272,7 +8273,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(60:10) {#each $data.Teachers.filter((t) => t.Depart_ID == selDep_ID) as item}",
+    		source: "(64:10) {#each $data.Teachers.filter((t) => t.Depart_ID == selDep_ID) as item}",
     		ctx
     	});
 
@@ -8324,37 +8325,37 @@ var app = (function () {
     			option1.textContent = "Выберите преподавателя";
     			if (if_block1) if_block1.c();
     			attr_dev(label0, "class", "label svelte-1v2pg6m");
-    			add_location(label0, file$c, 27, 2, 593);
+    			add_location(label0, file$c, 31, 2, 726);
     			option0.__value = "null";
     			option0.value = option0.__value;
     			option0.selected = true;
     			option0.disabled = true;
-    			add_location(option0, file$c, 35, 8, 824);
+    			add_location(option0, file$c, 39, 8, 957);
     			attr_dev(select0, "class", "svelte-1v2pg6m");
     			if (/*selDep_ID*/ ctx[0] === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[7].call(select0));
-    			add_location(select0, file$c, 30, 6, 697);
+    			add_location(select0, file$c, 34, 6, 830);
     			attr_dev(div0, "class", "select is-success svelte-1v2pg6m");
-    			add_location(div0, file$c, 29, 4, 659);
+    			add_location(div0, file$c, 33, 4, 792);
     			attr_dev(div1, "class", "control");
-    			add_location(div1, file$c, 28, 2, 633);
+    			add_location(div1, file$c, 32, 2, 766);
     			attr_dev(div2, "class", "field svelte-1v2pg6m");
-    			add_location(div2, file$c, 26, 0, 571);
+    			add_location(div2, file$c, 30, 0, 704);
     			attr_dev(label1, "class", "label svelte-1v2pg6m");
-    			add_location(label1, file$c, 49, 2, 1153);
+    			add_location(label1, file$c, 53, 2, 1286);
     			option1.__value = "null";
     			option1.value = option1.__value;
     			option1.selected = true;
     			option1.disabled = true;
-    			add_location(option1, file$c, 57, 8, 1392);
+    			add_location(option1, file$c, 61, 8, 1525);
     			attr_dev(select1, "class", "svelte-1v2pg6m");
     			if (/*selTchr_ID*/ ctx[1] === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[10].call(select1));
-    			add_location(select1, file$c, 52, 6, 1263);
+    			add_location(select1, file$c, 56, 6, 1396);
     			attr_dev(div3, "class", "select is-success svelte-1v2pg6m");
-    			add_location(div3, file$c, 51, 4, 1225);
+    			add_location(div3, file$c, 55, 4, 1358);
     			attr_dev(div4, "class", "control");
-    			add_location(div4, file$c, 50, 2, 1199);
+    			add_location(div4, file$c, 54, 2, 1332);
     			attr_dev(div5, "class", "field svelte-1v2pg6m");
-    			add_location(div5, file$c, 48, 0, 1131);
+    			add_location(div5, file$c, 52, 0, 1264);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8470,7 +8471,8 @@ var app = (function () {
     	};
 
     	const onTchrSelected = e => {
-    		teacher_id.update(() => e.target.value);
+    		teacher_id.update(() => selTchr_ID); // e.target.value);
+    		teacher_fio.update(() => $data.Teachers.filter(t => t.Emp_ID == selTchr_ID)[0].FIO);
     		getSched();
 
     		setTimeout(
@@ -8501,7 +8503,7 @@ var app = (function () {
     		$$invalidate(0, selDep_ID);
     	}
 
-    	const change_handler_1 = v => onTchrSelected(v);
+    	const change_handler_1 = v => onTchrSelected();
 
     	$$self.$$set = $$props => {
     		if ("state_drawer" in $$props) $$invalidate(6, state_drawer = $$props.state_drawer);
@@ -8511,6 +8513,7 @@ var app = (function () {
     		departData,
     		depart_id,
     		teacher_id,
+    		teacher_fio,
     		getSched,
     		state_drawer,
     		selDep_ID,
@@ -8702,6 +8705,9 @@ var app = (function () {
     	}
     }
 
+    // import {TableToExcel} from "@linways/table-to-excel";
+    // import {TableToExcel} from "@linways/table-to-excel/dist/tableToExcel.js";
+
     const isToday = ( pairdate)=>{
         const today = intlFormat(new Date(), { locale: "ru-RU" });
         return  pairdate ===today
@@ -8711,6 +8717,10 @@ var app = (function () {
        let en= parse(pairdate, 'dd.MM.yyyy', new Date()); 
        return lightFormat(en, 'yyyy-MM-dd')
     };
+
+    // export const SaveExcel=()=>{
+    //     TableToExcel.convert(document.getElementById('table1'));
+    // }
 
     var css_248z$6 = "";
     styleInject(css_248z$6);
@@ -13815,7 +13825,7 @@ var app = (function () {
     const { document: document_1 } = globals;
     const file = "src/App.svelte";
 
-    // (69:1) {#if scrolly > 100}
+    // (74:1) {#if scrolly > 100}
     function create_if_block_2(ctx) {
     	let div;
     	let fa;
@@ -13838,7 +13848,7 @@ var app = (function () {
     			div = element("div");
     			create_component(fa.$$.fragment);
     			attr_dev(div, "class", "totop-box svelte-u4ygg2");
-    			add_location(div, file, 69, 2, 1609);
+    			add_location(div, file, 74, 2, 1751);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -13846,7 +13856,7 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(div, "click", /*scrollToTop*/ ctx[5], false, false, false);
+    				dispose = listen_dev(div, "click", /*scrollToTop*/ ctx[6], false, false, false);
     				mounted = true;
     			}
     		},
@@ -13881,14 +13891,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(69:1) {#if scrolly > 100}",
+    		source: "(74:1) {#if scrolly > 100}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (76:1) <Drawer {open} on:clickAway={() => (open = false)} size="null">
+    // (81:1) <Drawer {open} on:clickAway={() => (open = false)} size="null">
     function create_default_slot(ctx) {
     	let div;
     	let button;
@@ -13901,12 +13911,12 @@ var app = (function () {
     	period = new Period({ $$inline: true });
 
     	depart = new Depart({
-    			props: { state_drawer: /*TurnDrawer*/ ctx[6] },
+    			props: { state_drawer: /*TurnDrawer*/ ctx[7] },
     			$$inline: true
     		});
 
     	viewformat = new Viewformat({
-    			props: { changeformat: /*ToggleSwitch*/ ctx[7] },
+    			props: { changeformat: /*ToggleSwitch*/ ctx[8] },
     			$$inline: true
     		});
 
@@ -13918,9 +13928,9 @@ var app = (function () {
     			create_component(depart.$$.fragment);
     			create_component(viewformat.$$.fragment);
     			attr_dev(button, "class", "delete is-medium svelte-u4ygg2");
-    			add_location(button, file, 77, 3, 1886);
+    			add_location(button, file, 82, 3, 2028);
     			attr_dev(div, "class", "notification");
-    			add_location(div, file, 76, 2, 1856);
+    			add_location(div, file, 81, 2, 1998);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -13931,7 +13941,7 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[10], false, false, false);
+    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[13], false, false, false);
     				mounted = true;
     			}
     		},
@@ -13963,14 +13973,14 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(76:1) <Drawer {open} on:clickAway={() => (open = false)} size=\\\"null\\\">",
+    		source: "(81:1) <Drawer {open} on:clickAway={() => (open = false)} size=\\\"null\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (95:1) {:else}
+    // (100:1) {:else}
     function create_else_block(ctx) {
     	let shahsched;
     	let current;
@@ -14003,14 +14013,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(95:1) {:else}",
+    		source: "(100:1) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (93:21) 
+    // (98:21) 
     function create_if_block_1(ctx) {
     	let schedule;
     	let current;
@@ -14043,21 +14053,21 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(93:21) ",
+    		source: "(98:21) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (89:1) {#if $err_sched_data}
+    // (94:1) {#if $err_sched_data}
     function create_if_block(ctx) {
     	let div;
     	let errschedule;
     	let current;
 
     	errschedule = new Errschedule({
-    			props: { errmessage: /*$err_sched_data*/ ctx[4] },
+    			props: { errmessage: /*$err_sched_data*/ ctx[5] },
     			$$inline: true
     		});
 
@@ -14065,7 +14075,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(errschedule.$$.fragment);
-    			add_location(div, file, 89, 2, 2161);
+    			add_location(div, file, 94, 2, 2303);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -14074,7 +14084,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const errschedule_changes = {};
-    			if (dirty & /*$err_sched_data*/ 16) errschedule_changes.errmessage = /*$err_sched_data*/ ctx[4];
+    			if (dirty & /*$err_sched_data*/ 32) errschedule_changes.errmessage = /*$err_sched_data*/ ctx[5];
     			errschedule.$set(errschedule_changes);
     		},
     		i: function intro(local) {
@@ -14096,7 +14106,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(89:1) {#if $err_sched_data}",
+    		source: "(94:1) {#if $err_sched_data}",
     		ctx
     	});
 
@@ -14111,6 +14121,8 @@ var app = (function () {
     	};
 
     	let scrolling_timeout;
+    	let script_1;
+    	let script_1_src_value;
     	let t0;
     	let main;
     	let resizeobserver;
@@ -14126,16 +14138,28 @@ var app = (function () {
     	let t6;
     	let current_block_type_index;
     	let if_block1;
+    	let t7;
+    	let button;
+    	let t9;
+    	let div;
+    	let table;
+    	let tr0;
+    	let td0;
+    	let td1;
+    	let t12;
+    	let tr1;
+    	let td2;
+    	let td3;
     	let current;
     	let mounted;
     	let dispose;
-    	add_render_callback(/*onwindowscroll*/ ctx[8]);
+    	add_render_callback(/*onwindowscroll*/ ctx[10]);
     	resizeobserver = new ResizeObserver_1({ $$inline: true });
-    	resizeobserver.$on("resize", /*resize_handler*/ ctx[9]);
+    	resizeobserver.$on("resize", /*resize_handler*/ ctx[12]);
     	let if_block0 = /*scrolly*/ ctx[2] > 100 && create_if_block_2(ctx);
 
     	header = new Header({
-    			props: { onBurgerClick: /*TurnDrawer*/ ctx[6] },
+    			props: { onBurgerClick: /*TurnDrawer*/ ctx[7] },
     			$$inline: true
     		});
 
@@ -14149,11 +14173,11 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	drawer.$on("clickAway", /*clickAway_handler*/ ctx[11]);
+    	drawer.$on("clickAway", /*clickAway_handler*/ ctx[14]);
     	progbar = new Progbar({ $$inline: true });
 
     	startmessage = new Startmessage({
-    			props: { openDrawer: /*TurnDrawer*/ ctx[6] },
+    			props: { openDrawer: /*TurnDrawer*/ ctx[7] },
     			$$inline: true
     		});
 
@@ -14161,7 +14185,7 @@ var app = (function () {
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
-    		if (/*$err_sched_data*/ ctx[4]) return 0;
+    		if (/*$err_sched_data*/ ctx[5]) return 0;
     		if (/*showtable*/ ctx[1]) return 1;
     		return 2;
     	}
@@ -14171,6 +14195,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			script_1 = element("script");
     			t0 = space();
     			main = element("main");
     			create_component(resizeobserver.$$.fragment);
@@ -14186,15 +14211,47 @@ var app = (function () {
     			create_component(startmessage.$$.fragment);
     			t6 = space();
     			if_block1.c();
+    			t7 = space();
+    			button = element("button");
+    			button.textContent = "Save";
+    			t9 = space();
+    			div = element("div");
+    			table = element("table");
+    			tr0 = element("tr");
+    			td0 = element("td");
+    			td0.textContent = "1";
+    			td1 = element("td");
+    			td1.textContent = "2";
+    			t12 = space();
+    			tr1 = element("tr");
+    			td2 = element("td");
+    			td2.textContent = "Проверка";
+    			td3 = element("td");
+    			td3.textContent = "Таблицы";
     			document_1.title = "Расписание преподавателей";
+    			if (script_1.src !== (script_1_src_value = /*url*/ ctx[9])) attr_dev(script_1, "src", script_1_src_value);
+    			add_location(script_1, file, 62, 1, 1463);
+    			add_location(button, file, 103, 1, 2437);
+    			add_location(td0, file, 113, 7, 2687);
+    			add_location(td1, file, 113, 17, 2697);
+    			add_location(tr0, file, 113, 3, 2683);
+    			add_location(td2, file, 114, 7, 2720);
+    			add_location(td3, file, 114, 24, 2737);
+    			add_location(tr1, file, 114, 3, 2716);
+    			attr_dev(table, "id", "table1");
+    			add_location(table, file, 108, 2, 2574);
+    			set_style(div, "visibility", "hidden");
+    			add_location(div, file, 107, 1, 2540);
     			attr_dev(main, "class", "kv-container  is-widescreen svelte-u4ygg2");
     			set_style(main, "min-height", "100vh");
-    			add_location(main, file, 60, 0, 1384);
+    			add_location(main, file, 65, 0, 1526);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
+    			append_dev(document_1.head, script_1);
+    			/*script_1_binding*/ ctx[11](script_1);
     			insert_dev(target, t0, anchor);
     			insert_dev(target, main, anchor);
     			mount_component(resizeobserver, main, null);
@@ -14210,15 +14267,31 @@ var app = (function () {
     			mount_component(startmessage, main, null);
     			append_dev(main, t6);
     			if_blocks[current_block_type_index].m(main, null);
+    			append_dev(main, t7);
+    			append_dev(main, button);
+    			append_dev(main, t9);
+    			append_dev(main, div);
+    			append_dev(div, table);
+    			append_dev(table, tr0);
+    			append_dev(tr0, td0);
+    			append_dev(tr0, td1);
+    			append_dev(table, t12);
+    			append_dev(table, tr1);
+    			append_dev(tr1, td2);
+    			append_dev(tr1, td3);
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(window, "scroll", () => {
-    					scrolling = true;
-    					clearTimeout(scrolling_timeout);
-    					scrolling_timeout = setTimeout(clear_scrolling, 100);
-    					/*onwindowscroll*/ ctx[8]();
-    				});
+    				dispose = [
+    					listen_dev(window, "scroll", () => {
+    						scrolling = true;
+    						clearTimeout(scrolling_timeout);
+    						scrolling_timeout = setTimeout(clear_scrolling, 100);
+    						/*onwindowscroll*/ ctx[10]();
+    					}),
+    					listen_dev(button, "click", /*click_handler_1*/ ctx[15], false, false, false),
+    					listen_dev(table, "click", /*click_handler_2*/ ctx[16], false, false, false)
+    				];
 
     				mounted = true;
     			}
@@ -14257,7 +14330,7 @@ var app = (function () {
     			const drawer_changes = {};
     			if (dirty & /*open*/ 1) drawer_changes.open = /*open*/ ctx[0];
 
-    			if (dirty & /*$$scope, open*/ 4097) {
+    			if (dirty & /*$$scope, open*/ 131073) {
     				drawer_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14285,7 +14358,7 @@ var app = (function () {
     				}
 
     				transition_in(if_block1, 1);
-    				if_block1.m(main, null);
+    				if_block1.m(main, t7);
     			}
     		},
     		i: function intro(local) {
@@ -14310,6 +14383,8 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
+    			detach_dev(script_1);
+    			/*script_1_binding*/ ctx[11](null);
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
     			destroy_component(resizeobserver);
@@ -14320,7 +14395,7 @@ var app = (function () {
     			destroy_component(startmessage);
     			if_blocks[current_block_type_index].d();
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -14338,11 +14413,12 @@ var app = (function () {
     function instance($$self, $$props, $$invalidate) {
     	let $err_sched_data;
     	validate_store(err_sched_data, "err_sched_data");
-    	component_subscribe($$self, err_sched_data, $$value => $$invalidate(4, $err_sched_data = $$value));
+    	component_subscribe($$self, err_sched_data, $$value => $$invalidate(5, $err_sched_data = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("App", slots, []);
     	let open = false;
 
+    	// import { SaveExcel } from "./Comps/util.js";
     	const scrollToTop = () => {
     		let dp = document.getElementById("header");
 
@@ -14363,6 +14439,8 @@ var app = (function () {
 
     	let scrolly = 5;
     	let w;
+    	let script;
+    	let url = "/tableToExcel.js";
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -14373,6 +14451,13 @@ var app = (function () {
     		$$invalidate(2, scrolly = window.pageYOffset);
     	}
 
+    	function script_1_binding($$value) {
+    		binding_callbacks[$$value ? "unshift" : "push"](() => {
+    			script = $$value;
+    			$$invalidate(4, script);
+    		});
+    	}
+
     	const resize_handler = e => {
     		$$invalidate(3, w = e.detail.clientWidth);
     		client_width.update(() => w);
@@ -14380,6 +14465,8 @@ var app = (function () {
 
     	const click_handler = () => $$invalidate(0, open = false);
     	const clickAway_handler = () => $$invalidate(0, open = false);
+    	const click_handler_1 = () => TableToExcel.convert(document.querySelector("#table1"));
+    	const click_handler_2 = () => TableToExcel.convert(document.querySelector("#table1"));
 
     	$$self.$capture_state = () => ({
     		client_width,
@@ -14405,6 +14492,8 @@ var app = (function () {
     		ToggleSwitch,
     		scrolly,
     		w,
+    		script,
+    		url,
     		$err_sched_data
     	});
 
@@ -14413,6 +14502,8 @@ var app = (function () {
     		if ("showtable" in $$props) $$invalidate(1, showtable = $$props.showtable);
     		if ("scrolly" in $$props) $$invalidate(2, scrolly = $$props.scrolly);
     		if ("w" in $$props) $$invalidate(3, w = $$props.w);
+    		if ("script" in $$props) $$invalidate(4, script = $$props.script);
+    		if ("url" in $$props) $$invalidate(9, url = $$props.url);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -14424,14 +14515,19 @@ var app = (function () {
     		showtable,
     		scrolly,
     		w,
+    		script,
     		$err_sched_data,
     		scrollToTop,
     		TurnDrawer,
     		ToggleSwitch,
+    		url,
     		onwindowscroll,
+    		script_1_binding,
     		resize_handler,
     		click_handler,
-    		clickAway_handler
+    		clickAway_handler,
+    		click_handler_1,
+    		click_handler_2
     	];
     }
 

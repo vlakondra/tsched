@@ -29,6 +29,8 @@
 	import Fa from "svelte-fa";
 	import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
 
+	// import { SaveExcel } from "./Comps/util.js";
+
 	const scrollToTop = () => {
 		let dp = document.getElementById("header");
 		if (dp) {
@@ -50,12 +52,15 @@
 
 	let scrolly = 5;
 	let w;
+	let script;
+	let url = "/tableToExcel.js";
 </script>
 
 <svelte:window bind:scrollY={scrolly} />
 
 <svelte:head>
 	<title>Расписание преподавателей</title>
+	<script bind:this={script} src={url}></script>
 </svelte:head>
 
 <main class="kv-container  is-widescreen" style="min-height: 100vh;">
@@ -95,6 +100,21 @@
 	{:else}
 		<ShahSched />
 	{/if}
+
+	<button
+		on:click={() => TableToExcel.convert(document.querySelector("#table1"))}
+		>Save</button
+	>
+	<div style="visibility:hidden">
+		<table
+			on:click={() =>
+				TableToExcel.convert(document.querySelector("#table1"))}
+			id="table1"
+		>
+			<tr><td>1</td><td>2</td></tr>
+			<tr><td>Проверка</td><td>Таблицы</td></tr>
+		</table>
+	</div>
 </main>
 
 <style type="text/scss">
