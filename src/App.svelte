@@ -12,6 +12,7 @@
 	import StartMessage from "./Comps/startmessage.svelte";
 	import Period from "./Comps/period.svelte";
 	import Depart from "./Comps/depart.svelte";
+	import ToExcel from "./Comps/toexcel.svelte";
 
 	import Schedule from "./Comps/schedule.svelte";
 	import ShahSched from "./Comps/shahsched.svelte";
@@ -85,7 +86,7 @@
 			<Depart state_drawer={TurnDrawer} />
 			<ViewFormat changeformat={ToggleSwitch} />
 			<DeviceDetector showInDevice="desktop">
-				<p>Desktop</p>
+				<ToExcel />
 			</DeviceDetector>
 		</div>
 	</Drawer>
