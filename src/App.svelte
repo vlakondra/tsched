@@ -1,5 +1,7 @@
 <script>
 	//https://tsched.vercel.app/
+	//https://www.npmjs.com/package/svelte-device-detector
+
 	import "bulma/css/bulma.css";
 	import "@fontsource/roboto";
 	// https://fontsource.org/docs/getting-startedk

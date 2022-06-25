@@ -1,4 +1,5 @@
 <script>
+    //https://stackoverflow.com/questions/59629947/how-do-i-load-an-external-js-library-in-svelte-sapper
     import { client_width } from "./store.js";
     import { scheddata, sched_data_loaded } from "./store";
     import Fa from "svelte-fa";
