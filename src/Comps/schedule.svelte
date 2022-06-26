@@ -2,7 +2,6 @@
     //https://github.com/langbamit/svelte-scrollto#readme
     import { scheddata, sched_data_loaded } from "./store";
     import Noschedule from "./noschedule.svelte";
-    // import { format } from "date-fns";
     import { isToday, toEnDate } from "./util";
     import { fade } from "svelte/transition";
 
@@ -19,7 +18,7 @@
 </script>
 
 {#if Object.keys($scheddata).length}
-    <div  style="margin-top:10px;">
+    <div style="margin-top:10px;">
         {#each $scheddata as month, i}
             <div
                 id={i + "-month"}
@@ -86,14 +85,11 @@
 {/if}
 
 <style>
-    
-
     .sbt {
         color: rgb(234, 249, 252) !important;
     }
     .today {
         font-size: 1.15em;
-        /* color: blue; */
         background-color: #33e5e8 !important;
     }
 
@@ -188,7 +184,6 @@
             padding-top: 5px;
             background-color: rgb(221, 137, 137);
             color: white;
-            /* height: 100%; */
         }
         .kind {
             grid-column: 2 / 3;

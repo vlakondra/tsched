@@ -2034,21 +2034,19 @@ var app = (function () {
     			t4 = space();
     			div4 = element("div");
     			t5 = text(t5_value);
-    			attr_dev(div0, "class", "date svelte-1ov1i27");
-    			add_location(div0, file$h, 20, 4, 530);
-    			attr_dev(div1, "class", "kv-burger svelte-1ov1i27");
-    			add_location(div1, file$h, 24, 8, 685);
-    			attr_dev(div2, "class", "caption svelte-1ov1i27");
-    			add_location(div2, file$h, 27, 8, 790);
-    			set_style(div3, "display", "flex");
-    			set_style(div3, "flex-wrap", "nowrap");
-    			set_style(div3, "align-items", "center");
-    			add_location(div3, file$h, 23, 4, 613);
-    			attr_dev(div4, "class", "time svelte-1ov1i27");
-    			add_location(div4, file$h, 29, 4, 858);
+    			attr_dev(div0, "class", "date svelte-u7ov2g");
+    			add_location(div0, file$h, 19, 4, 484);
+    			attr_dev(div1, "class", "kv-burger svelte-u7ov2g");
+    			add_location(div1, file$h, 23, 8, 603);
+    			attr_dev(div2, "class", "caption svelte-u7ov2g");
+    			add_location(div2, file$h, 26, 8, 708);
+    			attr_dev(div3, "class", "caption-wrapp svelte-u7ov2g");
+    			add_location(div3, file$h, 22, 4, 567);
+    			attr_dev(div4, "class", "time svelte-u7ov2g");
+    			add_location(div4, file$h, 28, 4, 776);
     			attr_dev(div5, "id", "header");
-    			attr_dev(div5, "class", "header svelte-1ov1i27");
-    			add_location(div5, file$h, 19, 0, 493);
+    			attr_dev(div5, "class", "header svelte-u7ov2g");
+    			add_location(div5, file$h, 18, 0, 447);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2123,7 +2121,6 @@ var app = (function () {
     	let { onBurgerClick } = $$props;
 
     	// https://cweili.github.io/svelte-fa/
-    	//https://www.npmjs.com/package/svelte-fa
     	//https://fontawesome.com/v5/icons/bars?s=solid
     	const formatter = new Intl.DateTimeFormat("ru",
     	{
@@ -8140,7 +8137,7 @@ var app = (function () {
     			t1 = space();
     			option.__value = option_value_value = /*item*/ ctx[14].Depart_ID;
     			option.value = option.__value;
-    			add_location(option, file$e, 42, 12, 1102);
+    			add_location(option, file$e, 42, 12, 1082);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -8254,7 +8251,7 @@ var app = (function () {
     			t1 = space();
     			option.__value = option_value_value = /*item*/ ctx[14].Emp_ID;
     			option.value = option.__value;
-    			add_location(option, file$e, 64, 12, 1718);
+    			add_location(option, file$e, 64, 12, 1698);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -8330,37 +8327,37 @@ var app = (function () {
     			option1.textContent = "Выберите преподавателя";
     			if (if_block1) if_block1.c();
     			attr_dev(label0, "class", "label svelte-1v2pg6m");
-    			add_location(label0, file$e, 31, 2, 726);
+    			add_location(label0, file$e, 31, 2, 706);
     			option0.__value = "null";
     			option0.value = option0.__value;
     			option0.selected = true;
     			option0.disabled = true;
-    			add_location(option0, file$e, 39, 8, 957);
+    			add_location(option0, file$e, 39, 8, 937);
     			attr_dev(select0, "class", "svelte-1v2pg6m");
     			if (/*selDep_ID*/ ctx[0] === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[7].call(select0));
-    			add_location(select0, file$e, 34, 6, 830);
+    			add_location(select0, file$e, 34, 6, 810);
     			attr_dev(div0, "class", "select is-success svelte-1v2pg6m");
-    			add_location(div0, file$e, 33, 4, 792);
+    			add_location(div0, file$e, 33, 4, 772);
     			attr_dev(div1, "class", "control");
-    			add_location(div1, file$e, 32, 2, 766);
+    			add_location(div1, file$e, 32, 2, 746);
     			attr_dev(div2, "class", "field svelte-1v2pg6m");
-    			add_location(div2, file$e, 30, 0, 704);
+    			add_location(div2, file$e, 30, 0, 684);
     			attr_dev(label1, "class", "label svelte-1v2pg6m");
-    			add_location(label1, file$e, 53, 2, 1286);
+    			add_location(label1, file$e, 53, 2, 1266);
     			option1.__value = "null";
     			option1.value = option1.__value;
     			option1.selected = true;
     			option1.disabled = true;
-    			add_location(option1, file$e, 61, 8, 1525);
+    			add_location(option1, file$e, 61, 8, 1505);
     			attr_dev(select1, "class", "svelte-1v2pg6m");
     			if (/*selTchr_ID*/ ctx[1] === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[10].call(select1));
-    			add_location(select1, file$e, 56, 6, 1396);
+    			add_location(select1, file$e, 56, 6, 1376);
     			attr_dev(div3, "class", "select is-success svelte-1v2pg6m");
-    			add_location(div3, file$e, 55, 4, 1358);
+    			add_location(div3, file$e, 55, 4, 1338);
     			attr_dev(div4, "class", "control");
-    			add_location(div4, file$e, 54, 2, 1332);
+    			add_location(div4, file$e, 54, 2, 1312);
     			attr_dev(div5, "class", "field svelte-1v2pg6m");
-    			add_location(div5, file$e, 52, 0, 1264);
+    			add_location(div5, file$e, 52, 0, 1244);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8476,7 +8473,7 @@ var app = (function () {
     	};
 
     	const onTchrSelected = e => {
-    		teacher_id.update(() => selTchr_ID); // e.target.value);
+    		teacher_id.update(() => selTchr_ID);
     		teacher_fio.update(() => $data.Teachers.filter(t => t.Emp_ID == selTchr_ID)[0].FIO);
     		getSched();
 
@@ -8944,7 +8941,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (84:29) 
+    // (83:29) 
     function create_if_block_3$1(ctx) {
     	let noschedule;
     	let current;
@@ -8977,14 +8974,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$1.name,
     		type: "if",
-    		source: "(84:29) ",
+    		source: "(83:29) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (21:0) {#if Object.keys($scheddata).length}
+    // (20:0) {#if Object.keys($scheddata).length}
     function create_if_block$6(ctx) {
     	let div;
     	let current;
@@ -9009,7 +9006,7 @@ var app = (function () {
     			}
 
     			set_style(div, "margin-top", "10px");
-    			add_location(div, file$b, 21, 4, 640);
+    			add_location(div, file$b, 20, 4, 598);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9077,14 +9074,14 @@ var app = (function () {
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(21:0) {#if Object.keys($scheddata).length}",
+    		source: "(20:0) {#if Object.keys($scheddata).length}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (36:12) {#if shows[i]}
+    // (35:12) {#if shows[i]}
     function create_if_block_1$3(ctx) {
     	let div;
     	let t;
@@ -9108,7 +9105,7 @@ var app = (function () {
     			}
 
     			t = space();
-    			add_location(div, file$b, 36, 16, 1212);
+    			add_location(div, file$b, 35, 16, 1169);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9172,14 +9169,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(36:12) {#if shows[i]}",
+    		source: "(35:12) {#if shows[i]}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (52:28) {#if isToday(day.DatePair)}
+    // (51:28) {#if isToday(day.DatePair)}
     function create_if_block_2$2(ctx) {
     	let span;
 
@@ -9187,8 +9184,8 @@ var app = (function () {
     		c: function create() {
     			span = element("span");
     			span.textContent = "Сегодня";
-    			attr_dev(span, "class", "today-lbl svelte-109x24t");
-    			add_location(span, file$b, 52, 32, 1965);
+    			attr_dev(span, "class", "today-lbl svelte-1wissb3");
+    			add_location(span, file$b, 51, 32, 1922);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -9202,14 +9199,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(52:28) {#if isToday(day.DatePair)}",
+    		source: "(51:28) {#if isToday(day.DatePair)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (56:24) {#each day.Schedule as pair, i}
+    // (55:24) {#each day.Schedule as pair, i}
     function create_each_block_2$2(ctx) {
     	let div5;
     	let div0;
@@ -9255,24 +9252,24 @@ var app = (function () {
     			t7 = space();
     			div4 = element("div");
     			t8 = text(t8_value);
-    			attr_dev(div0, "class", "time-start svelte-109x24t");
-    			add_location(div0, file$b, 57, 32, 2212);
-    			attr_dev(span0, "class", "svelte-109x24t");
-    			add_location(span0, file$b, 61, 36, 2421);
-    			attr_dev(div1, "class", "subj-name svelte-109x24t");
-    			add_location(div1, file$b, 60, 32, 2361);
-    			attr_dev(span1, "class", "svelte-109x24t");
-    			add_location(span1, file$b, 64, 36, 2578);
-    			attr_dev(div2, "class", "kind svelte-109x24t");
-    			add_location(div2, file$b, 63, 32, 2523);
-    			attr_dev(span2, "class", "svelte-109x24t");
-    			add_location(span2, file$b, 69, 36, 2817);
-    			attr_dev(div3, "class", "kv-group svelte-109x24t");
-    			add_location(div3, file$b, 68, 32, 2758);
-    			attr_dev(div4, "class", "aud svelte-109x24t");
-    			add_location(div4, file$b, 73, 32, 2993);
-    			attr_dev(div5, "class", "pair-wrapper svelte-109x24t");
-    			add_location(div5, file$b, 56, 28, 2153);
+    			attr_dev(div0, "class", "time-start svelte-1wissb3");
+    			add_location(div0, file$b, 56, 32, 2169);
+    			attr_dev(span0, "class", "svelte-1wissb3");
+    			add_location(span0, file$b, 60, 36, 2378);
+    			attr_dev(div1, "class", "subj-name svelte-1wissb3");
+    			add_location(div1, file$b, 59, 32, 2318);
+    			attr_dev(span1, "class", "svelte-1wissb3");
+    			add_location(span1, file$b, 63, 36, 2535);
+    			attr_dev(div2, "class", "kind svelte-1wissb3");
+    			add_location(div2, file$b, 62, 32, 2480);
+    			attr_dev(span2, "class", "svelte-1wissb3");
+    			add_location(span2, file$b, 68, 36, 2774);
+    			attr_dev(div3, "class", "kv-group svelte-1wissb3");
+    			add_location(div3, file$b, 67, 32, 2715);
+    			attr_dev(div4, "class", "aud svelte-1wissb3");
+    			add_location(div4, file$b, 72, 32, 2950);
+    			attr_dev(div5, "class", "pair-wrapper svelte-1wissb3");
+    			add_location(div5, file$b, 55, 28, 2110);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div5, anchor);
@@ -9310,14 +9307,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2$2.name,
     		type: "each",
-    		source: "(56:24) {#each day.Schedule as pair, i}",
+    		source: "(55:24) {#each day.Schedule as pair, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (38:20) {#each month.DateDay as day, i}
+    // (37:20) {#each month.DateDay as day, i}
     function create_each_block_1$2(ctx) {
     	let div;
     	let span1;
@@ -9360,11 +9357,11 @@ var app = (function () {
 
     			each_1_anchor = empty();
     			set_style(span0, "margin-left", "10px");
-    			add_location(span0, file$b, 46, 32, 1717);
-    			add_location(span1, file$b, 44, 28, 1631);
+    			add_location(span0, file$b, 45, 32, 1674);
+    			add_location(span1, file$b, 43, 28, 1588);
     			attr_dev(div, "id", div_id_value = toEnDate(/*day*/ ctx[8].DatePair));
-    			attr_dev(div, "class", div_class_value = "day " + (/*day*/ ctx[8].DayWeek == "Суббота" ? "sbt" : "") + "  " + (isToday(/*day*/ ctx[8].DatePair) ? "today" : "") + " svelte-109x24t");
-    			add_location(div, file$b, 38, 24, 1332);
+    			attr_dev(div, "class", div_class_value = "day " + (/*day*/ ctx[8].DayWeek == "Суббота" ? "sbt" : "") + "  " + (isToday(/*day*/ ctx[8].DatePair) ? "today" : "") + " svelte-1wissb3");
+    			add_location(div, file$b, 37, 24, 1289);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9403,7 +9400,7 @@ var app = (function () {
     				attr_dev(div, "id", div_id_value);
     			}
 
-    			if (dirty & /*$scheddata*/ 2 && div_class_value !== (div_class_value = "day " + (/*day*/ ctx[8].DayWeek == "Суббота" ? "sbt" : "") + "  " + (isToday(/*day*/ ctx[8].DatePair) ? "today" : "") + " svelte-109x24t")) {
+    			if (dirty & /*$scheddata*/ 2 && div_class_value !== (div_class_value = "day " + (/*day*/ ctx[8].DayWeek == "Суббота" ? "sbt" : "") + "  " + (isToday(/*day*/ ctx[8].DatePair) ? "today" : "") + " svelte-1wissb3")) {
     				attr_dev(div, "class", div_class_value);
     			}
 
@@ -9444,14 +9441,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(38:20) {#each month.DateDay as day, i}",
+    		source: "(37:20) {#each month.DateDay as day, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (23:8) {#each $scheddata as month, i}
+    // (22:8) {#each $scheddata as month, i}
     function create_each_block$2(ctx) {
     	let div;
     	let span0;
@@ -9491,13 +9488,13 @@ var app = (function () {
     			t6 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
-    			attr_dev(span0, "class", "svelte-109x24t");
-    			add_location(span0, file$b, 28, 16, 878);
-    			attr_dev(span1, "class", "svelte-109x24t");
-    			add_location(span1, file$b, 29, 16, 922);
+    			attr_dev(span0, "class", "svelte-1wissb3");
+    			add_location(span0, file$b, 27, 16, 835);
+    			attr_dev(span1, "class", "svelte-1wissb3");
+    			add_location(span1, file$b, 28, 16, 879);
     			attr_dev(div, "id", /*i*/ ctx[7] + "-month");
-    			attr_dev(div, "class", "month svelte-109x24t");
-    			add_location(div, file$b, 23, 12, 723);
+    			attr_dev(div, "class", "month svelte-1wissb3");
+    			add_location(div, file$b, 22, 12, 680);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9571,7 +9568,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(23:8) {#each $scheddata as month, i}",
+    		source: "(22:8) {#each $scheddata as month, i}",
     		ctx
     	});
 
@@ -9757,34 +9754,34 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
-    	child_ctx[11] = i;
+    	child_ctx[8] = list[i];
+    	child_ctx[10] = i;
     	return child_ctx;
     }
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
-    	child_ctx[14] = i;
+    	child_ctx[11] = list[i];
+    	child_ctx[13] = i;
     	return child_ctx;
     }
 
     function get_each_context_2$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[15] = list[i][0];
-    	child_ctx[16] = list[i][1];
+    	child_ctx[14] = list[i][0];
+    	child_ctx[15] = list[i][1];
     	return child_ctx;
     }
 
     function get_each_context_3$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[15] = list[i][0];
-    	child_ctx[16] = list[i][1];
-    	child_ctx[20] = i;
+    	child_ctx[14] = list[i][0];
+    	child_ctx[15] = list[i][1];
+    	child_ctx[19] = i;
     	return child_ctx;
     }
 
-    // (132:30) 
+    // (122:29) 
     function create_if_block_4(ctx) {
     	let noschedule;
     	let current;
@@ -9817,14 +9814,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(132:30) ",
+    		source: "(122:29) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (38:0) {#if Object.keys($scheddata).length}
+    // (28:0) {#if Object.keys($scheddata).length}
     function create_if_block$5(ctx) {
     	let div;
     	let current;
@@ -9848,8 +9845,8 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", "pair-wrapper svelte-rtcixe");
-    			add_location(div, file$a, 38, 4, 912);
+    			attr_dev(div, "class", "pair-wrapper svelte-le8yp3");
+    			add_location(div, file$a, 28, 4, 765);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9861,7 +9858,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*$scheddata, Object, timepairs, parseInt, PairItem, toEnDate, startCol, isToday, shows, PairCount*/ 123) {
+    			if (dirty & /*$scheddata, Object, timepairs, parseInt, PairItem, toEnDate, startCol, isToday, shows, PairCount*/ 59) {
     				each_value = /*$scheddata*/ ctx[1];
     				validate_each_argument(each_value);
     				let i;
@@ -9917,21 +9914,21 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(38:0) {#if Object.keys($scheddata).length}",
+    		source: "(28:0) {#if Object.keys($scheddata).length}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (53:12) {#if shows[m]}
+    // (43:12) {#if shows[m]}
     function create_if_block_1$2(ctx) {
     	let div;
     	let t0;
     	let t1;
     	let each1_anchor;
     	let current;
-    	let each_value_3 = Object.entries(/*timepairs*/ ctx[3]);
+    	let each_value_3 = Object.entries(timepairs);
     	validate_each_argument(each_value_3);
     	let each_blocks_1 = [];
 
@@ -9939,7 +9936,7 @@ var app = (function () {
     		each_blocks_1[i] = create_each_block_3$1(get_each_context_3$1(ctx, each_value_3, i));
     	}
 
-    	let each_value_1 = /*month*/ ctx[9].DateDay;
+    	let each_value_1 = /*month*/ ctx[8].DateDay;
     	validate_each_argument(each_value_1);
     	let each_blocks = [];
 
@@ -9968,8 +9965,8 @@ var app = (function () {
 
     			each1_anchor = empty();
     			set_style(div, "grid-column", "1 / 2}");
-    			attr_dev(div, "class", "timepairs svelte-rtcixe");
-    			add_location(div, file$a, 53, 16, 1407);
+    			attr_dev(div, "class", "timepairs svelte-le8yp3");
+    			add_location(div, file$a, 43, 16, 1260);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9989,8 +9986,8 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*parseInt, Object, timepairs*/ 8) {
-    				each_value_3 = Object.entries(/*timepairs*/ ctx[3]);
+    			if (dirty & /*parseInt, Object, timepairs*/ 0) {
+    				each_value_3 = Object.entries(timepairs);
     				validate_each_argument(each_value_3);
     				let i;
 
@@ -10013,8 +10010,8 @@ var app = (function () {
     				each_blocks_1.length = each_value_3.length;
     			}
 
-    			if (dirty & /*Object, timepairs, parseInt, $scheddata, PairItem, toEnDate, startCol, isToday*/ 106) {
-    				each_value_1 = /*month*/ ctx[9].DateDay;
+    			if (dirty & /*Object, timepairs, parseInt, $scheddata, PairItem, toEnDate, startCol, isToday*/ 50) {
+    				each_value_1 = /*month*/ ctx[8].DateDay;
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -10073,26 +10070,26 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(53:12) {#if shows[m]}",
+    		source: "(43:12) {#if shows[m]}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (56:16) {#each Object.entries(timepairs) as [n_pair, time], n}
+    // (46:16) {#each Object.entries(timepairs) as [n_pair, time], n}
     function create_each_block_3$1(ctx) {
     	let div;
-    	let t_value = /*time*/ ctx[16] + "";
+    	let t_value = /*time*/ ctx[15] + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			set_style(div, "grid-column", parseInt(/*n_pair*/ ctx[15]) + 1 + " / " + (parseInt(/*n_pair*/ ctx[15]) + 2));
-    			attr_dev(div, "class", "timepairs svelte-rtcixe");
-    			add_location(div, file$a, 56, 20, 1555);
+    			set_style(div, "grid-column", parseInt(/*n_pair*/ ctx[14]) + 1 + " / " + (parseInt(/*n_pair*/ ctx[14]) + 2));
+    			attr_dev(div, "class", "timepairs svelte-le8yp3");
+    			add_location(div, file$a, 46, 20, 1408);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -10108,14 +10105,14 @@ var app = (function () {
     		block,
     		id: create_each_block_3$1.name,
     		type: "each",
-    		source: "(56:16) {#each Object.entries(timepairs) as [n_pair, time], n}",
+    		source: "(46:16) {#each Object.entries(timepairs) as [n_pair, time], n}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (79:24) {#if isToday(day.DatePair)}
+    // (69:24) {#if isToday(day.DatePair)}
     function create_if_block_3(ctx) {
     	let div;
 
@@ -10123,8 +10120,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			div.textContent = "Сегодня";
-    			attr_dev(div, "class", "today-lbl svelte-rtcixe");
-    			add_location(div, file$a, 79, 28, 2486);
+    			attr_dev(div, "class", "today-lbl svelte-le8yp3");
+    			add_location(div, file$a, 69, 28, 2339);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -10138,31 +10135,31 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(79:24) {#if isToday(day.DatePair)}",
+    		source: "(69:24) {#if isToday(day.DatePair)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (101:28) {:else}
+    // (91:28) {:else}
     function create_else_block$2(ctx) {
     	let div5;
     	let div0;
-    	let t0_value = /*PairItem*/ ctx[6](/*day*/ ctx[12].Schedule, /*time*/ ctx[16]).SubjSN + "";
+    	let t0_value = /*PairItem*/ ctx[5](/*day*/ ctx[11].Schedule, /*time*/ ctx[15]).SubjSN + "";
     	let t0;
     	let t1;
     	let div3;
     	let div1;
-    	let t2_value = /*PairItem*/ ctx[6](/*day*/ ctx[12].Schedule, /*time*/ ctx[16]).Aud + "";
+    	let t2_value = /*PairItem*/ ctx[5](/*day*/ ctx[11].Schedule, /*time*/ ctx[15]).Aud + "";
     	let t2;
     	let t3;
     	let div2;
-    	let t4_value = /*PairItem*/ ctx[6](/*day*/ ctx[12].Schedule, /*time*/ ctx[16]).LoadKindSN + "";
+    	let t4_value = /*PairItem*/ ctx[5](/*day*/ ctx[11].Schedule, /*time*/ ctx[15]).LoadKindSN + "";
     	let t4;
     	let t5;
     	let div4;
-    	let t6_value = /*PairItem*/ ctx[6](/*day*/ ctx[12].Schedule, /*time*/ ctx[16]).GSName + "";
+    	let t6_value = /*PairItem*/ ctx[5](/*day*/ ctx[11].Schedule, /*time*/ ctx[15]).GSName + "";
     	let t6;
     	let div5_title_value;
 
@@ -10181,19 +10178,19 @@ var app = (function () {
     			t5 = space();
     			div4 = element("div");
     			t6 = text(t6_value);
-    			attr_dev(div0, "class", "subj svelte-rtcixe");
-    			add_location(div0, file$a, 106, 36, 3638);
-    			attr_dev(div1, "class", "aud svelte-rtcixe");
-    			add_location(div1, file$a, 111, 40, 3881);
-    			attr_dev(div2, "class", "kind-load svelte-rtcixe");
-    			add_location(div2, file$a, 114, 40, 4065);
-    			attr_dev(div3, "class", "aud-wrapper svelte-rtcixe");
-    			add_location(div3, file$a, 110, 36, 3815);
-    			attr_dev(div4, "class", "groups svelte-rtcixe");
-    			add_location(div4, file$a, 120, 36, 4351);
-    			attr_dev(div5, "title", div5_title_value = /*PairItem*/ ctx[6](/*day*/ ctx[12].Schedule, /*time*/ ctx[16]).TimeStart);
-    			attr_dev(div5, "class", "pair-detail svelte-rtcixe");
-    			add_location(div5, file$a, 101, 32, 3383);
+    			attr_dev(div0, "class", "subj svelte-le8yp3");
+    			add_location(div0, file$a, 96, 36, 3491);
+    			attr_dev(div1, "class", "aud svelte-le8yp3");
+    			add_location(div1, file$a, 101, 40, 3734);
+    			attr_dev(div2, "class", "kind-load svelte-le8yp3");
+    			add_location(div2, file$a, 104, 40, 3918);
+    			attr_dev(div3, "class", "aud-wrapper svelte-le8yp3");
+    			add_location(div3, file$a, 100, 36, 3668);
+    			attr_dev(div4, "class", "groups svelte-le8yp3");
+    			add_location(div4, file$a, 110, 36, 4204);
+    			attr_dev(div5, "title", div5_title_value = /*PairItem*/ ctx[5](/*day*/ ctx[11].Schedule, /*time*/ ctx[15]).TimeStart);
+    			attr_dev(div5, "class", "pair-detail svelte-le8yp3");
+    			add_location(div5, file$a, 91, 32, 3236);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div5, anchor);
@@ -10211,12 +10208,12 @@ var app = (function () {
     			append_dev(div4, t6);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*$scheddata*/ 2 && t0_value !== (t0_value = /*PairItem*/ ctx[6](/*day*/ ctx[12].Schedule, /*time*/ ctx[16]).SubjSN + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*$scheddata*/ 2 && t2_value !== (t2_value = /*PairItem*/ ctx[6](/*day*/ ctx[12].Schedule, /*time*/ ctx[16]).Aud + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*$scheddata*/ 2 && t4_value !== (t4_value = /*PairItem*/ ctx[6](/*day*/ ctx[12].Schedule, /*time*/ ctx[16]).LoadKindSN + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*$scheddata*/ 2 && t6_value !== (t6_value = /*PairItem*/ ctx[6](/*day*/ ctx[12].Schedule, /*time*/ ctx[16]).GSName + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*$scheddata*/ 2 && t0_value !== (t0_value = /*PairItem*/ ctx[5](/*day*/ ctx[11].Schedule, /*time*/ ctx[15]).SubjSN + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*$scheddata*/ 2 && t2_value !== (t2_value = /*PairItem*/ ctx[5](/*day*/ ctx[11].Schedule, /*time*/ ctx[15]).Aud + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*$scheddata*/ 2 && t4_value !== (t4_value = /*PairItem*/ ctx[5](/*day*/ ctx[11].Schedule, /*time*/ ctx[15]).LoadKindSN + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*$scheddata*/ 2 && t6_value !== (t6_value = /*PairItem*/ ctx[5](/*day*/ ctx[11].Schedule, /*time*/ ctx[15]).GSName + "")) set_data_dev(t6, t6_value);
 
-    			if (dirty & /*$scheddata*/ 2 && div5_title_value !== (div5_title_value = /*PairItem*/ ctx[6](/*day*/ ctx[12].Schedule, /*time*/ ctx[16]).TimeStart)) {
+    			if (dirty & /*$scheddata*/ 2 && div5_title_value !== (div5_title_value = /*PairItem*/ ctx[5](/*day*/ ctx[11].Schedule, /*time*/ ctx[15]).TimeStart)) {
     				attr_dev(div5, "title", div5_title_value);
     			}
     		},
@@ -10229,14 +10226,14 @@ var app = (function () {
     		block,
     		id: create_else_block$2.name,
     		type: "else",
-    		source: "(101:28) {:else}",
+    		source: "(91:28) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (99:28) {#if day.Schedule.findIndex((el) => el.TimeStart == time) == -1}
+    // (89:28) {#if day.Schedule.findIndex((el) => el.TimeStart == time) == -1}
     function create_if_block_2$1(ctx) {
     	let t_value = "" + "";
     	let t;
@@ -10258,14 +10255,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$1.name,
     		type: "if",
-    		source: "(99:28) {#if day.Schedule.findIndex((el) => el.TimeStart == time) == -1}",
+    		source: "(89:28) {#if day.Schedule.findIndex((el) => el.TimeStart == time) == -1}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (91:20) {#each Object.entries(timepairs) as [n_pair, time]}
+    // (81:20) {#each Object.entries(timepairs) as [n_pair, time]}
     function create_each_block_2$1(ctx) {
     	let div;
     	let show_if;
@@ -10275,11 +10272,11 @@ var app = (function () {
     	let current;
 
     	function func(...args) {
-    		return /*func*/ ctx[7](/*time*/ ctx[16], ...args);
+    		return /*func*/ ctx[6](/*time*/ ctx[15], ...args);
     	}
 
     	function select_block_type_1(ctx, dirty) {
-    		if (show_if == null || dirty & /*$scheddata*/ 2) show_if = !!(/*day*/ ctx[12].Schedule.findIndex(func) == -1);
+    		if (show_if == null || dirty & /*$scheddata*/ 2) show_if = !!(/*day*/ ctx[11].Schedule.findIndex(func) == -1);
     		if (show_if) return create_if_block_2$1;
     		return create_else_block$2;
     	}
@@ -10292,9 +10289,9 @@ var app = (function () {
     			div = element("div");
     			if_block.c();
     			t = space();
-    			set_style(div, "grid-column", parseInt(/*n_pair*/ ctx[15]) + 1 + " / " + (parseInt(/*n_pair*/ ctx[15]) + 2));
-    			attr_dev(div, "class", "pair-ceil svelte-rtcixe");
-    			add_location(div, file$a, 91, 24, 2885);
+    			set_style(div, "grid-column", parseInt(/*n_pair*/ ctx[14]) + 1 + " / " + (parseInt(/*n_pair*/ ctx[14]) + 2));
+    			attr_dev(div, "class", "pair-ceil svelte-le8yp3");
+    			add_location(div, file$a, 81, 24, 2738);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -10344,24 +10341,24 @@ var app = (function () {
     		block,
     		id: create_each_block_2$1.name,
     		type: "each",
-    		source: "(91:20) {#each Object.entries(timepairs) as [n_pair, time]}",
+    		source: "(81:20) {#each Object.entries(timepairs) as [n_pair, time]}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (67:16) {#each month.DateDay as day, d}
+    // (57:16) {#each month.DateDay as day, d}
     function create_each_block_1$1(ctx) {
     	let div2;
-    	let show_if = isToday(/*day*/ ctx[12].DatePair);
+    	let show_if = isToday(/*day*/ ctx[11].DatePair);
     	let t0;
     	let div0;
-    	let t1_value = /*day*/ ctx[12].DatePair + "";
+    	let t1_value = /*day*/ ctx[11].DatePair + "";
     	let t1;
     	let t2;
     	let div1;
-    	let t3_value = /*day*/ ctx[12].DayWeek + "";
+    	let t3_value = /*day*/ ctx[11].DayWeek + "";
     	let t3;
     	let div2_id_value;
     	let div2_class_value;
@@ -10371,7 +10368,7 @@ var app = (function () {
     	let each_1_anchor;
     	let current;
     	let if_block = show_if && create_if_block_3(ctx);
-    	let each_value_2 = Object.entries(/*timepairs*/ ctx[3]);
+    	let each_value_2 = Object.entries(timepairs);
     	validate_each_argument(each_value_2);
     	let each_blocks = [];
 
@@ -10400,16 +10397,16 @@ var app = (function () {
     			}
 
     			each_1_anchor = empty();
-    			add_location(div0, file$a, 82, 24, 2578);
-    			add_location(div1, file$a, 85, 24, 2682);
-    			attr_dev(div2, "id", div2_id_value = toEnDate(/*day*/ ctx[12].DatePair));
-    			set_style(div2, "grid-column", /*startCol*/ ctx[5] + " / " + (/*startCol*/ ctx[5] + 1));
+    			add_location(div0, file$a, 72, 24, 2431);
+    			add_location(div1, file$a, 75, 24, 2535);
+    			attr_dev(div2, "id", div2_id_value = toEnDate(/*day*/ ctx[11].DatePair));
+    			set_style(div2, "grid-column", /*startCol*/ ctx[4] + " / " + (/*startCol*/ ctx[4] + 1));
 
-    			attr_dev(div2, "class", div2_class_value = "first-ceil " + (/*day*/ ctx[12].DayWeek == "Суббота"
+    			attr_dev(div2, "class", div2_class_value = "first-ceil " + (/*day*/ ctx[11].DayWeek == "Суббота"
     			? "sbt"
-    			: "date-pair") + "   " + (isToday(/*day*/ ctx[12].DatePair) ? "today" : "") + " svelte-rtcixe");
+    			: "date-pair") + "   " + (isToday(/*day*/ ctx[11].DatePair) ? "today" : "") + " svelte-le8yp3");
 
-    			add_location(div2, file$a, 67, 20, 1923);
+    			add_location(div2, file$a, 57, 20, 1776);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -10430,7 +10427,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*$scheddata*/ 2) show_if = isToday(/*day*/ ctx[12].DatePair);
+    			if (dirty & /*$scheddata*/ 2) show_if = isToday(/*day*/ ctx[11].DatePair);
 
     			if (show_if) {
     				if (if_block) ; else {
@@ -10443,21 +10440,21 @@ var app = (function () {
     				if_block = null;
     			}
 
-    			if ((!current || dirty & /*$scheddata*/ 2) && t1_value !== (t1_value = /*day*/ ctx[12].DatePair + "")) set_data_dev(t1, t1_value);
-    			if ((!current || dirty & /*$scheddata*/ 2) && t3_value !== (t3_value = /*day*/ ctx[12].DayWeek + "")) set_data_dev(t3, t3_value);
+    			if ((!current || dirty & /*$scheddata*/ 2) && t1_value !== (t1_value = /*day*/ ctx[11].DatePair + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty & /*$scheddata*/ 2) && t3_value !== (t3_value = /*day*/ ctx[11].DayWeek + "")) set_data_dev(t3, t3_value);
 
-    			if (!current || dirty & /*$scheddata*/ 2 && div2_id_value !== (div2_id_value = toEnDate(/*day*/ ctx[12].DatePair))) {
+    			if (!current || dirty & /*$scheddata*/ 2 && div2_id_value !== (div2_id_value = toEnDate(/*day*/ ctx[11].DatePair))) {
     				attr_dev(div2, "id", div2_id_value);
     			}
 
-    			if (!current || dirty & /*$scheddata*/ 2 && div2_class_value !== (div2_class_value = "first-ceil " + (/*day*/ ctx[12].DayWeek == "Суббота"
+    			if (!current || dirty & /*$scheddata*/ 2 && div2_class_value !== (div2_class_value = "first-ceil " + (/*day*/ ctx[11].DayWeek == "Суббота"
     			? "sbt"
-    			: "date-pair") + "   " + (isToday(/*day*/ ctx[12].DatePair) ? "today" : "") + " svelte-rtcixe")) {
+    			: "date-pair") + "   " + (isToday(/*day*/ ctx[11].DatePair) ? "today" : "") + " svelte-le8yp3")) {
     				attr_dev(div2, "class", div2_class_value);
     			}
 
-    			if (dirty & /*parseInt, Object, timepairs, $scheddata, PairItem*/ 74) {
-    				each_value_2 = Object.entries(/*timepairs*/ ctx[3]);
+    			if (dirty & /*parseInt, Object, timepairs, $scheddata, PairItem*/ 34) {
+    				each_value_2 = Object.entries(timepairs);
     				validate_each_argument(each_value_2);
     				let i;
 
@@ -10524,26 +10521,26 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(67:16) {#each month.DateDay as day, d}",
+    		source: "(57:16) {#each month.DateDay as day, d}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (40:8) {#each $scheddata as month, m}
+    // (30:8) {#each $scheddata as month, m}
     function create_each_block$1(ctx) {
     	let div;
     	let span0;
-    	let t0_value = /*month*/ ctx[9].Month + "";
+    	let t0_value = /*month*/ ctx[8].Month + "";
     	let t0;
     	let t1;
     	let span1;
     	let t2;
-    	let t3_value = /*PairCount*/ ctx[4](/*month*/ ctx[9].DateDay) + "";
+    	let t3_value = /*PairCount*/ ctx[3](/*month*/ ctx[8].DateDay) + "";
     	let t3;
     	let t4;
-    	let t5_value = /*month*/ ctx[9].DateDay.length + "";
+    	let t5_value = /*month*/ ctx[8].DateDay.length + "";
     	let t5;
     	let t6;
     	let if_block_anchor;
@@ -10552,10 +10549,10 @@ var app = (function () {
     	let dispose;
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[8](/*m*/ ctx[11]);
+    		return /*click_handler*/ ctx[7](/*m*/ ctx[10]);
     	}
 
-    	let if_block = /*shows*/ ctx[0][/*m*/ ctx[11]] && create_if_block_1$2(ctx);
+    	let if_block = /*shows*/ ctx[0][/*m*/ ctx[10]] && create_if_block_1$2(ctx);
 
     	const block = {
     		c: function create() {
@@ -10571,13 +10568,13 @@ var app = (function () {
     			t6 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
-    			attr_dev(span0, "class", "svelte-rtcixe");
-    			add_location(span0, file$a, 45, 16, 1156);
-    			attr_dev(span1, "class", "svelte-rtcixe");
-    			add_location(span1, file$a, 46, 16, 1200);
+    			attr_dev(span0, "class", "svelte-le8yp3");
+    			add_location(span0, file$a, 35, 16, 1009);
+    			attr_dev(span1, "class", "svelte-le8yp3");
+    			add_location(span1, file$a, 36, 16, 1053);
     			set_style(div, "grid-column", "1 / 10");
-    			attr_dev(div, "class", "month svelte-rtcixe");
-    			add_location(div, file$a, 40, 12, 990);
+    			attr_dev(div, "class", "month svelte-le8yp3");
+    			add_location(div, file$a, 30, 12, 843);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -10601,11 +10598,11 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty & /*$scheddata*/ 2) && t0_value !== (t0_value = /*month*/ ctx[9].Month + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty & /*$scheddata*/ 2) && t3_value !== (t3_value = /*PairCount*/ ctx[4](/*month*/ ctx[9].DateDay) + "")) set_data_dev(t3, t3_value);
-    			if ((!current || dirty & /*$scheddata*/ 2) && t5_value !== (t5_value = /*month*/ ctx[9].DateDay.length + "")) set_data_dev(t5, t5_value);
+    			if ((!current || dirty & /*$scheddata*/ 2) && t0_value !== (t0_value = /*month*/ ctx[8].Month + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*$scheddata*/ 2) && t3_value !== (t3_value = /*PairCount*/ ctx[3](/*month*/ ctx[8].DateDay) + "")) set_data_dev(t3, t3_value);
+    			if ((!current || dirty & /*$scheddata*/ 2) && t5_value !== (t5_value = /*month*/ ctx[8].DateDay.length + "")) set_data_dev(t5, t5_value);
 
-    			if (/*shows*/ ctx[0][/*m*/ ctx[11]]) {
+    			if (/*shows*/ ctx[0][/*m*/ ctx[10]]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
@@ -10651,7 +10648,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(40:8) {#each $scheddata as month, m}",
+    		source: "(30:8) {#each $scheddata as month, m}",
     		ctx
     	});
 
@@ -10770,17 +10767,6 @@ var app = (function () {
     	validate_slots("Shahsched", slots, []);
     	let shows = Array($scheddata.length).fill(true);
 
-    	let timepairs = {
-    		1: "08:30",
-    		2: "10:15",
-    		3: "12:00",
-    		4: "14:05",
-    		5: "15:50",
-    		6: "17:35",
-    		7: "19:15",
-    		8: "20:55"
-    	};
-
     	const PairCount = daysArr => {
     		//считает кол-во пар в мес.
     		let pcount = 0;
@@ -10810,12 +10796,12 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		scheddata,
     		sched_data_loaded,
+    		timepairs,
     		Noschedule,
     		fade,
     		isToday,
     		toEnDate,
     		shows,
-    		timepairs,
     		PairCount,
     		startCol,
     		PairItem,
@@ -10825,8 +10811,7 @@ var app = (function () {
 
     	$$self.$inject_state = $$props => {
     		if ("shows" in $$props) $$invalidate(0, shows = $$props.shows);
-    		if ("timepairs" in $$props) $$invalidate(3, timepairs = $$props.timepairs);
-    		if ("startCol" in $$props) $$invalidate(5, startCol = $$props.startCol);
+    		if ("startCol" in $$props) $$invalidate(4, startCol = $$props.startCol);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -10837,7 +10822,6 @@ var app = (function () {
     		shows,
     		$scheddata,
     		$sched_data_loaded,
-    		timepairs,
     		PairCount,
     		startCol,
     		PairItem,
@@ -15164,7 +15148,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (30:0) {#if Object.keys($scheddata).length}
+    // (29:0) {#if Object.keys($scheddata).length}
     function create_if_block$1(ctx) {
     	let div;
     	let table;
@@ -15188,14 +15172,14 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(tbody, file$1, 32, 12, 1064);
+    			add_location(tbody, file$1, 31, 12, 1015);
     			attr_dev(table, "id", "schtable");
     			attr_dev(table, "data-cols-width", table_data_cols_width_value = /*ColsWidths*/ ctx[2](/*$scheddata*/ ctx[0]));
-    			add_location(table, file$1, 31, 8, 989);
+    			add_location(table, file$1, 30, 8, 940);
     			set_style(div, "visibility", "collapse");
     			set_style(div, "height", "0px");
     			set_style(div, "width", "0px");
-    			add_location(div, file$1, 30, 4, 924);
+    			add_location(div, file$1, 29, 4, 875);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15245,14 +15229,14 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(30:0) {#if Object.keys($scheddata).length}",
+    		source: "(29:0) {#if Object.keys($scheddata).length}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (51:24) {#each Object.entries(timepairs) as [n_pair, time], n}
+    // (50:24) {#each Object.entries(timepairs) as [n_pair, time], n}
     function create_each_block_3(ctx) {
     	let td;
     	let t0_value = /*time*/ ctx[11] + "";
@@ -15267,7 +15251,7 @@ var app = (function () {
     			attr_dev(td, "data-f-name", "Arial");
     			attr_dev(td, "data-f-bold", "true");
     			attr_dev(td, "data-f-color", "0e2ff6");
-    			add_location(td, file$1, 51, 28, 1822);
+    			add_location(td, file$1, 50, 28, 1773);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, td, anchor);
@@ -15284,14 +15268,14 @@ var app = (function () {
     		block,
     		id: create_each_block_3.name,
     		type: "each",
-    		source: "(51:24) {#each Object.entries(timepairs) as [n_pair, time], n}",
+    		source: "(50:24) {#each Object.entries(timepairs) as [n_pair, time], n}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (78:32) {:else}
+    // (77:32) {:else}
     function create_else_block$1(ctx) {
     	let td;
     	let t0_value = /*PairItem*/ ctx[1](/*day*/ ctx[7].Schedule, /*time*/ ctx[11]).SubjName + "";
@@ -15320,11 +15304,11 @@ var app = (function () {
     			br1 = element("br");
     			t5 = space();
     			t6 = text(t6_value);
-    			add_location(br0, file$1, 80, 54, 3178);
-    			add_location(br1, file$1, 84, 74, 3389);
+    			add_location(br0, file$1, 79, 54, 3129);
+    			add_location(br1, file$1, 83, 74, 3340);
     			attr_dev(td, "data-a-wrap", "true");
     			attr_dev(td, "data-a-v", "top");
-    			add_location(td, file$1, 78, 36, 3015);
+    			add_location(td, file$1, 77, 36, 2966);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, td, anchor);
@@ -15353,14 +15337,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(78:32) {:else}",
+    		source: "(77:32) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (76:32) {#if day.Schedule.findIndex((el) => el.TimeStart == time) == -1}
+    // (75:32) {#if day.Schedule.findIndex((el) => el.TimeStart == time) == -1}
     function create_if_block_1$1(ctx) {
     	let td;
 
@@ -15368,7 +15352,7 @@ var app = (function () {
     		c: function create() {
     			td = element("td");
     			td.textContent = `${""}`;
-    			add_location(td, file$1, 76, 36, 2925);
+    			add_location(td, file$1, 75, 36, 2876);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, td, anchor);
@@ -15383,14 +15367,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(76:32) {#if day.Schedule.findIndex((el) => el.TimeStart == time) == -1}",
+    		source: "(75:32) {#if day.Schedule.findIndex((el) => el.TimeStart == time) == -1}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (75:28) {#each Object.entries(timepairs) as [n_pair, time]}
+    // (74:28) {#each Object.entries(timepairs) as [n_pair, time]}
     function create_each_block_2(ctx) {
     	let show_if;
     	let if_block_anchor;
@@ -15442,14 +15426,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(75:28) {#each Object.entries(timepairs) as [n_pair, time]}",
+    		source: "(74:28) {#each Object.entries(timepairs) as [n_pair, time]}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (61:20) {#each month.DateDay as day, d}
+    // (60:20) {#each month.DateDay as day, d}
     function create_each_block_1(ctx) {
     	let tr;
     	let td;
@@ -15486,14 +15470,14 @@ var app = (function () {
     			}
 
     			t5 = space();
-    			add_location(br, file$1, 70, 32, 2624);
+    			add_location(br, file$1, 69, 32, 2575);
     			attr_dev(td, "data-a-wrap", "true");
     			attr_dev(td, "data-a-v", "middle");
     			attr_dev(td, "data-f-name", "Arial");
     			attr_dev(td, "data-f-bold", "true");
     			attr_dev(td, "data-f-color", "2d324e");
-    			add_location(td, file$1, 62, 28, 2253);
-    			add_location(tr, file$1, 61, 24, 2220);
+    			add_location(td, file$1, 61, 28, 2204);
+    			add_location(tr, file$1, 60, 24, 2171);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -15549,14 +15533,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(61:20) {#each month.DateDay as day, d}",
+    		source: "(60:20) {#each month.DateDay as day, d}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (34:16) {#each $scheddata as month, m}
+    // (33:16) {#each $scheddata as month, m}
     function create_each_block(ctx) {
     	let tr0;
     	let td0;
@@ -15610,13 +15594,13 @@ var app = (function () {
     			attr_dev(td0, "data-f-sz", "14");
     			attr_dev(td0, "data-f-bold", "true");
     			attr_dev(td0, "data-f-color", "fe0404");
-    			add_location(td0, file$1, 35, 24, 1168);
-    			add_location(tr0, file$1, 34, 20, 1139);
+    			add_location(td0, file$1, 34, 24, 1119);
+    			add_location(tr0, file$1, 33, 20, 1090);
     			attr_dev(td1, "data-f-name", "Arial");
     			attr_dev(td1, "data-f-bold", "true");
     			attr_dev(td1, "data-f-color", "0e2ff6");
-    			add_location(td1, file$1, 43, 24, 1471);
-    			add_location(tr1, file$1, 42, 20, 1442);
+    			add_location(td1, file$1, 42, 24, 1422);
+    			add_location(tr1, file$1, 41, 20, 1393);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr0, anchor);
@@ -15705,7 +15689,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(34:16) {#each $scheddata as month, m}",
+    		source: "(33:16) {#each $scheddata as month, m}",
     		ctx
     	});
 

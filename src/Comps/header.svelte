@@ -6,7 +6,6 @@
     import { faBars } from "@fortawesome/free-solid-svg-icons";
 
     // https://cweili.github.io/svelte-fa/
-    //https://www.npmjs.com/package/svelte-fa
     //https://fontawesome.com/v5/icons/bars?s=solid
 
     const formatter = new Intl.DateTimeFormat("ru", {
@@ -21,7 +20,7 @@
     <div class="date">
         {new Date().toLocaleDateString("ru-RU")}
     </div>
-    <div style="display:flex;flex-wrap: nowrap;align-items:center">
+    <div class="caption-wrapp">
         <div class="kv-burger" on:click={onBurgerClick}>
             <Fa icon={faBars} />
         </div>
@@ -66,6 +65,12 @@
         font-size: 2em;
         font-weight: 200;
     }
+    .caption-wrapp {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
     @media (min-width: 500.5px) {
         .kv-burger {
             /* margin-right: 1em; */

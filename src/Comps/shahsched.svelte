@@ -1,23 +1,13 @@
 <script>
     //https://www.appypie.com/design/image-color-picker/
     import { scheddata, sched_data_loaded } from "./store";
+    import { timepairs } from "./util.js";
     import Noschedule from "./noschedule.svelte";
 
     import { fade } from "svelte/transition";
     import { isToday, toEnDate } from "./util";
 
     let shows = Array($scheddata.length).fill(true);
-
-    let timepairs = {
-        1: "08:30",
-        2: "10:15",
-        3: "12:00",
-        4: "14:05",
-        5: "15:50",
-        6: "17:35",
-        7: "19:15",
-        8: "20:55",
-    };
 
     const PairCount = (daysArr) => {
         //считает кол-во пар в мес.
@@ -129,9 +119,10 @@
             {/if}
         {/each}
     </div>
- {:else if $sched_data_loaded}
+{:else if $sched_data_loaded}
     <Noschedule />
 {/if}
+
 <style>
     .sbt {
         background-color: rgb(246 95 95) !important;
@@ -175,9 +166,6 @@
         padding: 5px 3px;
     }
     .pair-ceil {
-        /* font-weight: 300; */
-        /* background-color: rgb(215, 235, 250); */
-        /* background-color: #7BDC7F; */
         background-color: #f1fff7;
         padding: 5px;
     }
@@ -204,11 +192,6 @@
         font-size: 0.95em;
         line-height: 1.1em;
         height: 36px;
-        /* text-shadow: 0px 0.5px 0.5px #6f7df3; */
-        /* Сделать media-query  для height
-        border-top-left-radius: 0.5em; */
-        /* border-top-right-radius: 1px solid #bfa8a8; */
-        /* border-bottom: 1px solid #bfa8a8; */
     }
     .kind-load {
         text-align: right;

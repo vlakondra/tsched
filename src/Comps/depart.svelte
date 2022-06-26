@@ -16,7 +16,7 @@
   };
 
   const onTchrSelected = (e) => {
-    teacher_id.update(() => selTchr_ID); // e.target.value);
+    teacher_id.update(() => selTchr_ID);
     teacher_fio.update(
       () => $data.Teachers.filter((t) => t.Emp_ID == selTchr_ID)[0].FIO
     );

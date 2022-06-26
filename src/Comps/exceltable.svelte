@@ -26,7 +26,6 @@
     };
 </script>
 
-<!-- style="visibility:collapse; height:0px" -->
 {#if Object.keys($scheddata).length}
     <div style="visibility:collapse; height:0px; width:0px">
         <table id="schtable" data-cols-width={ColsWidths($scheddata)}>
