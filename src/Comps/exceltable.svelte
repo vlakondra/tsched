@@ -95,9 +95,3 @@
         </table>
     </div>
 {/if}
-
-<style>
-    .tt {
-        color: rgb(254, 4, 4);
-    }
-</style>

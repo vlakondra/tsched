@@ -15859,7 +15859,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(fa.$$.fragment);
-    			attr_dev(div, "class", "totop-box svelte-u4ygg2");
+    			attr_dev(div, "class", "totop-box svelte-a1h8jb");
     			add_location(div, file, 78, 2, 1976);
     		},
     		m: function mount(target, anchor) {
@@ -15997,7 +15997,7 @@ var app = (function () {
     			create_component(viewformat.$$.fragment);
     			t3 = space();
     			create_component(devicedetector.$$.fragment);
-    			attr_dev(button, "class", "delete is-medium svelte-u4ygg2");
+    			attr_dev(button, "class", "delete is-medium svelte-a1h8jb");
     			add_location(button, file, 86, 3, 2253);
     			attr_dev(div, "class", "notification");
     			add_location(div, file, 85, 2, 2223);
@@ -16023,7 +16023,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const devicedetector_changes = {};
 
-    			if (dirty & /*$$scope*/ 16384) {
+    			if (dirty & /*$$scope*/ 4096) {
     				devicedetector_changes.$$scope = { dirty, ctx };
     			}
 
@@ -16224,18 +16224,6 @@ var app = (function () {
     	let t7;
     	let current_block_type_index;
     	let if_block1;
-    	let t8;
-    	let button;
-    	let t10;
-    	let div;
-    	let table;
-    	let tr0;
-    	let td0;
-    	let td1;
-    	let t13;
-    	let tr1;
-    	let td2;
-    	let td3;
     	let current;
     	let mounted;
     	let dispose;
@@ -16299,36 +16287,8 @@ var app = (function () {
     			create_component(exceltable.$$.fragment);
     			t7 = space();
     			if_block1.c();
-    			t8 = space();
-    			button = element("button");
-    			button.textContent = "Save";
-    			t10 = space();
-    			div = element("div");
-    			table = element("table");
-    			tr0 = element("tr");
-    			td0 = element("td");
-    			td0.textContent = "1";
-    			td1 = element("td");
-    			td1.textContent = "2";
-    			t13 = space();
-    			tr1 = element("tr");
-    			td2 = element("td");
-    			td2.textContent = "Проверка";
-    			td3 = element("td");
-    			td3.textContent = "Таблицы";
     			document_1.title = "Расписание преподавателей";
-    			add_location(button, file, 109, 1, 2752);
-    			add_location(td0, file, 119, 7, 3002);
-    			add_location(td1, file, 119, 17, 3012);
-    			add_location(tr0, file, 119, 3, 2998);
-    			add_location(td2, file, 120, 7, 3035);
-    			add_location(td3, file, 120, 24, 3052);
-    			add_location(tr1, file, 120, 3, 3031);
-    			attr_dev(table, "id", "table1");
-    			add_location(table, file, 114, 2, 2889);
-    			set_style(div, "visibility", "hidden");
-    			add_location(div, file, 113, 1, 2855);
-    			attr_dev(main, "class", "kv-container  is-widescreen svelte-u4ygg2");
+    			attr_dev(main, "class", "kv-container  is-widescreen svelte-a1h8jb");
     			set_style(main, "min-height", "100vh");
     			add_location(main, file, 69, 0, 1751);
     		},
@@ -16353,31 +16313,15 @@ var app = (function () {
     			mount_component(exceltable, main, null);
     			append_dev(main, t7);
     			if_blocks[current_block_type_index].m(main, null);
-    			append_dev(main, t8);
-    			append_dev(main, button);
-    			append_dev(main, t10);
-    			append_dev(main, div);
-    			append_dev(div, table);
-    			append_dev(table, tr0);
-    			append_dev(tr0, td0);
-    			append_dev(tr0, td1);
-    			append_dev(table, t13);
-    			append_dev(table, tr1);
-    			append_dev(tr1, td2);
-    			append_dev(tr1, td3);
     			current = true;
 
     			if (!mounted) {
-    				dispose = [
-    					listen_dev(window, "scroll", () => {
-    						scrolling = true;
-    						clearTimeout(scrolling_timeout);
-    						scrolling_timeout = setTimeout(clear_scrolling, 100);
-    						/*onwindowscroll*/ ctx[8]();
-    					}),
-    					listen_dev(button, "click", /*click_handler_1*/ ctx[12], false, false, false),
-    					listen_dev(table, "click", /*click_handler_2*/ ctx[13], false, false, false)
-    				];
+    				dispose = listen_dev(window, "scroll", () => {
+    					scrolling = true;
+    					clearTimeout(scrolling_timeout);
+    					scrolling_timeout = setTimeout(clear_scrolling, 100);
+    					/*onwindowscroll*/ ctx[8]();
+    				});
 
     				mounted = true;
     			}
@@ -16416,7 +16360,7 @@ var app = (function () {
     			const drawer_changes = {};
     			if (dirty & /*open*/ 1) drawer_changes.open = /*open*/ ctx[0];
 
-    			if (dirty & /*$$scope, open*/ 16385) {
+    			if (dirty & /*$$scope, open*/ 4097) {
     				drawer_changes.$$scope = { dirty, ctx };
     			}
 
@@ -16444,7 +16388,7 @@ var app = (function () {
     				}
 
     				transition_in(if_block1, 1);
-    				if_block1.m(main, t8);
+    				if_block1.m(main, null);
     			}
     		},
     		i: function intro(local) {
@@ -16482,7 +16426,7 @@ var app = (function () {
     			destroy_component(exceltable);
     			if_blocks[current_block_type_index].d();
     			mounted = false;
-    			run_all(dispose);
+    			dispose();
     		}
     	};
 
@@ -16543,8 +16487,6 @@ var app = (function () {
 
     	const click_handler = () => $$invalidate(0, open = false);
     	const clickAway_handler = () => $$invalidate(0, open = false);
-    	const click_handler_1 = () => TableToExcel.convert(document.querySelector("#table1"));
-    	const click_handler_2 = () => TableToExcel.convert(document.querySelector("#table1"));
 
     	$$self.$capture_state = () => ({
     		client_width,
@@ -16599,9 +16541,7 @@ var app = (function () {
     		onwindowscroll,
     		resize_handler,
     		click_handler,
-    		clickAway_handler,
-    		click_handler_1,
-    		click_handler_2
+    		clickAway_handler
     	];
     }
 

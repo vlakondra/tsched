@@ -106,21 +106,6 @@
 	{:else}
 		<ShahSched />
 	{/if}
-
-	<button
-		on:click={() => TableToExcel.convert(document.querySelector("#table1"))}
-		>Save</button
-	>
-	<div style="visibility:hidden">
-		<table
-			on:click={() =>
-				TableToExcel.convert(document.querySelector("#table1"))}
-			id="table1"
-		>
-			<tr><td>1</td><td>2</td></tr>
-			<tr><td>Проверка</td><td>Таблицы</td></tr>
-		</table>
-	</div>
 </main>
 
 <style type="text/scss">
@@ -217,12 +202,12 @@
 		width: auto;
 	}
 
-	.kv-container.is-fluid {
-		max-width: none !important;
-		padding-left: 32px;
-		padding-right: 32px;
-		width: 100%;
-	}
+	// .kv-container.is-fluid {
+	// 	max-width: none !important;
+	// 	padding-left: 32px;
+	// 	padding-right: 32px;
+	// 	width: 100%;
+	// }
 
 	@media screen and (min-width: 1024px) {
 		.kv-container {
