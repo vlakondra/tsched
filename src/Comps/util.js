@@ -13,4 +13,13 @@ export const toEnDate=(pairdate)=>{
    return lightFormat(en, 'yyyy-MM-dd')
 }
 
-
+export const  timepairs = {
+    1: "08:30",
+    2: "10:15",
+    3: "12:00",
+    4: "14:05",
+    5: "15:50",
+    6: "17:35",
+    7: "19:15",
+    8: "20:55",
+};

@@ -30,19 +30,19 @@ export const sched_data_loaded=writable(false) //была  загрузка ра
 export const client_width = writable(0) //ширина экрана от ResizeObserver
 
 const esc = encodeURIComponent;
-const buildparams =(pars)=>{
-     Object.keys(pars)
-    .map((k) => `${esc(k)}=${esc(pars[k])}`)
-    .join("&");
-}
+// const buildparams =(pars)=>{
+//      Object.keys(pars)
+//     .map((k) => `${esc(k)}=${esc(pars[k])}`)
+//     .join("&");
+// }
 //загрузка данных по кафедрам. импортируется depart.svelte
 export default function (){
     const url = "https://old.ursei.su/Services/GetTeachersIniData?";
-    const params = {
-      //почему работает с любой датой?
-      d: new Date().toISOString().slice(0, 10),
-    };
-    let query = buildparams(params)
+    // const params = {
+    //   //почему работает с любой датой?
+    //   d: new Date().toISOString().slice(0, 10),
+    // };
+    let query =  `d=${new Date().toISOString().slice(0, 10)}`// buildparams(params)
 
     const loading = writable(true) //оставить только data и export-переменные
     const error = writable(false)
@@ -53,7 +53,7 @@ export default function (){
         error.set(false)
         load_ini_data.set(true)
         try {
-            const response = await fetch(url + query,{},5000)
+            const response = await fetch(url + query,{},3000)
             data.set(await response.json())
         } catch(e) {
             error.set(e)

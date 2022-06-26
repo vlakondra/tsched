@@ -30,6 +30,7 @@
 	import Fa from "svelte-fa";
 	import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
 	import DeviceDetector from "svelte-device-detector";
+	import ExcelTable from "./Comps/exceltable.svelte";
 
 	let open = false;
 	// import { SaveExcel } from "./Comps/util.js";
@@ -55,15 +56,15 @@
 
 	let scrolly = 5;
 	let w;
-	let script;
-	let url = "/tableToExcel.js";
+	// let script;
+	// let url = "/tableToExcel.js";
 </script>
 
 <svelte:window bind:scrollY={scrolly} />
 
 <svelte:head>
 	<title>Расписание преподавателей</title>
-	<script bind:this={script} src={url}></script>
+	<!-- <script bind:this={script} src={url}></script> -->
 </svelte:head>
 
 <main class="kv-container  is-widescreen" style="min-height: 100vh;">
@@ -94,6 +95,7 @@
 	</Drawer>
 	<Progbar />
 	<StartMessage openDrawer={TurnDrawer} />
+	<ExcelTable />
 
 	{#if $err_sched_data}
 		<div>
